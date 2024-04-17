@@ -20,7 +20,7 @@ export default function NewBookCarousel({ items }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
-    }, 500000);
+    }, 3000);
     return () => {
       clearInterval(interval);
     };
