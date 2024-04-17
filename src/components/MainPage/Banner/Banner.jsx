@@ -1,11 +1,11 @@
 import React from 'react';
 import * as S from './banner.styled';
 import { useEffect } from 'react';
-import { useNewBookListQuery } from '../../../hooks/useBookList';
+import { useNewSpecialBookListQuery } from '../../../hooks/useBookList';
 import NewBookCarousel from './NewBookCarousel/NewBookCarousel';
 
 export default function Banner() {
-  const { data: newBookList, isLoading, isError } = useNewBookListQuery();
+  const { data: newBookList, isLoading, isError } = useNewSpecialBookListQuery();
 
   useEffect(() => {
     if (newBookList) {
