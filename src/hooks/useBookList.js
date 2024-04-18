@@ -31,6 +31,7 @@ const fetchNewSpecialBookList = async () => {
       output: 'JS',
       Version: '20131101',
       Cover: 'Big'
+
     }
   });
   return response.data;
@@ -41,6 +42,7 @@ export const useNewSpecialBookListQuery = () => {
     queryFn: fetchNewSpecialBookList
   });
 };
+
 const fetchBookBlogBest = async () => {
   const response = await api.get('/ItemList.aspx', {
     params: {
@@ -61,3 +63,4 @@ export const useBookBlogBestQuery = () => {
     queryFn: fetchBookBlogBest
   });
 };
+

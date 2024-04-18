@@ -47,6 +47,7 @@ export const SlideContent = styled.div`
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
+
 export const SlideTitle = styled.h3`
   margin: 0;
   font-size: 2rem;
@@ -60,6 +61,7 @@ export const SlideTitle = styled.h3`
 export const SlideDescription = styled.div`
   margin-top: 0.5rem;
 `;
+
 export const SlideIndex = styled.div`
   position: absolute;
   bottom: 1.5rem;
