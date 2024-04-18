@@ -45,18 +45,6 @@
     } */
     cursor: pointer;
   }
-  .ranking{
-    position:absolute;
-    bottom:0;
-    left:0;
-    z-index:1;
-    font-family: "Anton", sans-serif;
-    font-size: 100%;
-    line-height:1;
-    font-style:italic;
-    color:white;
-    text-shadow:0 3px 6px rgb(0, 0, 0);    
-  }
   .newBookTag{
     position:absolute;
     top: -10px;

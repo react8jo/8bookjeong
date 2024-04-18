@@ -1,6 +1,10 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+.BestsellerBookCard{
+  margin-right: 30px;
+}
+
 .book-title{
   /* font-size:1.1vw; */
   font-size:15px;
@@ -24,10 +28,6 @@
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;  
-}
-
-.BestsellerBookCard{
-  margin-right: 30px;
 }
 
 .BestsellerBookCardimg{

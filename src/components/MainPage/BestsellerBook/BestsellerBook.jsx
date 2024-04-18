@@ -44,7 +44,7 @@ const BestsellerBook = () => {
   };
 
   return (
-    <div>
+    <div className='title'>
       <h1>{'베스트셀러'}</h1>
       {bookList && (
         <BestsellerBookSlider title={'베스트셀러'} books={bookList?.item} isRank={true} responsive={responsive} />

@@ -51,8 +51,8 @@ const NewBook = () => {
   };
 
   return (
-    <div>
-      <h1>신간</h1>
+    <div className='title'>
+      <h3>신간</h3>
       {bookList && <NewBookSlider title={'신간'} books={bookList?.item} responsive={responsive} />}
     </div>
   );

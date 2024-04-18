@@ -55,7 +55,7 @@ const ChoiceBook = () => {
   const handleBookList = (filterCategory) => {
     //종합일경우는 BlogBest로 대체해야한다. ItemEditorChoice는 카테고리값이 필수이기때문
     if (filterCategory === '0') {
-      setQuerytype('ItemNewSpecial');
+      setQuerytype('BlogBest');
     } else {
       setCategoryId('ItemEditorChoice');
     }
@@ -64,8 +64,8 @@ const ChoiceBook = () => {
   };
 
   return (
-    <div>
-      <h1>추천</h1>
+    <div className='title'>
+      <h3>추천</h3>
       <Button variant='success' onClick={() => handleBookList('0')}>
         종합
       </Button>

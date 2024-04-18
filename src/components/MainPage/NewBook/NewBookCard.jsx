@@ -31,7 +31,7 @@ const NewBookCard = ({ book }) => {
   }, [book]);
 
   return (
-    <div>
+    <div className='NewBookCard'>
       <div
         className='NewBookCardimg'
         style={{
