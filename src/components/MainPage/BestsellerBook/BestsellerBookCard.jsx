@@ -30,9 +30,9 @@ const BestsellerBookCard = ({ book, rank, isUpComing }) => {
   }, [book]);
 
   return (
-    <div>
+    <div className='BestsellerBookCard'>
       <div
-        className='BestsellerBookCard'
+        className='BestsellerBookCardimg'
         style={{
           backgroundImage: `url(${book.cover})`
         }}

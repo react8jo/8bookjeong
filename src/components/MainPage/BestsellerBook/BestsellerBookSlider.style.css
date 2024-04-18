@@ -11,3 +11,11 @@
   padding:25px 0;
   overflow:hidden;
 }
+
+.carousel .control-arrow {
+  display: none; /* 화살표 숨기기 */
+}
+
+.carousel:hover .control-arrow {
+  display: block; /* 마우스 hover 시 화살표 보이기 */
+}

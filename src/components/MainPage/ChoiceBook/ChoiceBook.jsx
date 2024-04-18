@@ -21,7 +21,7 @@ const ChoiceBook = () => {
   const [maxResults, setMaxResults] = useState('15');
   const [categoryId, setCategoryId] = useState('0');
   //const [querytype, setQuerytype] = useState('ItemEditorChoice');
-  const [querytype, setQuerytype] = useState('ItemNewSpecial');
+  const [querytype, setQuerytype] = useState('BlogBest');
   const {
     data: bookList,
     isLoading,
@@ -53,7 +53,7 @@ const ChoiceBook = () => {
   };
 
   const handleBookList = (filterCategory) => {
-    //종합일경우는 ItemNewSpecial로 대체해야한다. ItemEditorChoice는 카테고리값이 필수이기때문
+    //종합일경우는 BlogBest로 대체해야한다. ItemEditorChoice는 카테고리값이 필수이기때문
     if (filterCategory === '0') {
       setQuerytype('ItemNewSpecial');
     } else {

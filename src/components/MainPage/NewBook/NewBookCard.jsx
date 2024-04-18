@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './ChoiceBookCard.style.css';
+import './NewBookCard.style.css';
 // import { useNavigate } from 'react-router-dom';
 
 // const ChoiceBookCard = ({ book, rank, isUpComing }) => {
-const ChoiceBookCard = ({ book }) => {
+const NewBookCard = ({ book }) => {
   // 각각의 책 isbn에 맞는 상세 페이지로 이동
   // const navigate = useNavigate();
   // const goToBookDetailPage = (movieId)isbn=> {
@@ -31,12 +31,14 @@ const ChoiceBookCard = ({ book }) => {
   }, [book]);
 
   return (
-    <div className='ChoiceBookCard'>
+    <div>
       <div
-        className='ChoiceBookCardimg'
+        className='NewBookCardimg'
         style={{
           backgroundImage: `url(${book?.cover})`
-        }}></div>
+        }}>
+        <h4 className='newBookTag'>NEW</h4>
+      </div>
       <div>
         <div className='book-title'>{title}</div>
         <div className='book-author'>{author}</div>
@@ -45,4 +47,4 @@ const ChoiceBookCard = ({ book }) => {
   );
 };
 
-export default ChoiceBookCard;
+export default NewBookCard;

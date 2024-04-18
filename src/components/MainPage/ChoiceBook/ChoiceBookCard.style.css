@@ -40,8 +40,7 @@
   height:auto;
   aspect-ratio: 300 / 450;
   border:none;
-  font-family:'Spoqa Han Sans Neo', sans-serif;
-  background-color:var(--sub-background-color);
+  font-family:'Spoqa Han Sans Neo', sans-serif;  
   background-size:cover;
   transition:all 300ms;
   box-shadow: 0 3px 8px rgb(141, 138, 138);   
