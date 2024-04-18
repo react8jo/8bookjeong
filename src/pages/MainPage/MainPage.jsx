@@ -1,14 +1,14 @@
 import React from 'react';
 import Banner from '../../components/MainPage/Banner/Banner';
 import BestsellerBook from '../../components/MainPage/BestsellerBook/BestsellerBook';
-// import BestsellerBookCard from '../../components/MainPage/BestsellerBook/BestsellerBookCard';
+import ChoiceBook from '../../components/MainPage/ChoiceBook/ChoiceBook';
 
 export default function MainPage() {
   return (
     <>
       {/* <Banner /> */}
       <BestsellerBook />
-      {/* <BestsellerBookCard /> */}
+      <ChoiceBook />
     </>
   );
 }

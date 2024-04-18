@@ -15,13 +15,15 @@ const BestsellerBookSlider = ({ title, books, responsive, isRank }) => {
       <Carousel
         infinite={true}
         // autoPlay={true}
+        // autoplaySpeed='5000'
+        // vertical={true} // 세로 캐러셀
         centerMode={true}
         itemClass='movie-slider p-1'
         containerClass='carousel-container'
         responsive={responsive}
         dotListClass='custom-dot-list-style'>
         {books?.map((book, index) => (
-          <BestsellerBookCard key={book.title} book={book} rank={isRank && index + 1} />
+          <BestsellerBookCard key={book.isbn} book={book} rank={isRank && index + 1} />
         ))}
       </Carousel>
     </section>

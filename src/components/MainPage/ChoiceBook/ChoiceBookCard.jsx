@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './BestsellerBookCard.style.css';
+import './ChoiceBookCard.style.css';
 // import { useNavigate } from 'react-router-dom';
 
-const BestsellerBookCard = ({ book, rank, isUpComing }) => {
+// const ChoiceBookCard = ({ book, rank, isUpComing }) => {
+const ChoiceBookCard = ({ book }) => {
   // 각각의 책 isbn에 맞는 상세 페이지로 이동
   // const navigate = useNavigate();
   // const goToBookDetailPage = (movieId)isbn=> {
@@ -24,28 +25,24 @@ const BestsellerBookCard = ({ book, rank, isUpComing }) => {
 
   useEffect(() => {
     if (book) {
-      setTitle(getSubstringBeforeWord(book.title, ' -'));
-      setAuthor(getSubstringBeforeWord(book.author, '(지은이)'));
+      setTitle(getSubstringBeforeWord(book?.title, ' -'));
+      setAuthor(getSubstringBeforeWord(book?.author, '(지은이)'));
     }
   }, [book]);
 
   return (
-    <div>
+    <div className='ChoiceBookCard'>
       <div
-        className='BestsellerBookCard'
+        className='ChoiceBookCardimg'
         style={{
-          backgroundImage: `url(${book.cover})`
-          // backgroundPosition: 'right' // 이 부분을 추가
-        }}
-        // onClick={() => goToBookDetailPage(book.isbn)}>
-      >
-        {rank && <h4 className='ranking'>{rank}</h4>}
-        <div className='overlay'>{/* <h5>{book.title}</h5> */}</div>
+          backgroundImage: `url(${book?.cover})`
+        }}></div>
+      <div>
+        <div className='book-title'>{title}</div>
+        <div className='book-author'>{author}</div>
       </div>
-      <div className='book-title'>{title}</div>
-      <div className='book-author'>{author}</div>
     </div>
   );
 };
 
-export default BestsellerBookCard;
+export default ChoiceBookCard;
