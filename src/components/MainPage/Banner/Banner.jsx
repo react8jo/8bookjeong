@@ -12,7 +12,7 @@ import Loading from '../../common/Loading/Loading';
 export default function Banner() {
   const { data: newBookList, isLoading, isError } = useNewSpecialBookListQuery();
   const { data: bookBlogBestList } = useBookBlogBestQuery();
-  const [bannerType, setBannerType] = useState('new');
+  const [bannerType, setBannerType] = useState('best');
 
   if (isLoading) {
     return <Loading />;
@@ -33,11 +33,11 @@ export default function Banner() {
   return (
     <S.BannerLayout>
       <S.ButtonList>
-        <S.NewButton onClick={showNew}>주목할만한 신간</S.NewButton>
         <S.BestSeller onClick={showBest}>블로그 베스트셀러</S.BestSeller>
+        <S.NewButton onClick={showNew}>주목할만한 신간</S.NewButton>
       </S.ButtonList>
-      {bannerType === 'new' && newBookList && <NewBookCarousel items={newBookList.item} />}
       {bannerType === 'best' && bookBlogBestList && <BlogBestSellerCarousel items={bookBlogBestList.item} />}
+      {bannerType === 'new' && newBookList && <NewBookCarousel items={newBookList.item} />}
     </S.BannerLayout>
   );
 }
