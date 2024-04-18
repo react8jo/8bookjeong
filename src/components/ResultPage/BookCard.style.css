@@ -1,0 +1,26 @@
+.starIcon {
+  color: blue;
+}
+
+.bookDetailInfo {
+  font-size: small;
+}
+
+.textEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  width: 200px;
+}
+.bookCard {
+  display: flex;
+}
+.bookImg {
+  width: 200px;
+  object-fit: cover;
+}
+
+.bootInfo {
+  margin-left: 1em;
+}

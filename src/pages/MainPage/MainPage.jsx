@@ -1,6 +1,8 @@
 import React from 'react';
 import Banner from '../../components/MainPage/Banner/Banner';
 import * as S from './mainPage.styled';
+import ResultPage from '../ResultPage/ResultPage';
+
 export default function MainPage() {
   return (
     <S.MainPageLayout>
