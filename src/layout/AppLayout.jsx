@@ -4,6 +4,9 @@ import { Outlet, Link } from 'react-router-dom';
 import Footer from '../components/common/Footer/Footer';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { Autocomplete } from '../components/ResultPage/SearchBar';
 
 const AppLayout = () => {
   const [keyword, setKeyword] = useState('');
@@ -29,13 +32,20 @@ const AppLayout = () => {
           <S.Logo src='https://via.placeholder.com/150x50?text=Logo' alt='로고' />
         </Link>
         <S.SearchContainer>
+          <S.SearchIcon>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </S.SearchIcon>
           <S.SearchInput
             onChange={(event) => setKeyword(event.target.value)}
             onKeyDown={(e) => activeEnter(e)}
             type='text'
             placeholder='도서를 검색하세요'
           />
+          <S.DeleteIcon>
+            <FontAwesomeIcon icon={faCircleXmark} />
+          </S.DeleteIcon>
         </S.SearchContainer>
+        <Autocomplete />
       </S.Navbar>
       <Outlet />
       <Footer />

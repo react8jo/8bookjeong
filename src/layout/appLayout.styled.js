@@ -49,17 +49,28 @@ export const SearchContainer = styled.form`
 `;
 
 export const SearchInput = styled.input`
-  border: none;
+  border: 1px solid gray;
   outline: none;
-  padding-left: 1rem;
-  border-radius: 0.25rem;
-  background-color: #f2f2f2;
+  border-radius: 24px;
   color: #333;
-  width: 210px;
+  width: 300px;
   height: 30px;
   margin-right: 8px;
+  padding: 0.6em 2.5em 0.6em 2.5em;
 
   @media (max-width: 768px) {
     width: 100%;
   }
+`;
+
+export const SearchIcon = styled.span`
+  color: gray;
+  position: relative;
+  left: 30px;
+`;
+
+export const DeleteIcon = styled.span`
+  color: gray;
+  position: relative;
+  right: 35px;
 `;

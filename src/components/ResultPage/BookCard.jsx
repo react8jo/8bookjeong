@@ -1,11 +1,8 @@
 import React from 'react';
 import './BookCard.style.css';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStarHalfStroke, faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const BookCard = ({ book }) => {
   return (
@@ -26,26 +23,24 @@ const BookCard = ({ book }) => {
           <div className='textEllipsis'>{book.title}</div>
           <div className='bookDetailInfo'>
             <div>{book.author}</div>
-            <div>카테고리</div>
+            <div>{book.searchCategoryName}</div>
             <div>
               {book.pubDate} / {book.publisher}
             </div>
           </div>
-          <div>
-            <div className='bookDetailInfo'>가격 {book.priceStandard}</div>
+          <div className='bookSubInfo'>
             <div>
-              {Array.from({ length: 5 }, (_, index) => {
-                if (index < Math.floor(book.customerReviewRank / 2)) {
-                  return <FontAwesomeIcon className='starIcon' key={index} icon={solidStar} />;
-                } else if (index === Math.floor(book.customerReviewRank / 2) && book.customerReviewRank % 2 === 1) {
-                  return <FontAwesomeIcon className='starIcon' key={index} icon={faStarHalfStroke} />;
-                } else {
-                  return <FontAwesomeIcon className='starIcon' key={index} icon={faStar} />;
-                }
-              })}
+              <span className='bookSalePercent'>10%</span>
+              <span className='bookSale'>{Number(book.priceStandard * 0.9).toLocaleString()}원</span>
+              <span className='bookPrice'>{Number(book.priceStandard).toLocaleString()}원</span>
+            </div>
+            <div>
+              <FontAwesomeIcon className='starIcon' icon={faStar} /> {book.customerReviewRank}.0
             </div>
           </div>
-          <div></div>
+          <div className='bookAdd'>
+            <button>찜하기</button>
+          </div>
         </div>
       </div>
     </Container>
