@@ -10,8 +10,8 @@ export default function Router() {
     <Routes>
       <Route path='/' element={<AppLayout />}>
         <Route index element={<MainPage />}></Route>
+        <Route path='/products/:isbn13' element={<DetailPage />} />
       </Route>
-      <Route path='/products/:id' element={<DetailPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Routes>
   );
