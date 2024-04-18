@@ -5,6 +5,7 @@ export const CarouselContainer = styled.div`
   width: 100%;
   overflow: hidden;
   height: 400px;
+  cursor: pointer;
 `;
 
 export const CarouselSlider = styled.div`
@@ -22,9 +23,34 @@ export const SlideImage = styled.div`
   position: relative;
   background-color: ${(props) => props.backgroundColor};
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 400px;
+  padding: 0 4rem;
+`;
+
+export const SlideContent = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  padding: 3rem 4rem;
+  height: 100%;
+  background: linear-gradient(270deg, ${(props) => props.backgroundColor}, rgba(0, 0, 0, 0.8));
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  width: 50%;
+`;
+
+export const SlideTitle = styled.h3`
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
 `;
 
 export const SlideImageContent = styled.div`
@@ -34,30 +60,10 @@ export const SlideImageContent = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: 6rem;
 `;
-
-export const SlideContent = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 3rem 4rem;
-  background: linear-gradient(to top, ${(props) => props.backgroundColor}, rgba(0, 0, 0, 0));
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-`;
-
-export const SlideTitle = styled.h3`
-  margin: 0;
-  font-size: 2rem;
-  font-weight: bold;
-  width: 500px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-`;
-
 export const SlideDescription = styled.div`
   margin-top: 0.5rem;
 `;

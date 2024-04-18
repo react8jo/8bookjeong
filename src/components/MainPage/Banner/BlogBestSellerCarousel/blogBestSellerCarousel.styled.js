@@ -5,6 +5,7 @@ export const CarouselContainer = styled.div`
   width: 100%;
   overflow: hidden;
   height: fit-content;
+  cursor: pointer;
 `;
 
 export const CarouselSlider = styled.div`
@@ -36,7 +37,6 @@ export const SlideImageContent = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 `;
 
