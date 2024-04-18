@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './banner.styled';
 import { useEffect, useState } from 'react';
 import { useBookSearchQuery } from '../../../hooks/useBookSearch';
@@ -77,18 +77,31 @@ export default function Banner() {
   // }, [bookDetail]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (isError) {
     return <div>Error occurred while fetching data.</div>;
   }
 
+
+  const showNew = () => {
+    setBannerType('new');
+  };
+
+  const showBest = () => {
+    setBannerType('best');
+  };
+
   return (
     <S.BannerLayout>
-      <div>Data loaded successfully!</div>
-      <S.Title>배너제목</S.Title>
-      <S.Content>내용입니다</S.Content>
+      <S.ButtonList>
+        <S.NewButton onClick={showNew}>주목할만한 신간</S.NewButton>
+        <S.BestSeller onClick={showBest}>블로그 베스트셀러</S.BestSeller>
+      </S.ButtonList>
+      {bannerType === 'new' && newBookList && <NewBookCarousel items={newBookList.item} />}
+      {bannerType === 'best' && bookBlogBestList && <BlogBestSellerCarousel items={bookBlogBestList.item} />}
     </S.BannerLayout>
   );
+
 }
