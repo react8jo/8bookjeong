@@ -3,11 +3,11 @@ import styled from 'styled-components';
 // 단일도서 전체 컨테이너
 export const BookContainer = styled.div`
   display: flex;
-  padding: 36px 0 0 16px;
+  padding: 24px 0 0 16px;
   margin-top: 36px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   width: 984px;
-  height: 200px;
+  height: 220px;
   cursor: pointer;
 `;
 
@@ -48,6 +48,7 @@ export const BookInfoLine = styled.div`
 
 // 책 정보
 export const BookData = styled.p`
+  margin-top: 4px;
   margin-right: 8px;
   color: #666;
   font-size: 14px;
@@ -91,7 +92,7 @@ export const BookDescription = styled.p`
   margin-top: 20px;
   color: #595959;
   font-size: 13px;
-  line-height: 16px;
+  line-height: 22px;
 `;
 
 // 평점

@@ -39,7 +39,7 @@ export default function Banner() {
   } = useBookSearchQuery({ query, start, maxResults, sort, categoryId });
   useEffect(() => {
     if (bookSearch) {
-      console.log('bookSearch', bookSearch);
+      // console.log('bookSearch', bookSearch);
     }
   }, [bookSearch]);
 
