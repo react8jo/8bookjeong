@@ -10,7 +10,6 @@ export default function MainPage() {
     <>
       <S.MainPageLayout>
         <Banner />
-        <Banner />
         <BestsellerBook />
         <ChoiceBook />
         <NewBook />
