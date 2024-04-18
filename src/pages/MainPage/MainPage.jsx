@@ -7,11 +7,14 @@ import * as S from './mainPage.styled';
 
 export default function MainPage() {
   return (
-    <S.MainPageLayout>
-      <Banner />
-      <BestsellerBook />
-      <ChoiceBook />
-      <NewBook />
-    </S.MainPageLayout>
+    <>
+      <S.MainPageLayout>
+        <Banner />
+        <Banner />
+        <BestsellerBook />
+        <ChoiceBook />
+        <NewBook />
+      </S.MainPageLayout>
+    </>
   );
 }

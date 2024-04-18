@@ -4,11 +4,15 @@ import * as S from './blogBestSellerCarousel.styled';
 export default function BlogBestSellerCarousel({ items }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const colors = [
-    'rgb(255, 213, 170)',
-    'rgb(187, 255, 221)',
+    'rgb(255, 187, 187)',
+    'rgb(187, 221, 255)',
+    'rgb(255, 221, 187)',
+    'rgb(221, 187, 255)',
     'rgb(255, 255, 204)',
     'rgb(255, 204, 229)',
     'rgb(229, 255, 204)',
+    'rgb(255, 213, 170)',
+    'rgb(187, 255, 221)',
     'rgb(255, 187, 221)',
     'rgb(255, 255, 170)',
     'rgb(255, 204, 204)',
@@ -19,11 +23,7 @@ export default function BlogBestSellerCarousel({ items }) {
     'rgb(255, 170, 170)',
     'rgb(229, 204, 255)',
     'rgb(255, 229, 204)',
-    'rgb(213, 255, 170)',
-    'rgb(255, 187, 187)',
-    'rgb(187, 221, 255)',
-    'rgb(255, 221, 187)',
-    'rgb(221, 187, 255)'
+    'rgb(213, 255, 170)'
   ];
   useEffect(() => {
     const interval = setInterval(() => {
