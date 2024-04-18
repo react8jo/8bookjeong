@@ -8,10 +8,6 @@ import BestsellerBookCard from './BestsellerBookCard';
 const BestsellerBookSlider = ({ title, books, responsive, isRank }) => {
   return (
     <section className='BestsellerBookSlider'>
-      {/* <Container maxWidth='xl'>
-        <h3>{title}</h3>
-      </Container> */}
-      <h3>{title}</h3>
       <Carousel
         infinite={true}
         // autoPlay={true}

@@ -1,11 +1,6 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-/* .bungee-spice-regular {
-  font-family: "Bungee Spice", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-} */
+
 .book-title{
   /* font-size:1.1vw; */
   font-size:15px;
@@ -60,7 +55,6 @@
       content:'';
       width:80px;
       height:40px;
-      /* background:url('./../../assets/theMoviesLogo.png') 50% 50% no-repeat; */
       background-size:100% auto;
       filter:grayscale(1);
       opacity:0.2;
@@ -71,87 +65,23 @@
     left:0;
     z-index:1;
     font-family: "Anton", sans-serif;
-    /* font-size:clamp(100px, 7vw, 140px); */
     font-size: 100%;
     line-height:1;
     font-style:italic;
-    /* color:var(--main-font-color); */
-    /* color:rgb(254, 246, 246); */
     color:white;
-    /* text-shadow:0 3px 6px rgba(0,0,0,0.6); */
     text-shadow:0 3px 6px rgb(0, 0, 0);    
   }
   .overlay{
     position:relative;
     z-index:2;
     width:100%;
-    height:100%;
-    background:rgba(43, 41, 41, 0.9);
-    padding:10%;
-    box-sizing:border-box;
-    opacity:0;
-    transition:all 300ms;
-    color:white;
-    font-weight:bold;
-    word-break:keep-all;
+    height:100%;    
     @media(hover: hover) and (pointer: fine) {
       &:hover{
-        /* opacity:1; */
         cursor: pointer;
       }
     }
-    h5{
-      margin:0;
-      font-size: clamp(22px, 5vw, 26px);
-      font-weight: 300;
-    }
-    .genre{
-      display:flex;
-      flex-wrap: wrap;
-      margin:25px 0 0 0;
-      padding:0;
-      gap:5px 12px;
-      li{
-        margin:0;
-        line-height:1;
-        font-weight:300;
-        color:var(--sub-font-color);
-      }
-    }
-    .info{
-      display:flex;
-      gap:10px;
-      margin-top:5px;
-      font-size: clamp(12px, 100vw, 14px);
-      font-weight: 300;
-      p{
-        margin:0;
-      }
-    }
-    .adultlabel{
-      position:absolute;
-      bottom:15px;
-      right:15px;
-      display:inline-block;
-      margin:0;
-      padding:3px 8px;
-      font-size: 12px;
-      font-weight: 300;
-      background-color:crimson;
-    }
   }
-  /* @media screen and (max-width: 992px){
-    width:calc((100% - (20px * 2)) / 3);
-  }
-  
-  @media screen and (max-width:767px){
-    width:calc((100% - (20px * 1)) / 2);
-  } */ 
-  /* .credit-content{
-    word-break: break-all;
-    line-height: 1.2;
-  } */
-
   
 }
 
