@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import * as S from './banner.styled';
-
 import { useNewSpecialBookListQuery } from '../../../hooks/useBookList';
 import { useBookBlogBestQuery } from '../../../hooks/useBookList';
 
