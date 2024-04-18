@@ -4,7 +4,6 @@ export const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 400px;
 `;
 
 export const CarouselSlider = styled.div`
@@ -14,22 +13,23 @@ export const CarouselSlider = styled.div`
 
 export const CarouselSlide = styled.div`
   flex: 0 0 auto;
-  width: 100%;
+  width: 50%;
   box-sizing: border-box;
-`;
-
-export const SlideImage = styled.div`
-  position: relative;
-  background-color: ${(props) => props.backgroundColor};
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  padding: 0 10px;
+`;
+
+export const SlideImage = styled.div`
+  width: 200px;
+  height: 300px;
+  margin-right: 20px;
 `;
 
 export const SlideImageContent = styled.div`
-  width: 200px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
   background-repeat: no-repeat;
@@ -38,28 +38,24 @@ export const SlideImageContent = styled.div`
 `;
 
 export const SlideContent = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 3rem 4rem;
-  background: linear-gradient(to top, ${(props) => props.backgroundColor}, rgba(0, 0, 0, 0));
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: left;
 `;
+
 export const SlideTitle = styled.h3`
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  width: 500px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 `;
 
 export const SlideDescription = styled.div`
   margin-top: 0.5rem;
 `;
+
+export const SlideInfo = styled.div`
+  font-size: 1rem;
+  color: #777;
+`;
+
 export const SlideIndex = styled.div`
   position: absolute;
   bottom: 1.5rem;
@@ -73,14 +69,6 @@ export const SlideIndex = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const SlideInfo = styled.div`
-  font-size: 0.8rem;
-  margin-bottom: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 `;
 
 export const SlideControls = styled.div`

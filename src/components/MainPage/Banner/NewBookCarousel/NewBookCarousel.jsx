@@ -11,7 +11,7 @@ export default function NewBookCarousel({ items }) {
     'rgb(112, 141, 228)',
     'rgb(245,99,91)',
     'rgb(162, 155, 254)',
-    'rgb(255, 196, 0)',
+    'rgb(255, 187, 0)',
     'rgb(191,136,175)',
     'rgb(190,220,238)',
     'rgb(255, 118, 117)'
