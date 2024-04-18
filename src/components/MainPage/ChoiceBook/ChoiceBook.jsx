@@ -4,6 +4,7 @@ import { useBookListQuery } from '../../../hooks/useBookList';
 import './ChoiceBook.style.css';
 import ChoiceBookSlider from './ChoiceBookSlider';
 import { Button } from 'react-bootstrap';
+import Loading from '../../common/Loading/Loading';
 
 const ChoiceBook = () => {
   ////////////////////////////// 2. 상품 리스트 API //ItemList.aspx //////////////////////////////
@@ -62,6 +63,14 @@ const ChoiceBook = () => {
     setCategoryId(filterCategory);
     refetch();
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (isError) {
+    return <div>Error occurred while fetching data.</div>;
+  }
 
   return (
     <div className='title'>
