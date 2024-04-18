@@ -8,7 +8,6 @@ export const BannerLayout = styled.div`
   padding-top: 1rem;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
 `;
 
 export const ButtonList = styled.div`

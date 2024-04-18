@@ -31,7 +31,6 @@ const fetchNewSpecialBookList = async () => {
       output: 'JS',
       Version: '20131101',
       Cover: 'Big'
-
     }
   });
   return response.data;
@@ -63,4 +62,3 @@ export const useBookBlogBestQuery = () => {
     queryFn: fetchBookBlogBest
   });
 };
-
