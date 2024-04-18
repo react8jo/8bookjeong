@@ -65,8 +65,7 @@ export const SlideIndex = styled.div`
   bottom: 1.5rem;
   right: 1.5rem;
   font-size: 0.8rem;
-  color: #fff;
-  background-color: rgb(0, 0, 0, 0.4);
+  background-color: rgb(255, 255, 255, 0.4);
   width: 3rem;
   height: 1.5rem;
   border-radius: 1rem;
@@ -95,12 +94,16 @@ export const SlideControls = styled.div`
 `;
 
 export const ControlButton = styled.button`
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
   padding: 8px 12px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 `;
 
 export const SlideIndicators = styled.div`

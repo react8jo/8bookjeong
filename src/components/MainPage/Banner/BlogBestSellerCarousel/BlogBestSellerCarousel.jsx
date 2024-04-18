@@ -3,11 +3,32 @@ import * as S from './blogBestSellerCarousel.styled';
 
 export default function BlogBestSellerCarousel({ items }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const colors = [
+    'rgb(255, 213, 170)',
+    'rgb(187, 255, 221)',
+    'rgb(255, 255, 204)',
+    'rgb(255, 204, 229)',
+    'rgb(229, 255, 204)',
+    'rgb(255, 187, 221)',
+    'rgb(255, 255, 170)',
+    'rgb(255, 204, 204)',
+    'rgb(221, 255, 187)',
+    'rgb(204, 255, 229)',
+    'rgb(204, 229, 255)',
+    'rgb(255, 255, 187)',
+    'rgb(255, 170, 170)',
+    'rgb(229, 204, 255)',
+    'rgb(255, 229, 204)',
+    'rgb(213, 255, 170)',
+    'rgb(255, 187, 187)',
+    'rgb(187, 221, 255)',
+    'rgb(255, 221, 187)',
+    'rgb(221, 187, 255)'
+  ];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 2) % items.length);
-    }, 800000);
+    }, 4000);
     return () => {
       clearInterval(interval);
     };
@@ -29,7 +50,7 @@ export default function BlogBestSellerCarousel({ items }) {
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 50}%)` }}>
         {items.map((book, index) => (
-          <S.CarouselSlide key={index}>
+          <S.CarouselSlide key={index} backgroundColor={colors[index % colors.length]}>
             <S.SlideImage>
               <S.SlideImageContent backgroundImage={book.cover} />
             </S.SlideImage>
@@ -38,7 +59,7 @@ export default function BlogBestSellerCarousel({ items }) {
               <S.SlideDescription>
                 <S.SlideInfo>
                   <div>{book.author}</div>
-                  <div>{book.pubDate}</div>
+                  <div>{book.p}</div>
                 </S.SlideInfo>
               </S.SlideDescription>
             </S.SlideContent>
