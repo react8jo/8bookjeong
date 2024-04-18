@@ -22,7 +22,6 @@ export default function Banner() {
     return <div>Error occurred while fetching data.</div>;
   }
 
-
   const showNew = () => {
     setBannerType('new');
   };
@@ -41,5 +40,4 @@ export default function Banner() {
       {bannerType === 'best' && bookBlogBestList && <BlogBestSellerCarousel items={bookBlogBestList.item} />}
     </S.BannerLayout>
   );
-
 }
