@@ -13,7 +13,7 @@ export const BookContainer = styled.div`
 
 // 도서 이미지
 export const BookImage = styled.img`
-  width: 140px;
+  width: 148px;
   height: auto;
   margin-right: 16px;
 `;
@@ -23,7 +23,7 @@ export const BookInfo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: 5px 0 0 15px;
 `;
 
 // 도서명
