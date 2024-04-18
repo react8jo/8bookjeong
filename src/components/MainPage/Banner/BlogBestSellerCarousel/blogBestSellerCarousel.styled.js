@@ -4,7 +4,7 @@ export const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 400px;
+  height: fit-content;
 `;
 
 export const CarouselSlider = styled.div`
@@ -14,52 +14,57 @@ export const CarouselSlider = styled.div`
 
 export const CarouselSlide = styled.div`
   flex: 0 0 auto;
-  width: 100%;
+  width: 50%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: ${(props) => props.backgroundColor};
 `;
 
 export const SlideImage = styled.div`
-  position: relative;
-  background-color: ${(props) => props.backgroundColor};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
+  width: 200px;
+  height: 300px;
+  margin: 20px 0;
 `;
 
 export const SlideImageContent = styled.div`
-  width: 200px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 `;
 
 export const SlideContent = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 3rem 4rem;
-  background: linear-gradient(to top, ${(props) => props.backgroundColor}, rgba(0, 0, 0, 0));
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 100%;
 `;
 
 export const SlideTitle = styled.h3`
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  width: 500px;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
+  max-width: 100%;
 `;
 
 export const SlideDescription = styled.div`
   margin-top: 0.5rem;
+`;
+
+export const SlideInfo = styled.div`
+  font-size: 0.8rem;
+  line-height: 1rem;
+  padding: 10px;
+  color: #444;
 `;
 
 export const SlideIndex = styled.div`
@@ -67,21 +72,14 @@ export const SlideIndex = styled.div`
   bottom: 1.5rem;
   right: 1.5rem;
   font-size: 0.8rem;
-  background-color: rgb(255, 255, 255, 0.4);
+  color: #fff;
+  background-color: rgb(0, 0, 0, 0.4);
   width: 3rem;
   height: 1.5rem;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const SlideInfo = styled.div`
-  font-size: 0.8rem;
-  margin-bottom: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 `;
 
 export const SlideControls = styled.div`
@@ -96,7 +94,8 @@ export const SlideControls = styled.div`
 `;
 
 export const ControlButton = styled.button`
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
   border: none;
   padding: 8px 12px;
   font-size: 16px;
@@ -104,7 +103,7 @@ export const ControlButton = styled.button`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -120,8 +119,9 @@ export const IndicatorButton = styled.button`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: ${(props) => (props.active ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
+  background-color: ${(props) => (props.active ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0.2)')};
   margin: 0 4px;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 `;
