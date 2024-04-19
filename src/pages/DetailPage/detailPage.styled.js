@@ -5,9 +5,9 @@ export const StyledDetailPage = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  padding-top: 100px; // 여기에 세미콜론 추가
-  background-color: pink; // 여기에 세미콜론 추가
-  color: #899227;
+  padding-top: 100px;
+  // background-color: pink;
+  color: rgb(137, 146, 39);
   max-width: 1200px; // 최대 너비 설정
   margin: 0 auto; // 자동 마진으로 중앙 정렬
   width: 100%; // 전체 너비를 사용
@@ -72,7 +72,15 @@ export const Button = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #002244;
+    background-color: RGB(110, 117, 31);
+  }
+`;
+
+export const PurchaseButton = styled(Button)`
+  background-color: #1b3720;
+
+  &:hover {
+    background-color: #21542a; // 호버시 배경색
   }
 `;
 
@@ -80,7 +88,7 @@ export const Line = styled.hr`
   width: 100%;
   margin: 20px 0;
   height: 2px; // 선의 굵기 조절
-  background-color: #888; // 중간 회색으로 설정
+  background-color: #aaa; // 중간 회색으로 설정
   border: none; // 기본 테두리 제거
 `;
 
@@ -94,7 +102,7 @@ export const InfoHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 10px; // 간격 조절
+  margin-bottom: 16px; // 간격 조절
 `;
 
 export const TaxDeductionLabel = styled.span`
@@ -179,7 +187,7 @@ export const BookPriceStandard = styled.p`
 export const BookDescription = styled.p`
   margin-top: 20px;
   color: #595959;
-  font-size: 13px;
+  font-size: 16px; // 글씨 크기를 16px로 변경
   line-height: 22px;
 `;
 
@@ -195,7 +203,8 @@ export const PaymentBenefitsContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 export const PaymentBenefitsTitle = styled.span`
@@ -213,4 +222,38 @@ export const SectionTitle = styled.h2`
   margin-bottom: 10px;
   color: #899227;
   font-size: 22px;
+`;
+
+export const ProductInfoTable = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #333;
+  padding-bottom: 30px; // 전체 테이블의 하단에 패딩 추가
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid #bbb; // 굵고 진한 상단 테두리
+    border-bottom: 2px solid #bbb; // 굵고 진한 하단 테두리
+
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-left: none; // 양옆 테두리 없애기
+      border-right: none;
+      border-bottom: 1px solid #ccc; // 행 사이의 구분선 유지
+    }
+
+    th {
+      background-color: #f8f8f8; // 헤더의 배경색을 연하게
+      // font-weight: 600;
+    }
+
+    td {
+      background-color: transparent; // td의 배경색을 투명하게 설정
+    }
+  }
 `;

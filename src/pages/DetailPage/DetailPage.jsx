@@ -1,30 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as S from './detailPage.styled';
 import { useParams } from 'react-router-dom';
 import { useBookDetailsQuery } from '../../hooks/useBookDetails';
 import ReturnExchangeTable from '../../components/DetailPage/DetailFooter/DetailFooter';
+import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
 
 function DetailPage() {
   const { isbn13 } = useParams();
   const { data: book, isLoading, isError, error } = useBookDetailsQuery({ isbn: isbn13 });
+  const [activeTab, setActiveTab] = useState('bookInfo');
+  const bookInfoRef = useRef(null);
+  const deliveryRef = useRef(null);
 
   useEffect(() => {
     if (book) {
-      console.log('Book data:', book); // 콘솔에 도서 데이터 로깅
+      console.log('Book data:', book);
     }
-  }, [book]); // book 데이터가 변경될 때마다 실행
+  }, [book]);
+
+  useEffect(() => {
+    if (activeTab === 'bookInfo' && bookInfoRef.current) {
+      bookInfoRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (activeTab === 'delivery' && deliveryRef.current) {
+      deliveryRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [activeTab]);
 
   if (isLoading) {
     return <S.StyledDetailPage>Loading...</S.StyledDetailPage>;
   }
   if (isError) {
-    console.error('Error fetching book details:', error);
     return <S.StyledDetailPage>Error: {error.message}</S.StyledDetailPage>;
   }
   if (!book) {
     return <S.StyledDetailPage>No book details available.</S.StyledDetailPage>;
   }
-
   return (
     <S.StyledDetailPage>
       <S.BookContent>
@@ -38,6 +48,7 @@ function DetailPage() {
 
           <S.BookInfo>
             <S.BookCategory>{book.item[0].categoryName}</S.BookCategory>
+            <S.Line />
             <S.BookInfoLine>
               <S.BookData>{book.item[0].author}</S.BookData>
               <S.BookData>|</S.BookData>
@@ -50,7 +61,7 @@ function DetailPage() {
               <S.BookPriceSales>{`${book.item[0].priceSales.toLocaleString()}원`}</S.BookPriceSales>
               <S.BookPriceStandard>{`${book.item[0].priceStandard.toLocaleString()}원`}</S.BookPriceStandard>
             </S.PriceLine>
-            <S.BookDescription>{book.item[0].description}</S.BookDescription>
+            {/* <S.BookDescription>{book.item[0].description}</S.BookDescription> */}
             <S.BookReview>{`⭐️ ${book.item[0].customerReviewRank}.0`}</S.BookReview>
           </S.BookInfo>
 
@@ -59,33 +70,70 @@ function DetailPage() {
             <S.PaymentBenefitsTitle>결제혜택</S.PaymentBenefitsTitle>
             <S.PaymentBenefitsDescription>카드/간편결제 혜택을 확인하세요</S.PaymentBenefitsDescription>
           </S.PaymentBenefitsContainer>
+          <S.Line />
+          <S.PaymentBenefitsContainer>
+            <S.PaymentBenefitsTitle>배송안내</S.PaymentBenefitsTitle>
+            <S.PaymentBenefitsDescription>
+              서울특별시 영등포구 은행로 11(여의도동,일신빌딩){' '}
+            </S.PaymentBenefitsDescription>
+          </S.PaymentBenefitsContainer>
 
           <S.Line />
-          <p>평점: {book.item[0].customerReviewRank}</p>
-          <p>가격: {book.item[0].priceSales}</p>
-          <S.Line />
+          {/* <p>평점: {book.item[0].customerReviewRank}</p>
+          <p>가격: {book.item[0].priceSales}</p> */}
+
           <S.ButtonGroup>
             <S.Button>장바구니에 담기</S.Button>
-            <S.Button>바로 구매하기</S.Button>
+            <S.PurchaseButton>바로 구매하기</S.PurchaseButton>
           </S.ButtonGroup>
         </S.BookInfoContainer>
       </S.BookContent>
-      <S.Line />
-      <div>
-        <S.SectionTitle>이 책이 속한 분야</S.SectionTitle>
-        <S.Content>{book.item[0].categoryName}</S.Content>
+      <TabsComponent activeTab={activeTab} onTabClick={setActiveTab} />
+      <div ref={bookInfoRef}>
         <S.Line />
-        <S.SectionTitle>책 소개</S.SectionTitle>
-        <S.Content>{book.item[0].description || 'No description available.'}</S.Content>
-        <S.Line />
-        <S.SectionTitle>Link</S.SectionTitle>
-        <S.Content>
-          <a href={book.link} target='_blank' rel='noopener noreferrer'>
-            More Details
-          </a>
-        </S.Content>
+        <div>
+          <S.SectionTitle>품목정보</S.SectionTitle>
+          <S.ProductInfoTable>
+            <table>
+              <tbody>
+                <tr>
+                  <th>발행일</th>
+                  <td>{book.item[0].pubDate}</td>
+                </tr>
+                <tr>
+                  <th>쪽수</th>
+                  <td>{book.item[0].subInfo.itemPage}</td>
+                </tr>
+                <tr>
+                  <th>ISBN13</th>
+                  <td>{book.item[0].isbn13}</td>
+                </tr>
+                <tr>
+                  <th>ISBN10</th>
+                  <td>{book.item[0].isbn}</td>
+                </tr>
+              </tbody>
+            </table>
+          </S.ProductInfoTable>
+          <S.SectionTitle>관련 분류</S.SectionTitle>
+          <S.Content>카테고리 분류</S.Content>
+          <S.BookDescription>{book.item[0].categoryName}</S.BookDescription>
+          <S.Line />
+          <S.SectionTitle>책 소개</S.SectionTitle>
+          <S.BookDescription>{book.item[0].description || 'No description available.'}</S.BookDescription>
+          {/* <S.BookDescription>{book.item[0].description}</S.BookDescription> */}
+          <S.Line />
+          <S.SectionTitle>Link</S.SectionTitle>
+          <S.Content>
+            <a href={book.link} target='_blank' rel='noopener noreferrer'>
+              More Details
+            </a>
+          </S.Content>
+        </div>
       </div>
-      <ReturnExchangeTable />
+      <div ref={deliveryRef}>
+        <ReturnExchangeTable />
+      </div>
     </S.StyledDetailPage>
   );
 }
