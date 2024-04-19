@@ -4,9 +4,10 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useBookSearchResultQuery } from '../../hooks/useBookSearchResult';
 
 import './ResultPage.style.css';
+import * as S from './ResultPage.styled';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import BookCard from '../../components/ResultPage/BookCard';
+import SearchBookCard from '../../components/ResultPage/SearchBookCard';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
@@ -62,30 +63,29 @@ export default function ResultPage() {
   if (isLoading) {
     return <Loading />;
   }
-
   if (isError) {
     return <NotFoundPage />;
   }
 
   return (
     <div className='text'>
-      <div className='searchCount'>
+      <S.SearchCount>
         <h4>
-          <span className='searchQuery'>{data && data.query}</span> 검색 결과: 총{' '}
+          <S.SearchQuery>{data && data.query}</S.SearchQuery> 검색 결과: 총{' '}
           {data && data.totalResults && data.totalResults.toLocaleString()}건
         </h4>
-      </div>
-      <div className='sortArea'>
-        <ul className='sortItems'>
+      </S.SearchCount>
+      <S.SortArea>
+        <ul>
           {sortOptions.map((item, index) => (
-            <li
-              className={`sortItem ${index === activeSortIndex ? 'active' : ''}`}
+            <S.SortItem
+              className={`${index === activeSortIndex ? 'active' : ''}`}
               onClick={() => {
                 handleSortItemClick(item, index);
               }}
               key={item.apiName}>
               {item.displayName}
-            </li>
+            </S.SortItem>
           ))}
         </ul>
         <DropdownButton
@@ -98,13 +98,14 @@ export default function ResultPage() {
             </Dropdown.Item>
           ))}
         </DropdownButton>
-      </div>
+      </S.SortArea>
       <div>
         <Row>
-          {data.item &&
+          {data &&
+            data.item &&
             data.item.map((item, index) => (
               <Col key={index} lg={6} sm={12} className='bookCard'>
-                <BookCard book={item} />
+                <SearchBookCard book={item} />
               </Col>
             ))}
         </Row>
