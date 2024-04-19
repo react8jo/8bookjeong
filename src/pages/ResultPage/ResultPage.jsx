@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react';
 import { useState, useEffect } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useBookSearchResultQuery } from '../../hooks/useBookSearchResult';
 
 import './ResultPage.style.css';
 import Row from 'react-bootstrap/Row';
@@ -8,8 +10,6 @@ import BookCard from '../../components/ResultPage/BookCard';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
-import axios from 'axios';
-import { useSearchParams } from 'react-router-dom';
 import Loading from '../../components/common/Loading/Loading';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
@@ -29,98 +29,41 @@ const sortOptions = [
 ];
 
 export default function ResultPage() {
-  const [query, setQuery] = useSearchParams();
+  const [q, setQuery] = useSearchParams();
   const [sortOption, setSortOption] = useState('Accuracy');
-  const [data, setData] = useState({});
-  const [page, setPage] = useState(1);
-  const [start, setStart] = useState(2);
-  const [end, setEnd] = useState(7);
-  const [selectedItem, setSelectedItem] = useState(displayOptions[0]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [activeSortIndex, setActiveSortIndex] = useState(0);
+  const [maxOption, setMaxOption] = useState(10);
+  const [activeMaxSortIndex, setMaxSortIndex] = useState(0);
+  const [page, setPage] = useState(1);
 
-  const handleItemClick = (item, index) => {
-    setSelectedItem(item);
+  const query = q.get('query');
+  const start = q.get('start');
+  const sort = q.get('sort');
+  const maxResults = q.get('maxResults');
+
+  const navigate = useNavigate();
+
+  const { data, isLoading, isError } = useBookSearchResultQuery({ query, start, maxResults, sort });
+
+  const handleSortItemClick = (item, index) => {
+    setSortOption(item.apiName);
     setActiveSortIndex(index);
   };
 
-  const keyword = query.get('q');
-
-  const TTBKey = 'ttbjjari910105001';
-
-  const getBookInfo = useCallback(async () => {
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const response = await axios.get(
-        `/ttb/api/ItemSearch.aspx?ttbkey=${TTBKey}&Query=${keyword}&QueryType=Keyword&Output=JS&MaxResults=${selectedItem.apiName}&Cover=Big&Start=${page}&Version=20131101&Sort=${sortOption}`
-      );
-      setData(response.data);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [TTBKey, keyword, selectedItem, page, sortOption]);
-
-  useEffect(() => {
-    setSortOption('Accuracy');
-    setPage(1);
-    getBookInfo();
-
-  }, [keyword, getBookInfo]);
-
-  useEffect(() => {
-    setPage(1);
-    getBookInfo();
-
-  }, [sortOption, getBookInfo]);
-
-  useEffect(() => {
-    getBookInfo();
-  }, [page, getBookInfo]);
-
-  useEffect(() => {
-    setPage(1);
-    getBookInfo();
-  }, [selectedItem, getBookInfo]);
-
-
-  console.log('ResultPage ', data);
-
-  const handlePageChange = (pageNumber) => {
-    setPage(pageNumber);
+  const handleMaxItemClick = (item, index) => {
+    setMaxOption(item.apiName);
+    setMaxSortIndex(index);
   };
 
-  const handleNextPage = () => {
-    if (end === Math.floor(data.totalResults / data.itemsPerPage)) {
-      return;
-    } else {
-      const newStart = start + 6;
-      setPage(newStart);
-      setStart(newStart);
-      setEnd(end + 6);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (start === 2) {
-      return;
-    } else {
-      const newStart = start - 6;
-      setPage(newStart);
-      setStart(newStart);
-      setEnd(end - 6);
-    }
-  };
+  useEffect(() => {
+    navigate(`/result/?query=${query}&start=1&sort=${sortOption}&maxResults=${maxOption}`);
+  }, [sortOption, maxOption, navigate, query]);
 
   if (isLoading) {
     return <Loading />;
   }
 
-  if (error) {
+  if (isError) {
     return <NotFoundPage />;
   }
 
@@ -138,18 +81,20 @@ export default function ResultPage() {
             <li
               className={`sortItem ${index === activeSortIndex ? 'active' : ''}`}
               onClick={() => {
-                handleItemClick(item, index);
-                setSortOption(item.apiName);
+                handleSortItemClick(item, index);
               }}
               key={item.apiName}>
               {item.displayName}
             </li>
           ))}
         </ul>
-        <DropdownButton variant='outline-primary' id='dropdown-basic-button' title={selectedItem.displayName}>
-          {displayOptions.map((option) => (
-            <Dropdown.Item key={option.apiName} onClick={() => handleItemClick(option)}>
-              {option.displayName}
+        <DropdownButton
+          variant='outline-success'
+          id='dropdown-basic-button'
+          title={displayOptions[activeMaxSortIndex].displayName}>
+          {displayOptions.map((item, index) => (
+            <Dropdown.Item key={item.apiName} onClick={() => handleMaxItemClick(item, index)}>
+              {item.displayName}
             </Dropdown.Item>
           ))}
         </DropdownButton>
@@ -164,34 +109,6 @@ export default function ResultPage() {
             ))}
         </Row>
       </div>
-      <div className='paginationArea'>
-        <span className='pageMove' onClick={() => handlePrevPage()}>
-          &#60;
-        </span>
-        <span className={page === 1 ? 'pageActive' : ''} onClick={() => handlePageChange(1)}>
-          {1}
-        </span>
-        {start !== 2 && <span>...</span>}
-        {Array.from({ length: end - start + 1 }, (_, i) => {
-          const pageNumber = start + i;
-          return (
-            <span
-              key={pageNumber}
-              className={pageNumber === data.startIndex ? 'pageActive' : ''}
-              onClick={() => handlePageChange(pageNumber)}>
-              {pageNumber}
-            </span>
-          );
-        })}
-        {end !== Math.ceil(data.totalResults / data.itemsPerPage) && <span>...</span>}
-        <span onClick={() => handlePageChange(Math.ceil(data.totalResults / data.itemsPerPage))}>
-          {Math.ceil(data.totalResults / data.itemsPerPage)}
-        </span>
-        <span className='pageMove' onClick={() => handleNextPage()}>
-          &#62;
-        </span>
-      </div>
-      <div className='space'></div>
     </div>
   );
 }

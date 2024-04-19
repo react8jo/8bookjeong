@@ -14,7 +14,7 @@ const Header = () => {
 
   const searchByKeyword = (e) => {
     e.preventDefault();
-    navigate(`/result?q=${keyword}`);
+    navigate(`/result/?query=${keyword}&start=1&sort=Accuracy&maxResults=10`);
   };
 
   const activeEnter = (e) => {
