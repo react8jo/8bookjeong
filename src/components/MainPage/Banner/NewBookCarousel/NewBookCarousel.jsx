@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './newBookCarousel.styled';
 import { useNavigate } from 'react-router-dom';
+
 export default function NewBookCarousel({ items = [] }) {
-  // 초기값 설정
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const colors = [
@@ -20,39 +20,26 @@ export default function NewBookCarousel({ items = [] }) {
 
   useEffect(() => {
     if (items.length > 0) {
-      // 배열 확인
       const interval = setInterval(() => {
         setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
       }, 3000);
-      return () => {
-        clearInterval(interval);
-      };
+      return () => clearInterval(interval);
     }
   }, [items]);
 
-  const goToSlide = (slideIndex) => {
-    setCurrentSlide(slideIndex);
-  };
-
-  const goToPrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide - 1 + items.length) % items.length);
-  };
-
-  const goToNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
-  };
-  const goToBookDetailPage = (isbn) => {
-    navigate(`/products/${isbn}`);
-  };
+  const goToSlide = (slideIndex) => setCurrentSlide(slideIndex);
+  const goToPrevSlide = () => setCurrentSlide((prevSlide) => (prevSlide - 1 + items.length) % items.length);
+  const goToNextSlide = () => setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
+  const goToBookDetailPage = (isbn) => navigate(`/products/${isbn}`);
 
   return (
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {items.map((book, index) => (
           <S.CarouselSlide key={index} onClick={() => goToBookDetailPage(book.isbn)}>
-            <S.SlideImage backgroundColor={colors[index % colors.length]}>
-              <S.SlideImageContent backgroundImage={book.cover} />
-              <S.SlideContent backgroundColor={colors[index % colors.length]}>
+            <S.SlideImage style={{ backgroundColor: colors[index % colors.length] }}>
+              <S.SlideImageContent style={{ backgroundImage: `url(${book.cover})` }} />
+              <S.SlideContent style={{ backgroundColor: colors[index % colors.length] }}>
                 <S.SlideTitle>{book.title}</S.SlideTitle>
                 <S.SlideDescription>
                   <S.SlideInfo>
@@ -60,10 +47,10 @@ export default function NewBookCarousel({ items = [] }) {
                     <div>{book.author}</div>
                   </S.SlideInfo>
                 </S.SlideDescription>
+                <S.SlideIndex>
+                  {currentSlide + 1} / {items.length}
+                </S.SlideIndex>
               </S.SlideContent>
-              <S.SlideIndex>
-                {currentSlide + 1} / {items.length}
-              </S.SlideIndex>
             </S.SlideImage>
           </S.CarouselSlide>
         ))}

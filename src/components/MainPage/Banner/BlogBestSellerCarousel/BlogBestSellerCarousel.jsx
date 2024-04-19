@@ -31,11 +31,9 @@ export default function BlogBestSellerCarousel({ items }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 2) % items.length);
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
     }, 4000);
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, [items]);
 
   const goToSlide = (slideIndex) => {
@@ -43,11 +41,11 @@ export default function BlogBestSellerCarousel({ items }) {
   };
 
   const goToPrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide - 2 + items.length) % items.length);
+    setCurrentSlide((prevSlide) => (prevSlide - 1 + items.length) % items.length);
   };
 
   const goToNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 2) % items.length);
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
   };
 
   const goToBookDetailPage = (isbn) => {
@@ -56,21 +54,21 @@ export default function BlogBestSellerCarousel({ items }) {
 
   return (
     <S.CarouselContainer>
-      <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 50}%)` }}>
+      <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {items.map((book, index) => (
           <S.CarouselSlide
             key={index}
             backgroundColor={colors[index % colors.length]}
             onClick={() => goToBookDetailPage(book.isbn)}>
             <S.SlideImage>
-              <S.SlideImageContent backgroundImage={book.cover} />
+              <S.SlideImageContent style={{ backgroundImage: `url(${book.cover})` }} />
             </S.SlideImage>
             <S.SlideContent>
               <S.SlideTitle>{book.title}</S.SlideTitle>
               <S.SlideDescription>
                 <S.SlideInfo>
                   <div>{book.author}</div>
-                  <div>{book.p}</div>
+                  <div>{book.publisher}</div>
                 </S.SlideInfo>
               </S.SlideDescription>
             </S.SlideContent>
@@ -78,19 +76,15 @@ export default function BlogBestSellerCarousel({ items }) {
         ))}
       </S.CarouselSlider>
       <S.SlideIndex>
-        {Math.floor(currentSlide / 2) + 1} / {Math.ceil(items.length / 2)}
+        {currentSlide + 1} / {items.length}
       </S.SlideIndex>
       <S.SlideControls>
         <S.ControlButton onClick={goToPrevSlide}>&lt;</S.ControlButton>
         <S.ControlButton onClick={goToNextSlide}>&gt;</S.ControlButton>
       </S.SlideControls>
       <S.SlideIndicators>
-        {Array.from({ length: Math.ceil(items.length / 2) }).map((_, index) => (
-          <S.IndicatorButton
-            key={index}
-            onClick={() => goToSlide(index * 2)}
-            active={index === Math.floor(currentSlide / 2)}
-          />
+        {items.map((_, index) => (
+          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} active={index === currentSlide} />
         ))}
       </S.SlideIndicators>
     </S.CarouselContainer>
