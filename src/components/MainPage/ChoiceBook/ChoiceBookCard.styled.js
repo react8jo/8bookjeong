@@ -41,7 +41,7 @@ export const BookAuthor = styled.div`
 `;
 
 export const ChoiceBookCardimg = styled.div`
-  background-image: url(${(props) => props.backgroundImage});
+  background-image: url(${(props) => props.$backgroundImage});
   width:85%;
   height:auto;
   aspect-ratio: 300 / 450;

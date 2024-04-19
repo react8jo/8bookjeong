@@ -38,6 +38,10 @@ export default function BlogBestSellerCarousel({ items }) {
     };
   }, [items]);
 
+  if (!items) {
+    return 'no';
+  }
+
   const goToSlide = (slideIndex) => {
     setCurrentSlide(slideIndex);
   };
@@ -60,10 +64,10 @@ export default function BlogBestSellerCarousel({ items }) {
         {items.map((book, index) => (
           <S.CarouselSlide
             key={index}
-            backgroundColor={colors[index % colors.length]}
+            $backgroundColor={colors[index % colors.length]}
             onClick={() => goToBookDetailPage(book.isbn)}>
             <S.SlideImage>
-              <S.SlideImageContent backgroundImage={book.cover} />
+              <S.SlideImageContent $backgroundImage={book.cover} />
             </S.SlideImage>
             <S.SlideContent>
               <S.SlideTitle>{book.title}</S.SlideTitle>
@@ -89,7 +93,7 @@ export default function BlogBestSellerCarousel({ items }) {
           <S.IndicatorButton
             key={index}
             onClick={() => goToSlide(index * 2)}
-            active={index === Math.floor(currentSlide / 2)}
+            $active={index === Math.floor(currentSlide / 2)}
           />
         ))}
       </S.SlideIndicators>

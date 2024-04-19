@@ -58,8 +58,8 @@ const CategorySelector = () => {
       <S.HamburgerButton onClick={toggleMenu}>&#9776;</S.HamburgerButton>
       {isOpen && (
         <S.CategoryGrid>
-          {categories.map((category) => (
-            <S.CategoryItem key={category.id} onClick={() => handleCategorySelect(category.id)}>
+          {categories.map((category, index) => (
+            <S.CategoryItem key={index} onClick={() => handleCategorySelect(category.id)}>
               {category.name}
             </S.CategoryItem>
           ))}

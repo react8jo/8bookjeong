@@ -34,7 +34,7 @@ const ChoiceBookCard = ({ book }) => {
   return (
     <S.ChoiceBookCard>
       <S.ChoiceBookCardimg
-        backgroundImage={book?.cover}
+        $backgroundImage={book?.cover}
         onClick={() => goToBookDetailPage(book.isbn)}></S.ChoiceBookCardimg>
       <div>
         <S.BookTitle>{title}</S.BookTitle>

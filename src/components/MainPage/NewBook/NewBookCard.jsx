@@ -33,7 +33,7 @@ const NewBookCard = ({ book }) => {
 
   return (
     <div>
-      <S.NewBookCardimg backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
+      <S.NewBookCardimg $backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
         <S.NewBookTag>NEW</S.NewBookTag>
       </S.NewBookCardimg>
       <S.BookTitle>{title}</S.BookTitle>
