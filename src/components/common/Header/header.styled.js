@@ -31,23 +31,32 @@ export const SearchContainer = styled.form`
 
   @media (max-width: 768px) {
     margin-top: 1rem;
-    width: 375px;
   }
 `;
 
 export const SearchInput = styled.input`
-  border: none;
+  border: 1px solid rgb(137, 146, 39);
   outline: none;
-  padding-left: 1rem;
-  border-radius: 5rem;
-  background-color: #ffffff;
-  border: solid 2px rgb(137, 146, 39);
+  border-radius: 24px;
   color: #333;
-  width: 270px;
+  width: 300px;
   height: 30px;
   margin-right: 8px;
+  padding: 0.3em 3em 0.3em 3em;
 
   @media (max-width: 768px) {
     width: 100%;
   }
+`;
+
+export const SearchIcon = styled.span`
+  color: rgb(137, 146, 39);
+  position: relative;
+  left: 30px;
+`;
+
+export const DeleteIcon = styled.span`
+  color: rgb(137, 146, 39);
+  position: relative;
+  right: 35px;
 `;
