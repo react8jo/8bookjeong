@@ -9,12 +9,12 @@ import DetailPage from '../pages/DetailPage/DetailPage';
 export default function Router() {
   return (
     <Routes>
-      <Route path='/' element={<AppLayout />}>
-        <Route index element={<MainPage />} />
+      <Route element={<AppLayout />}>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/products/:isbn13' element={<DetailPage />} />
+        <Route path='/books/:categoryId' element={<FilteredPage />} />
+        <Route path='*' element={<NotFoundPage />} />
       </Route>
-      <Route path='/books/:categoryId' element={<FilteredPage />} />
-      <Route path='/products/:isbn13' element={<DetailPage />} />
-      <Route path='*' element={<NotFoundPage />} />
     </Routes>
   );
 }
