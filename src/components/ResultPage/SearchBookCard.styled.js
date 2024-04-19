@@ -78,6 +78,9 @@ export const BookAdd = styled.button`
 
 export const BookInfo = styled.div`
   margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 export const BookContainer = styled.div`
@@ -101,6 +104,9 @@ export const BookImgLayer = styled.div`
   width: 100%;
   overflow: hidden;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media (max-width: 768px) {
     height: 200px;
