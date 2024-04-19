@@ -15,7 +15,7 @@ export const Navbar = styled.nav`
 
 export const Logo = styled.img`
   width: 8rem;
-  height: 2rem;
+  height: auto;
   margin: 0 1.5rem 0 1rem;
 
   @media (max-width: 768px) {
@@ -42,7 +42,7 @@ export const SearchInput = styled.input`
   padding-left: 1rem;
   border-radius: 5rem;
   background-color: #ffffff;
-  border: solid 3px rgb(137, 146, 39);
+  border: solid 2px rgb(137, 146, 39);
   color: #333;
   width: 270px;
   height: 30px;

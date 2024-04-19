@@ -9,8 +9,8 @@ export const HamburgerButton = styled.button`
   cursor: pointer;
   font-size: 30px;
   position: absolute;
-  top: 15px;
-  right: 40px;
+  top: 30px;
+  right: 50px;
   z-index: 100;
 `;
 
@@ -22,8 +22,8 @@ export const CategoryGrid = styled.div`
   background: white;
   border: 1px solid #ccc;
   position: absolute;
-  top: 70px;
-  right: 40px;
+  top: 90px;
+  right: 50px;
   margin: auto;
   width: 100%;
   max-width: 960px;
@@ -42,7 +42,7 @@ export const CategoryGrid = styled.div`
 `;
 
 export const CategoryItem = styled.div`
-  padding: 5px;
+  padding: 8px;
   text-align: center;
   font-size: 14px;
   cursor: pointer;
