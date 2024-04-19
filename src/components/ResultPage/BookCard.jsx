@@ -42,7 +42,7 @@ const BookCard = ({ book }) => {
     <Container>
       <div className='bookCard'>
         <div onClick={goToBookDetailPage} style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
-          <img src={book.cover} alt='Image' style={imgStyle} />
+          <img src={book.cover} alt={book.title} style={imgStyle} />
         </div>
         <div className='bootInfo'>
           <div className='textEllipsis'>{book.title}</div>
