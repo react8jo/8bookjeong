@@ -56,7 +56,33 @@ const FilteredPage = () => {
     { id: 4670, name: '역사만화' }
   ];
 
-  const { data: filteredBooks, isLoading, isError } = useBookSearchQuery({ query, maxResults, categoryId });
+  //api호출수정//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ////////////// 1. 상품 검색 API 테스트 //ItemSearch.aspx /////////////////
+  // import { useBookSearchQuery } from "../../../../hooks/useBookSearch";
+  // // Query : 검색어 (문자열) (*필수값)
+  // // start : 1이상, 양의 정수 (기본값:1)           //검색결과 시작페이지
+  // // MaxResults : 1이상 100이하 양의정수 (기본값10) //검색결과 한페이지당 최대 출력개수
+  // // Sort
+  // //   ㄴ Accuracy(기본값): 관련도
+  // //   ㄴ PublishTime : 출간일
+  // //   ㄴ Title : 제목
+  // //   ㄴ SalesPoint : 판매량
+  // //   ㄴ CustomerRating 고객평점
+  // //   ㄴ MyReviewCount :마이리뷰갯수
+  // // categoryId : //양의정수 - 분야의 고유 번호(기본값:0, 전체) (참고 : 알라딘 모든 분야 카테고리)
+  // const [query, setQuery] = useState("미래");        //검색어 (문자열) (필수값)
+  // const [start, setStart] = useState("1");           //검색결과 시작페이지 (1이상 양의정수) (선택값)
+  // const [maxResults, setMaxResults] = useState("5"); //1이상 100d이하 양의정수 기본값1 //검색결과 한페이지당 최대 출력개수
+  // const [sort, setSort] = useState("Accuracy");
+  // const [categoryId, setCategoryId] = useState("0");  //양의정수 - 분야의 고유 번호(기본값:0, 전체) //2173	경영전략/혁신
+  // const {data,isLoading,isError,error} = useBookSearchQuery({query, start, maxResults, sort, categoryId});
+  const [sort] = useState('Accuracy'); //1이상 100d이하 양의정수 기본값1 //검색결과 한페이지당 최대 출력개수
+  const {
+    data: filteredBooks,
+    isLoading,
+    isError
+  } = useBookSearchQuery({ query, start: page, maxResults, sort, categoryId });
+  //api호출수정//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (filteredBooks) {

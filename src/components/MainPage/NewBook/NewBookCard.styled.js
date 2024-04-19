@@ -42,6 +42,7 @@ export const NewBookCardimg = styled.div`
   background-size: cover;
   transition: all 300ms;
   box-shadow: 0 3px 8px rgb(141, 138, 138);
+  cursor: pointer;
   @ media(hover: hover) and (pointer: fine) {
     cursor: pointer;
 }
