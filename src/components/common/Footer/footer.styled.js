@@ -11,15 +11,21 @@ export const FooterContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 `;
-
 export const CompanyInfo = styled.div`
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
 
-  p {
-    margin: 5px 0;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
 
+export const CompanyText = styled.p`
+  margin: 0;
+`;
 export const ToggleButton = styled.button`
   background: none;
   border: none;
@@ -58,5 +64,34 @@ export const ButtonLink = styled.a`
 
   &:hover {
     text-decoration: underline;
+  }
+`;
+
+export const ButtonItem = styled.li`
+  margin-bottom: 8px;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
+`;
+export const GithubLink = styled.a`
+  display: inline-block;
+  margin-left: 16px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+`;
+
+export const GithubIcon = styled.img`
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+  @media (max-width: 768px) {
+    width: 24px;
+    height: 24px;
   }
 `;
