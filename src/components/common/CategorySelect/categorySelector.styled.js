@@ -4,23 +4,24 @@ import styled from 'styled-components';
 export const HamburgerButton = styled.button`
   background: none;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 50px;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 1px 4px;
   cursor: pointer;
   font-size: 30px;
-  position: fixed;
-  top: 20px;
+  position: absolute;
+  top: 15px;
   right: 40px;
   z-index: 100;
 `;
 
 export const CategoryGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, auto);
   padding: 15px;
   background: white;
   border: 1px solid #ccc;
-  position: fixed;
+  position: absolute;
   top: 70px;
   right: 40px;
   margin: auto;
@@ -28,6 +29,16 @@ export const CategoryGrid = styled.div`
   max-width: 960px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 101;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+    width: 70%;
+    font-size: 12px;
+  }
 `;
 
 export const CategoryItem = styled.div`
@@ -40,5 +51,8 @@ export const CategoryItem = styled.div`
   &:hover {
     text-decoration: underline;
     font-weight: 600;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
   }
 `;

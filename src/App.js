@@ -3,7 +3,7 @@ import { GlobalStyle } from './assets/style/globalStyle.styled';
 import { BrowserRouter } from 'react-router-dom';
 import Router from './router/Router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import CategorySelector from './components/common/CategorySelect/CategorySelect';
+import Header from './components/common/Header/Header';
 
 const queryClient = new QueryClient();
 
@@ -12,7 +12,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <GlobalStyle />
-        <CategorySelector />
+        <Header />
         <Router />
       </BrowserRouter>
     </QueryClientProvider>
