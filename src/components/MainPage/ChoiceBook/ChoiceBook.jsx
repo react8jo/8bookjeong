@@ -107,7 +107,7 @@ const ChoiceBook = () => {
   //   refetch();
   // };
   const [startTot] = useState('1');
-  const [maxResultsTot] = useState('10');
+  const [maxResultsTot] = useState('15');
   const [categoryIdTot] = useState('0');
   const [querytypeTot] = useState('BlogBest');
   const {
@@ -118,49 +118,49 @@ const ChoiceBook = () => {
   } = useBookCategoryTotListQuery({ querytypeTot, startTot, maxResultsTot, categoryIdTot });
   ////////////////////////////////////////////////////////////////////////////////////////////
   const [start1] = useState('1');
-  const [maxResults1] = useState('10');
+  const [maxResults1] = useState('15');
   const [categoryId1] = useState('1');
   const [querytype1] = useState('ItemEditorChoice');
   const { data: detail1 } = useBookCategory1ListQuery({ querytype1, start1, maxResults1, categoryId1 });
   ////////////////////////////////////////////////////////////////////////////////////////////
   const [start2] = useState('1');
-  const [maxResults2] = useState('10');
+  const [maxResults2] = useState('15');
   const [categoryId2] = useState('170'); //경제경영
   const [querytype2] = useState('ItemEditorChoice');
   const { data: detail2 } = useBookCategory2ListQuery({ querytype2, start2, maxResults2, categoryId2 });
   ////////////////////////////////////////////////////////////////////////////////////////////
   const [start3] = useState('1');
-  const [maxResults3] = useState('10');
+  const [maxResults3] = useState('15');
   const [categoryId3] = useState('336'); //자기계발
   const [querytype3] = useState('ItemEditorChoice');
   const { data: detail3 } = useBookCategory3ListQuery({ querytype3, start3, maxResults3, categoryId3 });
   ////////////////////////////////////////////////////////////////////////////////////////////
   const [start4] = useState('1');
-  const [maxResults4] = useState('10');
+  const [maxResults4] = useState('15');
   const [categoryId4] = useState('656'); //인문/교양
   const [querytype4] = useState('ItemEditorChoice');
   const { data: detail4 } = useBookCategory4ListQuery({ querytype4, start4, maxResults4, categoryId4 });
   ////////////////////////////////////////////////////////////////////////////////////////////
   const [start5] = useState('1');
-  const [maxResults5] = useState('10');
+  const [maxResults5] = useState('15');
   const [categoryId5] = useState('1196'); //여행
   const [querytype5] = useState('ItemEditorChoice');
   const { data: detail5 } = useBookCategory5ListQuery({ querytype5, start5, maxResults5, categoryId5 });
   ////////////////////////////////////////////////////////////////////////////////////////////
   const [start6] = useState('1');
-  const [maxResults6] = useState('10');
+  const [maxResults6] = useState('15');
   const [categoryId6] = useState('2913'); //매거진
   const [querytype6] = useState('ItemEditorChoice');
   const { data: detail6 } = useBookCategory6ListQuery({ querytype6, start6, maxResults6, categoryId6 });
   ////////////////////////////////////////////////////////////////////////////////////////////
   const [start7] = useState('1');
-  const [maxResults7] = useState('10');
+  const [maxResults7] = useState('15');
   const [categoryId7] = useState('517'); //예술/문화
   const [querytype7] = useState('ItemEditorChoice');
   const { data: detail7 } = useBookCategory7ListQuery({ querytype7, start7, maxResults7, categoryId7 });
   ////////////////////////////////////////////////////////////////////////////////////////////
   const [start8] = useState('1');
-  const [maxResults8] = useState('10');
+  const [maxResults8] = useState('15');
   const [categoryId8] = useState('2551'); //만화
   const [querytype8] = useState('ItemEditorChoice');
   const { data: detail8 } = useBookCategory8ListQuery({ querytype8, start8, maxResults8, categoryId8 });
