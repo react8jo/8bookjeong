@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
 import api from '../services/api';
 
-const fetchBookDetail = async (isbn) => {
+const fetchBookDetail = async ({ isbn }) => {
   const response = await api.get('/ItemLookUp.aspx', {
     params: {
       ItemId: isbn,
-      SearchTarget: 'Book'
+      SearchTarget: 'Book',
+      OptResult: 'cardReviewImgList,ratingInfo,bestSellerRank,ebookList,usedList'
     }
   });
   return response.data;

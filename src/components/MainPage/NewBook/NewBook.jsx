@@ -28,11 +28,11 @@ const NewBook = () => {
     refetch
   } = useBookListQuery({ querytype, start, maxResults, categoryId });
 
-  useEffect(() => {
-    if (bookList) {
-      console.log('bookList', bookList);
-    }
-  }, [bookList]);
+  // useEffect(() => {
+  //   if (bookList) {
+  //     console.log('bookList', bookList);
+  //   }
+  // }, [bookList]);
 
   const responsive = {
     desktop: {

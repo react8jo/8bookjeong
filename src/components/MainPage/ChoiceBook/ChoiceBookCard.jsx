@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './ChoiceBookCard.style.css';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // const ChoiceBookCard = ({ book, rank, isUpComing }) => {
 const ChoiceBookCard = ({ book }) => {
-  // 각각의 책 isbn에 맞는 상세 페이지로 이동
-  // const navigate = useNavigate();
-  // const goToBookDetailPage = (movieId)isbn=> {
-  //   navigate(`/books/${isbn}`);
-  // };
+  const navigate = useNavigate();
+
+  const goToBookDetailPage = (isbn) => {
+    console.log(book); // 콘솔에 도서 정보 출력
+    navigate(`/products/${isbn}`);
+  };
 
   function getSubstringBeforeWord(inputString, word) {
     let index = inputString.indexOf(word);
@@ -36,7 +37,8 @@ const ChoiceBookCard = ({ book }) => {
         className='ChoiceBookCardimg'
         style={{
           backgroundImage: `url(${book?.cover})`
-        }}></div>
+        }}
+        onClick={() => goToBookDetailPage(book.isbn)}></div>
       <div>
         <div className='book-title'>{title}</div>
         <div className='book-author'>{author}</div>

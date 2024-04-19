@@ -3,14 +3,14 @@ import './BestsellerBookCard.style.css';
 import { useNavigate } from 'react-router-dom';
 
 const BestsellerBookCard = ({ book, rank, isUpComing }) => {
-  useEffect(() => {
-    console.log('Book props in BestsellerBookCard:', book);
-  }, [book]);
+  // useEffect(() => {
+  //   console.log('Book props in BestsellerBookCard:', book);
+  // }, [book]);
   const navigate = useNavigate();
 
   const goToBookDetailPage = (isbn) => {
     console.log(book); // 콘솔에 도서 정보 출력
-    navigate(`/books/${isbn}`);
+    navigate(`/products/${isbn}`);
   };
 
   function getSubstringBeforeWord(inputString, word) {

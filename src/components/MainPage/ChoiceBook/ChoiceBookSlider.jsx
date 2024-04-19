@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import ChoiceBookCard from './ChoiceBookCard';
 
 const ChoiceBookSlider = ({ title, books, responsive }) => {
-  console.log('books', books);
+  // console.log('books', books);
 
   return (
     <section className='ChoiceBookSlider'>
