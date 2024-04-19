@@ -60,6 +60,7 @@ export const ButtonGroup = styled.div`
   gap: 10px;
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 50px;
 `;
 
 export const Button = styled.button`
