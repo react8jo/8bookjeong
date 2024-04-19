@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'react-multi-carousel/lib/styles.css';
 import { useBookListQuery } from '../../../hooks/useBookList';
-import './NewBook.style.css';
+// import './NewBook.style.css';
 import NewBookSlider from './NewBookSlider';
+import * as S from './NewBook.styled';
 
 const NewBook = () => {
   ////////////////////////////// 2. 상품 리스트 API //ItemList.aspx //////////////////////////////
@@ -51,10 +52,10 @@ const NewBook = () => {
   };
 
   return (
-    <div className='title'>
-      <h3>신간</h3>
+    <S.Title>
+      <S.TitleName>{'신간'}</S.TitleName>
       {bookList && <NewBookSlider title={'신간'} books={bookList?.item} responsive={responsive} />}
-    </div>
+    </S.Title>
   );
 };
 

@@ -1,14 +1,14 @@
 import React from 'react';
-import './ChoiceBookSlider.style.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import ChoiceBookCard from './ChoiceBookCard';
+import * as S from './ChoiceBookSlider.styled';
 
 const ChoiceBookSlider = ({ title, books, responsive }) => {
   // console.log('books', books);
 
   return (
-    <section className='ChoiceBookSlider'>
+    <S.ChoiceBookSlider>
       {books && (
         <Carousel
           infinite={false}
@@ -46,7 +46,7 @@ const ChoiceBookSlider = ({ title, books, responsive }) => {
           </div>
         </Carousel>
       )}
-    </section>
+    </S.ChoiceBookSlider>
   );
 };
 

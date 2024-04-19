@@ -1,12 +1,13 @@
 import React from 'react';
-import './BestsellerBookSlider.style.css';
+// import './BestsellerBookSlider.style.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import BestsellerBookCard from './BestsellerBookCard';
+import * as S from './bestsellerBookSlider.styled';
 
 const BestsellerBookSlider = ({ title, books, responsive, isRank }) => {
   return (
-    <section className='BestsellerBookSlider'>
+    <S.BestsellerBookSlider>
       <Carousel
         infinite={true}
         // autoPlay={true}
@@ -23,7 +24,7 @@ const BestsellerBookSlider = ({ title, books, responsive, isRank }) => {
           <BestsellerBookCard key={book.isbn} book={book} rank={isRank && index + 1} />
         ))}
       </Carousel>
-    </section>
+    </S.BestsellerBookSlider>
   );
 };
 
