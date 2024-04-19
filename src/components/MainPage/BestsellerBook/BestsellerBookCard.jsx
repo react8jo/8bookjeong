@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './BestsellerBookCard.style.css';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const BestsellerBookCard = ({ book, rank, isUpComing }) => {
-  // 각각의 책 isbn에 맞는 상세 페이지로 이동
-  // const navigate = useNavigate();
-  // const goToBookDetailPage = (movieId)isbn=> {
-  //   navigate(`/books/${isbn}`);
-  // };
+  // useEffect(() => {
+  //   console.log('Book props in BestsellerBookCard:', book);
+  // }, [book]);
+  const navigate = useNavigate();
+
+  const goToBookDetailPage = (isbn) => {
+    console.log(book); // 콘솔에 도서 정보 출력
+    navigate(`/products/${isbn}`);
+  };
 
   function getSubstringBeforeWord(inputString, word) {
     let index = inputString.indexOf(word);
@@ -36,8 +40,7 @@ const BestsellerBookCard = ({ book, rank, isUpComing }) => {
         style={{
           backgroundImage: `url(${book.cover})`
         }}
-        // onClick={() => goToBookDetailPage(book.isbn)}>
-      >
+        onClick={() => goToBookDetailPage(book.isbn)}>
         {rank && <h4 className='ranking'>{rank}</h4>}
         <div className='overlay'>{/* <h5>{book.title}</h5> */}</div>
       </div>
