@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { primaryColor } from '../../../assets/style/globalStyle.styled';
 export const BannerLayout = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,7 +7,6 @@ export const BannerLayout = styled.div`
   justify-content: center;
   padding-top: 1rem;
   background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 export const ButtonList = styled.div`
@@ -21,18 +20,18 @@ export const Button = styled.button`
   margin: 0 10px;
   font-size: 16px;
   font-weight: bold;
-  color: white;
+  color: ${primaryColor};
   border: none;
-  background-color: darkgray;
+  background-color: white;
   border-radius: 32px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 `;
 
 export const NewButton = styled(Button)`
-  &:hover,
-  &:active {
-    background-color: gray;
+  &:hover {
+    color: white;
+    background-color: ${primaryColor};
   }
 `;
 
