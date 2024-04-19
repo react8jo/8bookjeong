@@ -6,7 +6,8 @@ const api = axios.create({
   params: {
     TTBKey: API_KEY,
     output: 'js',
-    Version: '20131101'
+    Version: '20131101',
+    Cover: 'Big'
   }
 });
 

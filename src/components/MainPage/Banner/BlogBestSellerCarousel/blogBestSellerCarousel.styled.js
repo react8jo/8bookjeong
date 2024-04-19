@@ -5,6 +5,7 @@ export const CarouselContainer = styled.div`
   width: 100%;
   overflow: hidden;
   height: fit-content;
+  cursor: pointer;
 `;
 
 export const CarouselSlider = styled.div`
@@ -20,12 +21,14 @@ export const CarouselSlide = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
   background-color: ${(props) => props.backgroundColor};
 `;
 
 export const SlideImage = styled.div`
   width: 200px;
   height: 300px;
+
   margin: 20px 0;
 `;
 
@@ -36,7 +39,6 @@ export const SlideImageContent = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 `;
 

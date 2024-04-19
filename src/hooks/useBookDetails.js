@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import api from '../services/api';
 
-const fetchBookDetail = async ({ isbn }) => {
+const fetchBookDetails = async ({ isbn }) => {
   const response = await api.get('/ItemLookUp.aspx', {
     params: {
       ItemId: isbn,
@@ -12,9 +12,9 @@ const fetchBookDetail = async ({ isbn }) => {
   return response.data;
 };
 
-export const useBookDetailQuery = ({ isbn }) => {
+export const useBookDetailsQuery = ({ isbn }) => {
   return useQuery({
     queryKey: ['BookDetail', { isbn }],
-    queryFn: () => fetchBookDetail({ isbn })
+    queryFn: () => fetchBookDetails({ isbn })
   });
 };

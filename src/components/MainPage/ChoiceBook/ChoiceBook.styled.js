@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 import { primaryColor } from '../../../assets/style/globalStyle.styled';
-export const BannerLayout = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 1rem;
-  background-color: #fff;
+
+export const Title = styled.div`
+  margin-top: 1rem;
+  margin-left: 0rem;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+`;
+
+export const TitleName = styled.h3`
+  margin-left: 1.5rem;
 `;
 
 export const ButtonList = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin-bottom: 1rem;
 `;
 
@@ -28,11 +32,9 @@ export const Button = styled.button`
   transition: background-color 0.3s ease;
 `;
 
-export const NewButton = styled(Button)`
+export const CategoryButton = styled(Button)`
   &:hover {
     color: white;
     background-color: ${primaryColor};
   }
 `;
-
-export const BestSeller = styled(NewButton)``;

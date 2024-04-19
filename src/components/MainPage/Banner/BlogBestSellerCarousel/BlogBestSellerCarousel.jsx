@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './blogBestSellerCarousel.styled';
 
 export default function BlogBestSellerCarousel({ items }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
+
   const colors = [
-    'rgb(255, 213, 170)',
-    'rgb(187, 255, 221)',
+    'rgb(255, 187, 187)',
+    'rgb(187, 221, 255)',
+    'rgb(255, 221, 187)',
+    'rgb(221, 187, 255)',
     'rgb(255, 255, 204)',
     'rgb(255, 204, 229)',
     'rgb(229, 255, 204)',
+    'rgb(255, 213, 170)',
+    'rgb(187, 255, 221)',
     'rgb(255, 187, 221)',
     'rgb(255, 255, 170)',
     'rgb(255, 204, 204)',
@@ -19,12 +26,9 @@ export default function BlogBestSellerCarousel({ items }) {
     'rgb(255, 170, 170)',
     'rgb(229, 204, 255)',
     'rgb(255, 229, 204)',
-    'rgb(213, 255, 170)',
-    'rgb(255, 187, 187)',
-    'rgb(187, 221, 255)',
-    'rgb(255, 221, 187)',
-    'rgb(221, 187, 255)'
+    'rgb(213, 255, 170)'
   ];
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 2) % items.length);
@@ -46,11 +50,18 @@ export default function BlogBestSellerCarousel({ items }) {
     setCurrentSlide((prevSlide) => (prevSlide + 2) % items.length);
   };
 
+  const goToBookDetailPage = (isbn) => {
+    navigate(`/products/${isbn}`);
+  };
+
   return (
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 50}%)` }}>
         {items.map((book, index) => (
-          <S.CarouselSlide key={index} backgroundColor={colors[index % colors.length]}>
+          <S.CarouselSlide
+            key={index}
+            backgroundColor={colors[index % colors.length]}
+            onClick={() => goToBookDetailPage(book.isbn)}>
             <S.SlideImage>
               <S.SlideImageContent backgroundImage={book.cover} />
             </S.SlideImage>

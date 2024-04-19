@@ -5,8 +5,6 @@ import ReactPaginate from 'react-paginate';
 import BookCard from '../../components/FilteredPage/BookCard';
 import Loading from '../../components/common/Loading/Loading';
 import Nodata from '../../components/common/Nodata/Nodata';
-import Banner from '../../components/MainPage/Banner/Banner';
-import Footer from '../../components/common/Footer/Footer';
 
 import * as S from './filteredPage.styled';
 
@@ -89,7 +87,6 @@ const FilteredPage = () => {
 
   return (
     <>
-      <Banner />
       <S.Container>
         <S.ContainerForCenter>
           <S.Categories>
@@ -128,7 +125,6 @@ const FilteredPage = () => {
         //따라서 -1을 해줘야함
         forcePage={page - 1}
       />
-      <Footer />
     </>
   );
 };
