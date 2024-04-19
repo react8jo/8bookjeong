@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './newBookCarousel.styled';
 import { useNavigate } from 'react-router-dom';
-export default function NewBookCarousel({ items }) {
+export default function NewBookCarousel({ items = [] }) {
+  // 초기값 설정
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const colors = [
@@ -18,12 +19,15 @@ export default function NewBookCarousel({ items }) {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
-    }, 3000);
-    return () => {
-      clearInterval(interval);
-    };
+    if (items.length > 0) {
+      // 배열 확인
+      const interval = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
+      }, 3000);
+      return () => {
+        clearInterval(interval);
+      };
+    }
   }, [items]);
 
   const goToSlide = (slideIndex) => {
@@ -40,6 +44,7 @@ export default function NewBookCarousel({ items }) {
   const goToBookDetailPage = (isbn) => {
     navigate(`/products/${isbn}`);
   };
+
   return (
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
@@ -52,7 +57,7 @@ export default function NewBookCarousel({ items }) {
                 <S.SlideDescription>
                   <S.SlideInfo>
                     <div>{book.categoryName}</div>
-                    <div> {book.author}</div>
+                    <div>{book.author}</div>
                   </S.SlideInfo>
                 </S.SlideDescription>
               </S.SlideContent>
