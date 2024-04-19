@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useState, useEffect } from 'react';
 
 import './ResultPage.style.css';
@@ -49,48 +49,44 @@ export default function ResultPage() {
 
   const TTBKey = 'ttbjjari910105001';
 
-  const getBookInfo = async () => {
+  const getBookInfo = useCallback(async () => {
     setIsLoading(true);
     setError(null);
 
-    axios
-      .get(
+    try {
+      const response = await axios.get(
         `/ttb/api/ItemSearch.aspx?ttbkey=${TTBKey}&Query=${keyword}&QueryType=Keyword&Output=JS&MaxResults=${selectedItem.apiName}&Cover=Big&Start=${page}&Version=20131101&Sort=${sortOption}`
-      )
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((error) => {
-        setError(error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+      );
+      setData(response.data);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [TTBKey, keyword, selectedItem, page, sortOption]);
 
   useEffect(() => {
     setSortOption('Accuracy');
     setPage(1);
     getBookInfo();
-    // eslint-disable-next-line
-  }, [keyword]);
+
+  }, [keyword, getBookInfo]);
 
   useEffect(() => {
     setPage(1);
     getBookInfo();
-    // eslint-disable-next-line
-  }, [sortOption]);
+
+  }, [sortOption, getBookInfo]);
 
   useEffect(() => {
     getBookInfo();
-    // eslint-disable-next-line
-  }, [page]);
+  }, [page, getBookInfo]);
 
   useEffect(() => {
     setPage(1);
     getBookInfo();
-    // eslint-disable-next-line
-  }, [selectedItem]);
+  }, [selectedItem, getBookInfo]);
+
 
   console.log('ResultPage ', data);
 
