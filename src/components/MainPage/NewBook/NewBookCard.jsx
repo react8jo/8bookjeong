@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './NewBookCard.style.css';
+// import './NewBookCard.style.css';
 import { useNavigate } from 'react-router-dom';
+import * as S from './NewBookCard.styled';
 
 // const ChoiceBookCard = ({ book, rank, isUpComing }) => {
 const NewBookCard = ({ book }) => {
@@ -31,19 +32,12 @@ const NewBookCard = ({ book }) => {
   }, [book]);
 
   return (
-    <div className='NewBookCard'>
-      <div
-        className='NewBookCardimg'
-        style={{
-          backgroundImage: `url(${book?.cover})`
-        }}
-        onClick={() => goToBookDetailPage(book.isbn)}>
-        <h4 className='newBookTag'>NEW</h4>
-      </div>
-      <div>
-        <div className='book-title'>{title}</div>
-        <div className='book-author'>{author}</div>
-      </div>
+    <div>
+      <S.NewBookCardimg backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
+        <S.NewBookTag>NEW</S.NewBookTag>
+      </S.NewBookCardimg>
+      <S.BookTitle>{title}</S.BookTitle>
+      <S.BookAuthor>{author}</S.BookAuthor>
     </div>
   );
 };

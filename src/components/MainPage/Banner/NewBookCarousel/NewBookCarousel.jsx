@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './newBookCarousel.styled';
-
+import { useNavigate } from 'react-router-dom';
 export default function NewBookCarousel({ items }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const navigate = useNavigate();
   const colors = [
     'rgb(20, 30, 80)',
     'rgb(90, 65, 85)',
@@ -37,11 +37,14 @@ export default function NewBookCarousel({ items }) {
   const goToNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
   };
+  const goToBookDetailPage = (isbn) => {
+    navigate(`/products/${isbn}`);
+  };
   return (
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {items.map((book, index) => (
-          <S.CarouselSlide key={index}>
+          <S.CarouselSlide key={index} onClick={() => goToBookDetailPage(book.isbn)}>
             <S.SlideImage backgroundColor={colors[index % colors.length]}>
               <S.SlideImageContent backgroundImage={book.cover} />
               <S.SlideContent backgroundColor={colors[index % colors.length]}>

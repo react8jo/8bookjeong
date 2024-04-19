@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 export default GlobalStyle;
 
-export const BestsellerBookSlider = styled.section`
+export const NewBookSlider = styled.section`
   padding: 3% 0;
   font-family: 'Anton', sans-serif;
   font-size: clamp(100px, 7vw, 140px);

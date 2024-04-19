@@ -11,14 +11,14 @@ import CartPage from '../pages/CartPage/CartPage';
 export default function Router() {
   return (
     <Routes>
-      <Route path='/' element={<AppLayout />}>
+      <Route path="/" element={<AppLayout />}>
         <Route index element={<MainPage />} />
-        <Route path='/payment' element={<PaymentPage />} />
-        <Route path='/cart' element={<CartPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/products/:isbn13" element={<DetailPage />} />
+        <Route path="/books/:categoryId" element={<FilteredPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
-      <Route path='/books/:categoryId' element={<FilteredPage />} />
-      <Route path='/products/:isbn13' element={<DetailPage />} />
-      <Route path='*' element={<NotFoundPage />} />
     </Routes>
   );
 }

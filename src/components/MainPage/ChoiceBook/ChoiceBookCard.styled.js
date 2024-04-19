@@ -7,8 +7,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 export default GlobalStyle;
 
-export const BestsellerBookCard = styled.div`
-  margin-right: 30px;
+export const ChoiceBookCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  // margin-right: 30px;
   cursor: pointer;
 `;
 
@@ -35,30 +40,21 @@ export const BookAuthor = styled.div`
   white-space: nowrap;
 `;
 
-export const BestsellerBookCardimg = styled.div`
+export const ChoiceBookCardimg = styled.div`
   background-image: url(${(props) => props.backgroundImage});
-  position: relative;
-  width: 100%;
-  height: auto;
+  width:85%;
+  height:auto;
   aspect-ratio: 300 / 450;
-  border: none;
-  font-family: 'Spoqa Han Sans Neo', sans-serif;
-  background-size: cover;
-  transition: all 300ms;
-  box-shadow: 0 3px 8px rgb(141, 138, 138);
-  @ media(hover: hover) and (pointer: fine) {
-    cursor: pointer;
+  border:none;
+  font-family:'Spoqa Han Sans Neo', sans-serif;  
+  background-size:cover;
+  transition:all 300ms;
+  box-shadow: 0 3px 8px rgb(141, 138, 138);   
+  /* margin: 0 10px; */
+  @media(hover: hover) and (pointer: fine) {
+    &:hover{
+      cursor: pointer;
+    }
+  }  
 }
-`;
-
-export const Ranking = styled.h4`
-  position: absolute;
-  bottom: 0px;
-  left: -20px;
-  z-index: 1;
-  font-family: 'Anton', sans-serif;
-  font-size: 100%;
-  line-height: 1;
-  color: white;
-  text-shadow: 0 3px 6px rgb(0, 0, 0);
 `;

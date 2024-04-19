@@ -21,12 +21,14 @@ export const CarouselSlide = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
   background-color: ${(props) => props.backgroundColor};
 `;
 
 export const SlideImage = styled.div`
   width: 200px;
   height: 300px;
+
   margin: 20px 0;
 `;
 
