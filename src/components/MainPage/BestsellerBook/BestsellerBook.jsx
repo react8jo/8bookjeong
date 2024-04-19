@@ -21,11 +21,11 @@ const BestsellerBook = () => {
   const [categoryId, setCategoryId] = useState('0'); //2173	경영전략/혁신
   const [querytype, setQuerytype] = useState('Bestseller'); //베스트셀러
   const { data: bookList, isLoading, isError, error } = useBookListQuery({ querytype, start, maxResults, categoryId });
-  useEffect(() => {
-    if (bookList) {
-      console.log('bookList', bookList);
-    }
-  }, [bookList]);
+  // useEffect(() => {
+  //   if (bookList) {
+  //     console.log('bookList', bookList);
+  //   }
+  // }, [bookList]);
 
   const responsive = {
     desktop: {
