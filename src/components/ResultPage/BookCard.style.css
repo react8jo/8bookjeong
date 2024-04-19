@@ -49,7 +49,7 @@
   margin-left: 1em;
 }
 
-button {
+.bookAdd button {
   margin-top: 20px;
   background-color: rgb(137, 146, 39);
   color: white;
@@ -59,6 +59,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.bookAdd button:hover {
   background-color: rgb(180, 190, 65);
 }
