@@ -5,7 +5,7 @@ export const StyledDetailPage = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  color: #003366;
+  color: #899227;
 `;
 
 export const BookImage = styled.img`
@@ -45,7 +45,7 @@ export const ButtonGroup = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #003366;
+  background-color: #899227;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -65,12 +65,12 @@ export const Line = styled.hr`
 
 export const SectionTitle = styled.h2`
   margin-bottom: 5px;
-  color: #003366;
+  color: #899227;
   font-size: 24px;
 `;
 
 export const Content = styled.p`
   margin: 5px 0 20px 0;
-  color: #003366;
+  color: #899227;
   font-size: 18px;
 `;

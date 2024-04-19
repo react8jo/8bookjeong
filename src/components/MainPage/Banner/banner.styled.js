@@ -1,23 +1,38 @@
 import styled from 'styled-components';
-
+import { primaryColor } from '../../../assets/style/globalStyle.styled';
 export const BannerLayout = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 20px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-top: 1rem;
+  background-color: #fff;
 `;
 
-export const Title = styled.h1`
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
+export const ButtonList = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 `;
 
-export const Content = styled.p`
+export const Button = styled.button`
+  padding: 10px 20px;
+  margin: 0 10px;
   font-size: 16px;
-  color: #666;
+  font-weight: bold;
+  color: ${primaryColor};
+  border: none;
+  background-color: white;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 `;
+
+export const NewButton = styled(Button)`
+  &:hover {
+    color: white;
+    background-color: ${primaryColor};
+  }
+`;
+
+export const BestSeller = styled(NewButton)``;

@@ -1,20 +1,24 @@
 import React from 'react';
 import * as S from './detailPage.styled';
 import { useParams } from 'react-router-dom';
-import { useBookDetailsQuery } from '../../hooks/useBookDetails';
+import { useBookDetailQuery } from '../../hooks/useBookDetail';
 
 function DetailPage() {
-  const { isbn13 } = useParams();
-  const { data: book, isLoading, isError, error } = useBookDetailsQuery(isbn13);
+  const { isbn13 } = useParams(); // useParams로 isbn13 파라미터를 가져옴
+  const { data: book, isLoading, isError, error } = useBookDetailQuery({ isbn: isbn13 });
 
-  if (isLoading) return <S.StyledDetailPage>Loading...</S.StyledDetailPage>;
+  if (isLoading) {
+    return <S.StyledDetailPage>Loading...</S.StyledDetailPage>;
+  }
   if (isError) {
     console.error('Error fetching book details:', error);
     return <S.StyledDetailPage>Error: {error.message}</S.StyledDetailPage>;
   }
+  if (!book) {
+    return <S.StyledDetailPage>No book details available.</S.StyledDetailPage>;
+  }
 
-  if (!book) return <S.StyledDetailPage>No book details available.</S.StyledDetailPage>;
-
+  // 데이터가 정상적으로 로드된 경우 아래의 JSX를 렌더링
   return (
     <S.StyledDetailPage>
       <S.BookContent>
@@ -47,7 +51,7 @@ function DetailPage() {
         <S.Line />
         <S.SectionTitle>Link</S.SectionTitle>
         <S.Content>
-          <a href={book.link} target='_blank'>
+          <a href={book.link} target='_blank' rel='noopener noreferrer'>
             More Details
           </a>
         </S.Content>
