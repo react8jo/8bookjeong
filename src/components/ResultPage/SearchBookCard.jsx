@@ -1,8 +1,7 @@
 import React from 'react';
-import './BookCard.style.css';
-import Container from 'react-bootstrap/Container';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+
+import * as S from './SearchBookCard.styled';
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -39,33 +38,35 @@ const BookCard = ({ book }) => {
   };
 
   return (
-    <Container>
-      <div className='bookCard'>
+    <S.BookContainer>
+      <S.BookCard>
         <div onClick={goToBookDetailPage} style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
           <img src={book.cover} alt={book.title} style={imgStyle} />
         </div>
-        <div className='bootInfo'>
-          <div className='textEllipsis'>{book.title}</div>
-          <div className='bookDetailInfo'>
-            <div>{book.author}</div>
-            <div>
+        <S.BookInfo>
+          <S.TextEllipsis>{book.title}</S.TextEllipsis>
+          <S.BookDetail>
+            <S.BookDetailInfo>{book.author}</S.BookDetailInfo>
+            <S.BookDetailInfo>
               {book.pubDate} / {book.publisher}
-            </div>
-          </div>
-          <div className='bookSubInfo'>
-            <div>
-              <span className='bookSalePercent'>10%</span>
-              <span className='bookSale'>{Number(book.priceStandard * 0.9).toLocaleString()}원</span>
-              <span className='bookPrice'>{Number(book.priceStandard).toLocaleString()}원</span>
-            </div>
-            <div>⭐️ {book.customerReviewRank}.0</div>
-          </div>
-          <div className='bookAdd'>
-            <button>찜하기</button>
-          </div>
-        </div>
-      </div>
-    </Container>
+            </S.BookDetailInfo>
+          </S.BookDetail>
+          <S.BookTag>
+            <S.BookTagInfo># {book.categoryName.split('>')[book.categoryName.split('>').length - 1]}</S.BookTagInfo>
+            <S.BookTagInfo># {book.adult ? '성인' : '전체 연령'}</S.BookTagInfo>
+          </S.BookTag>
+          <S.BookSub>
+            <S.BookSubInfo>
+              <S.BookSalePercent>10%</S.BookSalePercent>
+              <S.BookSale>{Number(book.priceStandard * 0.9).toLocaleString()}원</S.BookSale>
+              <S.BookPrice>{Number(book.priceStandard).toLocaleString()}원</S.BookPrice>
+            </S.BookSubInfo>
+            <S.BookSubInfo>⭐️ {book.customerReviewRank}.0</S.BookSubInfo>
+          </S.BookSub>
+          <S.BookAdd>찜하기</S.BookAdd>
+        </S.BookInfo>
+      </S.BookCard>
+    </S.BookContainer>
   );
 };
 
