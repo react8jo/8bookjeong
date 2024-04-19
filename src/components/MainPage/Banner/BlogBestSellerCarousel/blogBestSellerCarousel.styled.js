@@ -21,21 +21,17 @@ export const CarouselSlide = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-
-  background-color: ${(props) => props.backgroundColor};
 `;
 
 export const SlideImage = styled.div`
   width: 200px;
   height: 300px;
-
   margin: 20px 0;
 `;
 
 export const SlideImageContent = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url(${(props) => props.backgroundImage});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

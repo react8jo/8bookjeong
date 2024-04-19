@@ -58,7 +58,7 @@ export default function BlogBestSellerCarousel({ items }) {
         {items.map((book, index) => (
           <S.CarouselSlide
             key={index}
-            backgroundColor={colors[index % colors.length]}
+            style={{ backgroundColor: colors[index % colors.length] }}
             onClick={() => goToBookDetailPage(book.isbn)}>
             <S.SlideImage>
               <S.SlideImageContent style={{ backgroundImage: `url(${book.cover})` }} />
@@ -84,7 +84,7 @@ export default function BlogBestSellerCarousel({ items }) {
       </S.SlideControls>
       <S.SlideIndicators>
         {items.map((_, index) => (
-          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} active={index === currentSlide} />
+          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} $active={index === currentSlide.toString()} />
         ))}
       </S.SlideIndicators>
     </S.CarouselContainer>

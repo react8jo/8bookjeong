@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import * as S from './newBookCarousel.styled';
 import { useNavigate } from 'react-router-dom';
+import * as S from './newBookCarousel.styled';
 
 export default function NewBookCarousel({ items = [] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -36,22 +36,22 @@ export default function NewBookCarousel({ items = [] }) {
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {items.map((book, index) => (
-          <S.CarouselSlide key={index} onClick={() => goToBookDetailPage(book.isbn)}>
-            <S.SlideImage style={{ backgroundColor: colors[index % colors.length] }}>
+          <S.CarouselSlide
+            key={index}
+            style={{ backgroundColor: colors[index % colors.length] }}
+            onClick={() => goToBookDetailPage(book.isbn)}>
+            <S.SlideImage>
               <S.SlideImageContent style={{ backgroundImage: `url(${book.cover})` }} />
-              <S.SlideContent style={{ backgroundColor: colors[index % colors.length] }}>
-                <S.SlideTitle>{book.title}</S.SlideTitle>
-                <S.SlideDescription>
-                  <S.SlideInfo>
-                    <div>{book.categoryName}</div>
-                    <div>{book.author}</div>
-                  </S.SlideInfo>
-                </S.SlideDescription>
-                <S.SlideIndex>
-                  {currentSlide + 1} / {items.length}
-                </S.SlideIndex>
-              </S.SlideContent>
             </S.SlideImage>
+            <S.SlideContent style={{ backgroundColor: colors[index % colors.length] }}>
+              <S.SlideTitle>{book.title}</S.SlideTitle>
+              <S.SlideDescription>
+                <S.SlideInfo>
+                  <div>{book.author}</div>
+                  <div>{book.publisher}</div>
+                </S.SlideInfo>
+              </S.SlideDescription>
+            </S.SlideContent>
           </S.CarouselSlide>
         ))}
       </S.CarouselSlider>
@@ -61,7 +61,7 @@ export default function NewBookCarousel({ items = [] }) {
       </S.SlideControls>
       <S.SlideIndicators>
         {items.map((_, index) => (
-          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} active={index === currentSlide} />
+          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} $={index === currentSlide} />
         ))}
       </S.SlideIndicators>
     </S.CarouselContainer>
