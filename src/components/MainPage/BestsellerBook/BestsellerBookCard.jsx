@@ -27,9 +27,7 @@ const BestsellerBookCard = ({ book, rank, isUpComing }) => {
 
   return (
     <S.BestsellerBookCard>
-      <S.BestsellerBookCardimg // 이름 수정
-        style={{ backgroundImage: `url(${book.cover})` }}
-        onClick={() => goToBookDetailPage(book.isbn)}>
+      <S.BestsellerBookCardimg $backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
         {rank && <S.Ranking>{rank}</S.Ranking>}
       </S.BestsellerBookCardimg>
       <S.BookTitle>{title}</S.BookTitle>

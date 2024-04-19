@@ -26,8 +26,8 @@ const NewBookCard = ({ book }) => {
   }, [book]);
 
   return (
-    <S.NewBookCard>
-      <S.NewBookCardImg style={{ backgroundImage: `url(${book.cover})` }} onClick={() => goToBookDetailPage(book.isbn)}>
+    <div>
+      <S.NewBookCardimg $backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
         <S.NewBookTag>NEW</S.NewBookTag>
       </S.NewBookCardImg>
       <S.BookTitle>{title}</S.BookTitle>

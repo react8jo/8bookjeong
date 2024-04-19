@@ -27,10 +27,9 @@ const ChoiceBookCard = ({ book }) => {
 
   return (
     <S.ChoiceBookCard>
-      <S.ChoiceBookCardimg // 이름 수정
-        style={{ backgroundImage: `url(${book.cover})` }}
-        onClick={() => goToBookDetailPage(book.isbn)}
-      />
+      <S.ChoiceBookCardimg
+        $backgroundImage={book?.cover}
+        onClick={() => goToBookDetailPage(book.isbn)}></S.ChoiceBookCardimg>
       <div>
         <S.BookTitle>{title}</S.BookTitle>
         <S.BookAuthor>{author}</S.BookAuthor>

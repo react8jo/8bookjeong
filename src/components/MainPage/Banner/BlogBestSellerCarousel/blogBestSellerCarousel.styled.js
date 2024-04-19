@@ -21,6 +21,8 @@ export const CarouselSlide = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
+  background-color: ${(props) => props.$backgroundColor};
 `;
 
 export const SlideImage = styled.div`
@@ -32,6 +34,7 @@ export const SlideImage = styled.div`
 export const SlideImageContent = styled.div`
   width: 100%;
   height: 100%;
+  background-image: url(${(props) => props.$backgroundImage});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -117,7 +120,7 @@ export const IndicatorButton = styled.button`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: ${(props) => (props.active ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0.2)')};
+  background-color: ${(props) => (props.$active ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0.2)')};
   margin: 0 4px;
   border: none;
   cursor: pointer;

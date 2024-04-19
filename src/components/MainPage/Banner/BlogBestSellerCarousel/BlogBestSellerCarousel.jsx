@@ -36,6 +36,10 @@ export default function BlogBestSellerCarousel({ items }) {
     return () => clearInterval(interval);
   }, [items]);
 
+  if (!items) {
+    return 'no';
+  }
+
   const goToSlide = (slideIndex) => {
     setCurrentSlide(slideIndex);
   };
@@ -58,10 +62,10 @@ export default function BlogBestSellerCarousel({ items }) {
         {items.map((book, index) => (
           <S.CarouselSlide
             key={index}
-            style={{ backgroundColor: colors[index % colors.length] }}
+            $backgroundColor={colors[index % colors.length]}
             onClick={() => goToBookDetailPage(book.isbn)}>
             <S.SlideImage>
-              <S.SlideImageContent style={{ backgroundImage: `url(${book.cover})` }} />
+              <S.SlideImageContent $backgroundImage={book.cover} />
             </S.SlideImage>
             <S.SlideContent>
               <S.SlideTitle>{book.title}</S.SlideTitle>
@@ -83,8 +87,12 @@ export default function BlogBestSellerCarousel({ items }) {
         <S.ControlButton onClick={goToNextSlide}>&gt;</S.ControlButton>
       </S.SlideControls>
       <S.SlideIndicators>
-        {items.map((_, index) => (
-          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} $active={index === currentSlide.toString()} />
+        {Array.from({ length: Math.ceil(items.length / 2) }).map((_, index) => (
+          <S.IndicatorButton
+            key={index}
+            onClick={() => goToSlide(index * 2)}
+            $active={index === Math.floor(currentSlide / 2)}
+          />
         ))}
       </S.SlideIndicators>
     </S.CarouselContainer>
