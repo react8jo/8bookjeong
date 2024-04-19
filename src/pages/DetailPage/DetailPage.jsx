@@ -61,7 +61,7 @@ function DetailPage() {
               <S.BookPriceSales>{`${book.item[0].priceSales.toLocaleString()}원`}</S.BookPriceSales>
               <S.BookPriceStandard>{`${book.item[0].priceStandard.toLocaleString()}원`}</S.BookPriceStandard>
             </S.PriceLine>
-            {/* <S.BookDescription>{book.item[0].description}</S.BookDescription> */}
+
             <S.BookReview>{`⭐️ ${book.item[0].customerReviewRank}.0`}</S.BookReview>
           </S.BookInfo>
 
@@ -79,8 +79,6 @@ function DetailPage() {
           </S.PaymentBenefitsContainer>
 
           <S.Line />
-          {/* <p>평점: {book.item[0].customerReviewRank}</p>
-          <p>가격: {book.item[0].priceSales}</p> */}
 
           <S.ButtonGroup>
             <S.Button>장바구니에 담기</S.Button>

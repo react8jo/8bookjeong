@@ -8,9 +8,9 @@ export const StyledDetailPage = styled.div`
   padding-top: 100px;
   // background-color: pink;
   color: rgb(137, 146, 39);
-  max-width: 1200px; // 최대 너비 설정
-  margin: 0 auto; // 자동 마진으로 중앙 정렬
-  width: 100%; // 전체 너비를 사용
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 `;
 
 export const BookImage = styled.img`
@@ -18,8 +18,8 @@ export const BookImage = styled.img`
   height: auto;
   margin-right: 40px;
   margin-bottom: 50px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // 그림자를 더 진하게 조정
-  transition: transform 0.4s ease-in-out; // 애니메이션 속도를 조금 느리게 조정
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease-in-out;
 
   &:hover {
     transform: scale(1.04);
@@ -81,16 +81,16 @@ export const PurchaseButton = styled(Button)`
   background-color: #1b3720;
 
   &:hover {
-    background-color: #21542a; // 호버시 배경색
+    background-color: #21542a;
   }
 `;
 
 export const Line = styled.hr`
   width: 100%;
   margin: 20px 0;
-  height: 2px; // 선의 굵기 조절
-  background-color: #aaa; // 중간 회색으로 설정
-  border: none; // 기본 테두리 제거
+  height: 2px;
+  background-color: #aaa;
+  border: none;
 `;
 
 export const Content = styled.p`
@@ -103,7 +103,7 @@ export const InfoHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 16px; // 간격 조절
+  margin-bottom: 16px;
 `;
 
 export const TaxDeductionLabel = styled.span`
@@ -163,7 +163,6 @@ export const PriceLine = styled.div`
 export const BookSalePercent = styled.p`
   margin-right: 8px;
   color: #c72d1b;
-  ${'' /* color: #4dac27; */}
   font-size: 16px;
   font-weight: bold;
 `;
@@ -188,7 +187,7 @@ export const BookPriceStandard = styled.p`
 export const BookDescription = styled.p`
   margin-top: 20px;
   color: #595959;
-  font-size: 16px; // 글씨 크기를 16px로 변경
+  font-size: 16px;
   line-height: 22px;
 `;
 
@@ -231,30 +230,30 @@ export const ProductInfoTable = styled.div`
   margin-top: 10px;
   margin-bottom: 20px;
   color: #333;
-  padding-bottom: 30px; // 전체 테이블의 하단에 패딩 추가
+  padding-bottom: 30px;
 
   table {
     width: 100%;
     border-collapse: collapse;
-    border-top: 2px solid #bbb; // 굵고 진한 상단 테두리
-    border-bottom: 2px solid #bbb; // 굵고 진한 하단 테두리
+    border-top: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
 
     th,
     td {
       padding: 8px;
       text-align: left;
-      border-left: none; // 양옆 테두리 없애기
+      border-left: none;
       border-right: none;
-      border-bottom: 1px solid #ccc; // 행 사이의 구분선 유지
+      border-bottom: 1px solid #ccc;
     }
 
     th {
-      background-color: #f8f8f8; // 헤더의 배경색을 연하게
+      background-color: #f8f8f8;
       // font-weight: 600;
     }
 
     td {
-      background-color: transparent; // td의 배경색을 투명하게 설정
+      background-color: transparent;
     }
   }
 `;
