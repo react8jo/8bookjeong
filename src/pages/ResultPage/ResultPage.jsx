@@ -10,6 +10,8 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 import axios from 'axios';
 import { useSearchParams } from 'react-router-dom';
+import Loading from '../../components/common/Loading/Loading';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
 
 const displayOptions = [
   { displayName: '10개', apiName: 10 },
@@ -113,11 +115,11 @@ export default function ResultPage() {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <NotFoundPage />;
   }
 
   return (
