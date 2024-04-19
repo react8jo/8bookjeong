@@ -42,6 +42,11 @@ export const TextEllipsis = styled.div`
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 `;
 
 export const BookCard = styled.div`
@@ -65,6 +70,10 @@ export const BookAdd = styled.button`
   &:hover {
     background-color: rgb(180, 190, 65);
   }
+
+  @media (max-width: 768px) {
+    margin-top: 5px;
+  }
 `;
 
 export const BookInfo = styled.div`
@@ -79,8 +88,21 @@ export const BookTag = styled.div`
   margin-top: 1em;
   font-size: small;
   color: gray;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const BookTagInfo = styled.div`
   margin-bottom: 5px;
+`;
+
+export const BookImgLayer = styled.div`
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
 `;

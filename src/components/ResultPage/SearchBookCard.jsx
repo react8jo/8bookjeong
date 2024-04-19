@@ -40,9 +40,9 @@ const BookCard = ({ book }) => {
   return (
     <S.BookContainer>
       <S.BookCard>
-        <div onClick={goToBookDetailPage} style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
+        <S.BookImgLayer onClick={goToBookDetailPage}>
           <img src={book.cover} alt={book.title} style={imgStyle} />
-        </div>
+        </S.BookImgLayer>
         <S.BookInfo>
           <S.TextEllipsis>{book.title}</S.TextEllipsis>
           <S.BookDetail>
