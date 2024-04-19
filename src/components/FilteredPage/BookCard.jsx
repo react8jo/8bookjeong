@@ -21,7 +21,7 @@ const BooksCard = ({ books }) => {
     <div>
       {books.map((book) => (
         <S.BookContainer key={book.itemId} onClick={() => goToBookDetailPage(book.isbn)}>
-          <S.BookImage src={book.cover} alt={book.title} />
+          <S.BookImage src={book.cover} alt='책제목' />
           <S.BookInfo>
             <S.BookTitle>{book.title}</S.BookTitle>
             <S.BookCategory>{book.categoryName}</S.BookCategory>
