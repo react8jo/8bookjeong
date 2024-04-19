@@ -34,14 +34,14 @@ const BookCard = ({ book }) => {
     }
   };
 
-  const handleMovieClick = () => {
+  const goToBookDetailPage = () => {
     navigate(`/products/${book.isbn}`);
   };
 
   return (
     <Container>
       <div className='bookCard'>
-        <div onClick={handleMovieClick} style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
+        <div onClick={goToBookDetailPage} style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
           <img src={book.cover} alt='Image' style={imgStyle} />
         </div>
         <div className='bootInfo'>
