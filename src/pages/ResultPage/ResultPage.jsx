@@ -98,8 +98,9 @@ export default function ResultPage() {
     if (end === Math.floor(data.totalResults / data.itemsPerPage)) {
       return;
     } else {
-      setPage(start + 6);
-      setStart(start + 6);
+      const newStart = start + 6;
+      setPage(newStart);
+      setStart(newStart);
       setEnd(end + 6);
     }
   };
@@ -108,8 +109,9 @@ export default function ResultPage() {
     if (start === 2) {
       return;
     } else {
-      setPage(start - 6);
-      setStart(start - 6);
+      const newStart = start - 6;
+      setPage(newStart);
+      setStart(newStart);
       setEnd(end - 6);
     }
   };

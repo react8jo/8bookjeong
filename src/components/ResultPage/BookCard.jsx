@@ -4,9 +4,11 @@ import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BookCard = ({ book }) => {
   const [imgStyle, setImgStyle] = useState({});
+  const navigate = useNavigate();
 
   const img = new Image();
   img.src = book.cover;
@@ -31,10 +33,15 @@ const BookCard = ({ book }) => {
       });
     }
   };
+
+  const goToBookDetailPage = () => {
+    navigate(`/products/${book.isbn}`);
+  };
+
   return (
     <Container>
       <div className='bookCard'>
-        <div style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
+        <div onClick={goToBookDetailPage} style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
           <img src={book.cover} alt='Image' style={imgStyle} />
         </div>
         <div className='bootInfo'>
@@ -51,9 +58,7 @@ const BookCard = ({ book }) => {
               <span className='bookSale'>{Number(book.priceStandard * 0.9).toLocaleString()}원</span>
               <span className='bookPrice'>{Number(book.priceStandard).toLocaleString()}원</span>
             </div>
-            <div>
-              <FontAwesomeIcon className='starIcon' icon={faStar} /> {book.customerReviewRank}.0
-            </div>
+            <div>⭐️ {book.customerReviewRank}.0</div>
           </div>
           <div className='bookAdd'>
             <button>찜하기</button>
