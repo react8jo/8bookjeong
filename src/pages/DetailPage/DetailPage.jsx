@@ -5,6 +5,7 @@ import { useBookDetailsQuery } from '../../hooks/useBookDetails';
 import ReturnExchangeTable from '../../components/DetailPage/DetailFooter/DetailFooter';
 import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
 import AddressChange from '../../components/DetailPage/AddressChange /AddressChange';
+import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 
 function DetailPage() {
   const { isbn13 } = useParams();
@@ -92,6 +93,7 @@ function DetailPage() {
           </S.ButtonGroup>
         </S.BookInfoContainer>
       </S.BookContent>
+      <AdBanner />
       <TabsComponent activeTab={activeTab} onTabClick={setActiveTab} />
       <div ref={bookInfoRef}>
         <S.Line />
