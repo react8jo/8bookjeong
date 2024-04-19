@@ -19,8 +19,6 @@ export const Logo = styled.img`
   margin: 0 1.5rem 0 1rem;
 
   @media (max-width: 768px) {
-    margin-bottom: 1rem;
-    margin-right: 0;
   }
 `;
 
@@ -33,6 +31,7 @@ export const SearchContainer = styled.form`
 
   @media (max-width: 768px) {
     margin-top: 1rem;
+    width: 375px;
   }
 `;
 
