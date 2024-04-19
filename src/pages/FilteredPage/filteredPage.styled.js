@@ -19,6 +19,10 @@ export const Categories = styled.div`
   padding-right: 30px;
   padding-top: 10px;
   font-size: 1.2rem;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 // 단일 카테고리
@@ -37,4 +41,13 @@ export const Category = styled.div`
 // 단일도서 리스트
 export const BookList = styled.div`
   flex: 1; // 남은 공간을 모두 차지
+
+  @media (max-width: 1024px) {
+    width: 700px;
+  }
+
+  @media (max-width: 768px) {
+    width: 375px;
+    padding: 5px;
+  }
 `;
