@@ -4,9 +4,10 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useBookSearchResultQuery } from '../../hooks/useBookSearchResult';
 
 import './ResultPage.style.css';
+import * as S from './ResultPage.styled';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import BookCard from '../../components/ResultPage/BookCard';
+import SearchBookCard from '../../components/ResultPage/SearchBookCard';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
@@ -35,6 +36,8 @@ export default function ResultPage() {
   const [maxOption, setMaxOption] = useState(10);
   const [activeMaxSortIndex, setMaxSortIndex] = useState(0);
   const [page, setPage] = useState(1);
+  const [startPage, setStartPage] = useState(2);
+  const [endPage, setEndPage] = useState(7);
 
   const query = q.get('query');
   const start = q.get('start');
@@ -45,9 +48,15 @@ export default function ResultPage() {
 
   const { data, isLoading, isError } = useBookSearchResultQuery({ query, start, maxResults, sort });
 
+  console.log('ResultPage ', data);
+
   const handleSortItemClick = (item, index) => {
     setSortOption(item.apiName);
     setActiveSortIndex(index);
+
+    setPage(1);
+    setStartPage(2);
+    setEndPage(7);
   };
 
   const handleMaxItemClick = (item, index) => {
@@ -56,36 +65,66 @@ export default function ResultPage() {
   };
 
   useEffect(() => {
-    navigate(`/result/?query=${query}&start=1&sort=${sortOption}&maxResults=${maxOption}`);
-  }, [sortOption, maxOption, navigate, query]);
+    navigate(`/result/?query=${query}&start=${page}&sort=${sortOption}&maxResults=${maxOption}`);
+  }, [sortOption, maxOption, navigate, query, page]);
 
   if (isLoading) {
     return <Loading />;
   }
-
   if (isError) {
     return <NotFoundPage />;
   }
 
+  const handlePageChange = (pageNumber) => {
+    setPage(pageNumber);
+  };
+
+  const handleNextPage = () => {
+    if (
+      Math.ceil(data.totalResults / data.itemsPerPage) <= endPage &&
+      startPage <= Math.ceil(data.totalResults / data.itemsPerPage)
+    ) {
+      return;
+    } else {
+      const newStart = startPage + 6;
+      const newEnd = endPage + 6;
+      setPage(newStart);
+      setStartPage(newStart);
+      setEndPage(newEnd);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (startPage === 2) {
+      return;
+    } else {
+      const newStart = startPage - 6;
+      const newEnd = endPage - 6;
+      setPage(newStart);
+      setStartPage(newStart);
+      setEndPage(newEnd);
+    }
+  };
+
   return (
     <div className='text'>
-      <div className='searchCount'>
+      <S.SearchCount>
         <h4>
-          <span className='searchQuery'>{data && data.query}</span> 검색 결과: 총{' '}
+          <S.SearchQuery>{data && data.query}</S.SearchQuery> 검색 결과: 총{' '}
           {data && data.totalResults && data.totalResults.toLocaleString()}건
         </h4>
-      </div>
-      <div className='sortArea'>
-        <ul className='sortItems'>
+      </S.SearchCount>
+      <S.SortArea>
+        <ul>
           {sortOptions.map((item, index) => (
-            <li
-              className={`sortItem ${index === activeSortIndex ? 'active' : ''}`}
+            <S.SortItem
+              className={`${index === activeSortIndex ? 'active' : ''}`}
               onClick={() => {
                 handleSortItemClick(item, index);
               }}
               key={item.apiName}>
               {item.displayName}
-            </li>
+            </S.SortItem>
           ))}
         </ul>
         <DropdownButton
@@ -98,16 +137,52 @@ export default function ResultPage() {
             </Dropdown.Item>
           ))}
         </DropdownButton>
-      </div>
+      </S.SortArea>
       <div>
         <Row>
-          {data.item &&
+          {data &&
+            data.item &&
             data.item.map((item, index) => (
               <Col key={index} lg={6} sm={12} className='bookCard'>
-                <BookCard book={item} />
+                <SearchBookCard book={item} />
               </Col>
             ))}
         </Row>
+      </div>
+      <div className='paginationArea'>
+        <span className='pageMove' onClick={handlePrevPage}>
+          &#60;
+        </span>
+        <span className={page === 1 ? 'pageActive' : ''} onClick={() => handlePageChange(1)}>
+          1
+        </span>
+        {startPage !== 2 && <span>...</span>}
+        {Array.from(
+          { length: Math.min(endPage, Math.ceil(data.totalResults / data.itemsPerPage) - 1) - startPage + 1 },
+          (_, i) => {
+            const pageNumber = startPage + i;
+            return (
+              <span
+                key={pageNumber}
+                className={pageNumber === data.startIndex ? 'pageActive' : ''}
+                onClick={() => handlePageChange(pageNumber)}>
+                {pageNumber}
+              </span>
+            );
+          }
+        )}
+        {!(
+          Math.ceil(data.totalResults / data.itemsPerPage) <= endPage &&
+          startPage <= Math.ceil(data.totalResults / data.itemsPerPage)
+        ) && <span>...</span>}
+        <span
+          className={page === Math.ceil(data.totalResults / data.itemsPerPage) ? 'pageActive' : ''}
+          onClick={() => handlePageChange(Math.ceil(data.totalResults / data.itemsPerPage))}>
+          {Math.ceil(data.totalResults / data.itemsPerPage)}
+        </span>
+        <span className='pageMove' onClick={handleNextPage}>
+          &#62;
+        </span>
       </div>
     </div>
   );
