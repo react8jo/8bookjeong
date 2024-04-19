@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { useBookDetailsQuery } from '../../hooks/useBookDetails';
 import ReturnExchangeTable from '../../components/DetailPage/DetailFooter/DetailFooter';
 import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
+import AddressChange from '../../components/DetailPage/AddressChange /AddressChange';
 
 function DetailPage() {
   const { isbn13 } = useParams();
@@ -11,6 +12,7 @@ function DetailPage() {
   const [activeTab, setActiveTab] = useState('bookInfo');
   const bookInfoRef = useRef(null);
   const deliveryRef = useRef(null);
+  const [address, setAddress] = useState('기본 주소');
 
   useEffect(() => {
     if (book) {
@@ -76,7 +78,10 @@ function DetailPage() {
             <S.PaymentBenefitsDescription>
               서울특별시 영등포구 은행로 11(여의도동,일신빌딩){' '}
             </S.PaymentBenefitsDescription>
-            <S.AddressChange>지역변경 {'▾'}</S.AddressChange>
+            <div>
+              <h2>주소: {address}</h2>
+              <AddressChange setAddress={setAddress} />
+            </div>
           </S.PaymentBenefitsContainer>
 
           <S.Line />
