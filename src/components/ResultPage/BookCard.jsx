@@ -3,27 +3,44 @@ import './BookCard.style.css';
 import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 
 const BookCard = ({ book }) => {
+  const [imgStyle, setImgStyle] = useState({});
+
+  const img = new Image();
+  img.src = book.cover;
+  img.onload = () => {
+    const divAspect = 200 / 350;
+    const imgAspect = img.height / img.width;
+
+    if (imgAspect <= divAspect) {
+      const imgWidthActual = (window.innerHeight * img.width) / img.height;
+      const imgWidthToBe = (window.innerHeight * 200) / 350;
+      const marginLeft = -Math.round((imgWidthActual - imgWidthToBe) / 2);
+      setImgStyle({
+        width: 'auto',
+        height: '100%',
+        marginLeft: `${marginLeft}px`
+      });
+    } else {
+      setImgStyle({
+        width: '100%',
+        height: 'auto',
+        marginLeft: '0'
+      });
+    }
+  };
   return (
     <Container>
       <div className='bookCard'>
-        <div className='bookImg'>
-          <img
-            alt='bookImg'
-            src={
-              book.cover === 'https://image.aladin.co.kr/img/noimg_b.gif'
-                ? 'https://pho24smyrna.net/wp-content/plugins/clover-online-orders/public/img/noImg.png'
-                : book.cover
-            }
-            style={{ height: '100%' }}
-          />
+        <div style={{ width: '200px', height: '300px', overflow: 'hidden' }}>
+          <img src={book.cover} alt='Image' style={imgStyle} />
         </div>
         <div className='bootInfo'>
           <div className='textEllipsis'>{book.title}</div>
           <div className='bookDetailInfo'>
             <div>{book.author}</div>
-            <div>{book.searchCategoryName}</div>
             <div>
               {book.pubDate} / {book.publisher}
             </div>

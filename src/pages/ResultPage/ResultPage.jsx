@@ -36,9 +36,11 @@ export default function ResultPage() {
   const [selectedItem, setSelectedItem] = useState(displayOptions[0]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [activeSortIndex, setActiveSortIndex] = useState(0);
 
-  const handleItemClick = (item) => {
+  const handleItemClick = (item, index) => {
     setSelectedItem(item);
+    setActiveSortIndex(index);
   };
 
   const keyword = query.get('q');
@@ -87,7 +89,6 @@ export default function ResultPage() {
   console.log('ResultPage ', data);
 
   const handlePageChange = (pageNumber) => {
-    console.log(pageNumber);
     setPage(pageNumber);
   };
 
@@ -131,17 +132,9 @@ export default function ResultPage() {
         <ul className='sortItems'>
           {sortOptions.map((item, index) => (
             <li
-              className={`sortItem ${index === 0 ? 'active' : ''}`}
-              onClick={(event) => {
-                const sortItems = document.querySelectorAll('.sortItem');
-                sortItems.forEach((element, idx) => {
-                  if (idx === index) {
-                    element.classList.add('active');
-                  } else {
-                    element.classList.remove('active');
-                  }
-                });
-                console.log(item.apiName);
+              className={`sortItem ${index === activeSortIndex ? 'active' : ''}`}
+              onClick={() => {
+                handleItemClick(item, index);
                 setSortOption(item.apiName);
               }}
               key={item.apiName}>
@@ -167,7 +160,7 @@ export default function ResultPage() {
             ))}
         </Row>
       </div>
-      <div className='pagenationArea'>
+      <div className='paginationArea'>
         <span className='pageMove' onClick={() => handlePrevPage()}>
           &#60;
         </span>

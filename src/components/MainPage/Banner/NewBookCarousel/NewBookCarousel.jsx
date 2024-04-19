@@ -5,16 +5,16 @@ export default function NewBookCarousel({ items }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const colors = [
-    'rgb(106, 176, 76)',
-    'rgb(38,51,160)',
-    'rgb(253, 121, 168)',
-    'rgb(112, 141, 228)',
-    'rgb(245,99,91)',
-    'rgb(162, 155, 254)',
-    'rgb(255, 196, 0)',
-    'rgb(191,136,175)',
-    'rgb(190,220,238)',
-    'rgb(255, 118, 117)'
+    'rgb(20, 30, 80)',
+    'rgb(90, 65, 85)',
+    'rgb(90, 110, 120)',
+    'rgb(120, 60, 80)',
+    'rgb(50, 70, 110)',
+    'rgb(110, 50, 45)',
+    'rgb(80, 75, 120)',
+    'rgb(120, 90, 0)',
+    'rgb(40, 70, 30)',
+    'rgb(120, 60, 60)'
   ];
 
   useEffect(() => {

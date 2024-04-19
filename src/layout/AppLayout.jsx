@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-import { Autocomplete } from '../components/ResultPage/SearchBar';
 
 const AppLayout = () => {
   const [keyword, setKeyword] = useState('');
@@ -15,7 +14,6 @@ const AppLayout = () => {
   const searchByKeyword = (e) => {
     e.preventDefault();
     navigate(`/result?q=${keyword}`);
-    setKeyword('');
   };
 
   const activeEnter = (e) => {
@@ -23,6 +21,11 @@ const AppLayout = () => {
     if (e.key === 'Enter') {
       searchByKeyword(e);
     }
+  };
+
+  const deleteKeyword = () => {
+    console.log('deleteKeyword');
+    setKeyword('');
   };
 
   return (
@@ -39,13 +42,13 @@ const AppLayout = () => {
             onChange={(event) => setKeyword(event.target.value)}
             onKeyDown={(e) => activeEnter(e)}
             type='text'
-            placeholder='도서를 검색하세요'
+            placeholder='도서/작가를 검색하세요'
+            value={keyword}
           />
-          <S.DeleteIcon>
+          <S.DeleteIcon onClick={() => deleteKeyword()}>
             <FontAwesomeIcon icon={faCircleXmark} />
           </S.DeleteIcon>
         </S.SearchContainer>
-        <Autocomplete />
       </S.Navbar>
       <Outlet />
       <Footer />
