@@ -4,7 +4,7 @@
 }
 
 .searchQuery {
-  color: blue;
+  color: rgb(137, 146, 39);
   font-weight: bold;
   font-size: large;
 }
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 .active {
-  color: blue;
+  color: rgb(137, 146, 39);
   font-weight: bold;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .paginationArea span.pageActive {
-  color: blue;
+  color: rgb(137, 146, 39);
   font-weight: bold;
   padding: 0.2em 0.5em;
   border: 1px solid #ccc;
