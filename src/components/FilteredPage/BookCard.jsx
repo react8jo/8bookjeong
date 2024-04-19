@@ -5,6 +5,7 @@ import * as S from './bookCard.styled';
 
 const BooksCard = ({ books }) => {
   const navigate = useNavigate();
+
   if (!books || books.length === 0)
     return (
       <p>
@@ -21,7 +22,7 @@ const BooksCard = ({ books }) => {
     <div>
       {books.map((book) => (
         <S.BookContainer key={book.itemId} onClick={() => goToBookDetailPage(book.isbn)}>
-          <S.BookCover src={book.cover} alt='책제목' />
+          <S.BookCover backgroundImage={book.cover} />
           <S.BookInfo>
             <S.BookTitle>{book.title}</S.BookTitle>
             <S.BookCategory>{book.categoryName}</S.BookCategory>

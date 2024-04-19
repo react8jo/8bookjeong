@@ -29,16 +29,23 @@ export const BookContainer = styled.div`
 `;
 
 // 도서 이미지
-export const BookCover = styled.img`
+export const BookCover = styled.div`
   width: 148px;
-  height: auto;
+  height: 200px;
   margin-right: 16px;
+  background-image: url(${(props) => props.backgroundImage});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @media (max-width: 1024px) {
     width: 100px;
+    height: 150px;
   }
+
   @media (max-width: 768px) {
     width: 80px;
+    height: 120px;
     margin: 16px;
   }
 `;
