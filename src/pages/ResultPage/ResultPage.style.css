@@ -2,13 +2,10 @@
   margin-top: 1em;
 }
 
-.space {
-  margin: 10em;
-}
-
 .paginationArea {
+  margin-top: 2em;
+  margin-bottom: 3em;
   text-align: center;
-  margin-top: 3em;
 }
 .paginationArea span {
   cursor: pointer;

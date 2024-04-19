@@ -36,6 +36,8 @@ export default function ResultPage() {
   const [maxOption, setMaxOption] = useState(10);
   const [activeMaxSortIndex, setMaxSortIndex] = useState(0);
   const [page, setPage] = useState(1);
+  const [startPage, setStartPage] = useState(2);
+  const [endPage, setEndPage] = useState(7);
 
   const query = q.get('query');
   const start = q.get('start');
@@ -46,9 +48,15 @@ export default function ResultPage() {
 
   const { data, isLoading, isError } = useBookSearchResultQuery({ query, start, maxResults, sort });
 
+  console.log('ResultPage ', data);
+
   const handleSortItemClick = (item, index) => {
     setSortOption(item.apiName);
     setActiveSortIndex(index);
+
+    setPage(1);
+    setStartPage(2);
+    setEndPage(7);
   };
 
   const handleMaxItemClick = (item, index) => {
@@ -57,8 +65,8 @@ export default function ResultPage() {
   };
 
   useEffect(() => {
-    navigate(`/result/?query=${query}&start=1&sort=${sortOption}&maxResults=${maxOption}`);
-  }, [sortOption, maxOption, navigate, query]);
+    navigate(`/result/?query=${query}&start=${page}&sort=${sortOption}&maxResults=${maxOption}`);
+  }, [sortOption, maxOption, navigate, query, page]);
 
   if (isLoading) {
     return <Loading />;
@@ -66,6 +74,37 @@ export default function ResultPage() {
   if (isError) {
     return <NotFoundPage />;
   }
+
+  const handlePageChange = (pageNumber) => {
+    setPage(pageNumber);
+  };
+
+  const handleNextPage = () => {
+    if (
+      Math.ceil(data.totalResults / data.itemsPerPage) <= endPage &&
+      startPage <= Math.ceil(data.totalResults / data.itemsPerPage)
+    ) {
+      return;
+    } else {
+      const newStart = startPage + 6;
+      const newEnd = endPage + 6;
+      setPage(newStart);
+      setStartPage(newStart);
+      setEndPage(newEnd);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (startPage === 2) {
+      return;
+    } else {
+      const newStart = startPage - 6;
+      const newEnd = endPage - 6;
+      setPage(newStart);
+      setStartPage(newStart);
+      setEndPage(newEnd);
+    }
+  };
 
   return (
     <div className='text'>
@@ -109,6 +148,41 @@ export default function ResultPage() {
               </Col>
             ))}
         </Row>
+      </div>
+      <div className='paginationArea'>
+        <span className='pageMove' onClick={handlePrevPage}>
+          &#60;
+        </span>
+        <span className={page === 1 ? 'pageActive' : ''} onClick={() => handlePageChange(1)}>
+          1
+        </span>
+        {startPage !== 2 && <span>...</span>}
+        {Array.from(
+          { length: Math.min(endPage, Math.ceil(data.totalResults / data.itemsPerPage) - 1) - startPage + 1 },
+          (_, i) => {
+            const pageNumber = startPage + i;
+            return (
+              <span
+                key={pageNumber}
+                className={pageNumber === data.startIndex ? 'pageActive' : ''}
+                onClick={() => handlePageChange(pageNumber)}>
+                {pageNumber}
+              </span>
+            );
+          }
+        )}
+        {!(
+          Math.ceil(data.totalResults / data.itemsPerPage) <= endPage &&
+          startPage <= Math.ceil(data.totalResults / data.itemsPerPage)
+        ) && <span>...</span>}
+        <span
+          className={page === Math.ceil(data.totalResults / data.itemsPerPage) ? 'pageActive' : ''}
+          onClick={() => handlePageChange(Math.ceil(data.totalResults / data.itemsPerPage))}>
+          {Math.ceil(data.totalResults / data.itemsPerPage)}
+        </span>
+        <span className='pageMove' onClick={handleNextPage}>
+          &#62;
+        </span>
       </div>
     </div>
   );

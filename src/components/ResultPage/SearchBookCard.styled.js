@@ -74,3 +74,13 @@ export const BookInfo = styled.div`
 export const BookContainer = styled.div`
   margin: 1em;
 `;
+
+export const BookTag = styled.div`
+  margin-top: 1em;
+  font-size: small;
+  color: gray;
+`;
+
+export const BookTagInfo = styled.div`
+  margin-bottom: 5px;
+`;

@@ -51,6 +51,10 @@ const BookCard = ({ book }) => {
               {book.pubDate} / {book.publisher}
             </S.BookDetailInfo>
           </S.BookDetail>
+          <S.BookTag>
+            <S.BookTagInfo># {book.categoryName.split('>')[book.categoryName.split('>').length - 1]}</S.BookTagInfo>
+            <S.BookTagInfo># {book.adult ? '성인' : '전체 연령'}</S.BookTagInfo>
+          </S.BookTag>
           <S.BookSub>
             <S.BookSubInfo>
               <S.BookSalePercent>10%</S.BookSalePercent>

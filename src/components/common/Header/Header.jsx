@@ -18,14 +18,12 @@ const Header = () => {
   };
 
   const activeEnter = (e) => {
-    console.log('activeEnter');
     if (e.key === 'Enter') {
       searchByKeyword(e);
     }
   };
 
   const deleteKeyword = () => {
-    console.log('deleteKeyword');
     setKeyword('');
   };
 
