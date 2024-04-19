@@ -34,7 +34,7 @@ const BookCard = ({ book }) => {
   return (
     <Container>
       <div className='bookCard'>
-        <div style={{ width: '200px', height: '300px', overflow: 'hidden' }}>
+        <div style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
           <img src={book.cover} alt='Image' style={imgStyle} />
         </div>
         <div className='bootInfo'>
