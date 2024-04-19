@@ -69,11 +69,13 @@ export default function ResultPage() {
     setSortOption('Accuracy');
     setPage(1);
     getBookInfo();
+
   }, [keyword, getBookInfo]);
 
   useEffect(() => {
     setPage(1);
     getBookInfo();
+
   }, [sortOption, getBookInfo]);
 
   useEffect(() => {
@@ -84,6 +86,7 @@ export default function ResultPage() {
     setPage(1);
     getBookInfo();
   }, [selectedItem, getBookInfo]);
+
 
   console.log('ResultPage ', data);
 

@@ -36,7 +36,7 @@ export const BookAuthor = styled.div`
 `;
 
 export const BestsellerBookCardimg = styled.div`
-  background-image: url(${(props) => props.backgroundImage});
+  background-image: url(${(props) => props.$backgroundImage});
   position: relative;
   width: 100%;
   height: auto;

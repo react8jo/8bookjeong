@@ -19,6 +19,7 @@ const BooksCard = ({ books }) => {
 
   return (
     <div>
+
       {books.map((book) => (
         <S.BookContainer key={book.itemId} onClick={() => goToBookDetailPage(book.isbn)}>
           <S.BookCover src={book.cover} alt={book.title} />
