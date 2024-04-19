@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import 'react-multi-carousel/lib/styles.css';
 import { useBookListQuery } from '../../../hooks/useBookList';
-import './ChoiceBook.style.css';
+// import './ChoiceBook.style.css';
 import ChoiceBookSlider from './ChoiceBookSlider';
 import { Button } from 'react-bootstrap';
 import Loading from '../../common/Loading/Loading';
+import * as S from './ChoiceBook.styled';
 
 const ChoiceBook = () => {
   ////////////////////////////// 2. 상품 리스트 API //ItemList.aspx //////////////////////////////
@@ -37,18 +38,33 @@ const ChoiceBook = () => {
   //   }
   // }, [bookList]);
 
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 4
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 464 },
+  //     items: 2
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 464, min: 0 },
+  //     items: 1,
+  //     slidesToSlide: 1
+  //   }
+  // };
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1400 },
       items: 4
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2
+      breakpoint: { max: 1400, min: 1000 },
+      items: 3
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
+      breakpoint: { max: 1000, min: 0 },
+      items: 2,
       slidesToSlide: 1
     }
   };
@@ -65,7 +81,43 @@ const ChoiceBook = () => {
   };
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <S.Title>
+        <S.TitleName>추천</S.TitleName>
+        <S.ButtonList>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('0')}>
+            종합
+          </S.CategoryButton>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('1')}>
+            소설/시
+          </S.CategoryButton>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('170')}>
+            경제/경영
+          </S.CategoryButton>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('336')}>
+            자기계발
+          </S.CategoryButton>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('656')}>
+            인문/교양
+          </S.CategoryButton>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('1196')}>
+            여행
+          </S.CategoryButton>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('2913')}>
+            매거진
+          </S.CategoryButton>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('517')}>
+            예술/문화
+          </S.CategoryButton>
+          <S.CategoryButton variant='success' onClick={() => handleBookList('2551')}>
+            만화
+          </S.CategoryButton>
+          <div>
+            <Loading />
+          </div>
+        </S.ButtonList>
+      </S.Title>
+    );
   }
 
   if (isError) {
@@ -73,36 +125,42 @@ const ChoiceBook = () => {
   }
 
   return (
-    <div className='title'>
-      <h3>추천</h3>
-      <Button variant='success' onClick={() => handleBookList('0')}>
-        종합
-      </Button>
-      <Button variant='success' onClick={() => handleBookList('1')}>
-        소설/시
-      </Button>
-      <Button variant='success' onClick={() => handleBookList('170')}>
-        경제/경영
-      </Button>
-      <Button variant='success' onClick={() => handleBookList('336')}>
-        자기계발
-      </Button>
-      <Button variant='success' onClick={() => handleBookList('656')}>
-        인문/교양
-      </Button>
-      <Button variant='success' onClick={() => handleBookList('1196')}>
-        여행
-      </Button>
-      <Button variant='success' onClick={() => handleBookList('2913')}>
-        매거진
-      </Button>
-      <Button variant='success' onClick={() => handleBookList('517')}>
-        예술/문화
-      </Button>
-      <Button variant='success' onClick={() => handleBookList('2551')}>
-        만화
-      </Button>
-      {bookList && <ChoiceBookSlider title={'추천'} books={bookList?.item} responsive={responsive} />}
+    <div>
+      {bookList && (
+        <S.Title>
+          <S.TitleName>추천</S.TitleName>
+          <S.ButtonList>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('0')}>
+              종합
+            </S.CategoryButton>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('1')}>
+              소설/시
+            </S.CategoryButton>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('170')}>
+              경제/경영
+            </S.CategoryButton>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('336')}>
+              자기계발
+            </S.CategoryButton>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('656')}>
+              인문/교양
+            </S.CategoryButton>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('1196')}>
+              여행
+            </S.CategoryButton>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('2913')}>
+              매거진
+            </S.CategoryButton>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('517')}>
+              예술/문화
+            </S.CategoryButton>
+            <S.CategoryButton variant='success' onClick={() => handleBookList('2551')}>
+              만화
+            </S.CategoryButton>
+          </S.ButtonList>
+          {bookList && <ChoiceBookSlider title={'추천'} books={bookList?.item} responsive={responsive} />}
+        </S.Title>
+      )}
     </div>
   );
 };

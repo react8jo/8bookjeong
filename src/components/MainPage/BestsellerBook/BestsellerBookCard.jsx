@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './BestsellerBookCard.style.css';
+// import './BestsellerBookCard.style.css';
 import { useNavigate } from 'react-router-dom';
+import * as S from './bestsellerBookCard.styled';
 
 const BestsellerBookCard = ({ book, rank, isUpComing }) => {
   // useEffect(() => {
@@ -34,19 +35,13 @@ const BestsellerBookCard = ({ book, rank, isUpComing }) => {
   }, [book]);
 
   return (
-    <div className='BestsellerBookCard'>
-      <div
-        className='BestsellerBookCardimg'
-        style={{
-          backgroundImage: `url(${book.cover})`
-        }}
-        onClick={() => goToBookDetailPage(book.isbn)}>
-        {rank && <h4 className='ranking'>{rank}</h4>}
-        <div className='overlay'>{/* <h5>{book.title}</h5> */}</div>
-      </div>
-      <div className='book-title'>{title}</div>
-      <div className='book-author'>{author}</div>
-    </div>
+    <S.BestsellerBookCard>
+      <S.BestsellerBookCardimg backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
+        {rank && <S.Ranking>{rank}</S.Ranking>}
+      </S.BestsellerBookCardimg>
+      <S.BookTitle>{title}</S.BookTitle>
+      <S.BookAuthor>{author}</S.BookAuthor>
+    </S.BestsellerBookCard>
   );
 };
 

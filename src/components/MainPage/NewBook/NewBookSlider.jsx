@@ -3,12 +3,14 @@ import './NewBookSlider.style.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import NewBookCard from './NewBookCard';
+import * as S from './NewBookSlider.styled';
 
 const NewBookSlider = ({ title, books, responsive }) => {
   // console.log('books', books);
 
   return (
-    <section className='NewBookSlider'>
+    <S.NewBookSlider>
+      {/* <section> */}
       {books && (
         <Carousel
           infinite={false}
@@ -41,7 +43,8 @@ const NewBookSlider = ({ title, books, responsive }) => {
           </div>
         </Carousel>
       )}
-    </section>
+      {/* </section> */}
+    </S.NewBookSlider>
   );
 };
 
