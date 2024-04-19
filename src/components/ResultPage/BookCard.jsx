@@ -4,9 +4,11 @@ import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const BookCard = ({ book }) => {
   const [imgStyle, setImgStyle] = useState({});
+  const navigate = useNavigate();
 
   const img = new Image();
   img.src = book.cover;
@@ -31,10 +33,15 @@ const BookCard = ({ book }) => {
       });
     }
   };
+
+  const handleMovieClick = () => {
+    navigate(`/products/${book.isbn}`);
+  };
+
   return (
     <Container>
       <div className='bookCard'>
-        <div style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
+        <div onClick={handleMovieClick} style={{ width: '300px', height: '400px', overflow: 'hidden' }}>
           <img src={book.cover} alt='Image' style={imgStyle} />
         </div>
         <div className='bootInfo'>
