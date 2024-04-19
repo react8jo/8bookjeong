@@ -19,8 +19,8 @@ const BooksCard = ({ books }) => {
 
   return (
     <div>
-      {books.map((book) => (
-        <S.BookContainer key={book.itemId} onClick={() => goToBookDetailPage(book.isbn)}>
+      {books.map((book, index) => (
+        <S.BookContainer key={index} onClick={() => goToBookDetailPage(book.isbn)}>
           <S.BookImage src={book.cover} alt={`${book.title} 표지`} />
           <S.BookInfo>
             <S.BookTitle>{book.title}</S.BookTitle>

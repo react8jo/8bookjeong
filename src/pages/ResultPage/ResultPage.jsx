@@ -72,20 +72,24 @@ export default function ResultPage() {
     setSortOption('Accuracy');
     setPage(1);
     getBookInfo();
+    // eslint-disable-next-line
   }, [keyword]);
 
   useEffect(() => {
     setPage(1);
     getBookInfo();
+    // eslint-disable-next-line
   }, [sortOption]);
 
   useEffect(() => {
     getBookInfo();
+    // eslint-disable-next-line
   }, [page]);
 
   useEffect(() => {
     setPage(1);
     getBookInfo();
+    // eslint-disable-next-line
   }, [selectedItem]);
 
   console.log('ResultPage ', data);

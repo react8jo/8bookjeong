@@ -20,9 +20,8 @@ const BestsellerBookSlider = ({ title, books, responsive, isRank }) => {
         containerClass='carousel-container'
         responsive={responsive}
         dotListClass='custom-dot-list-style'>
-        {books?.map((book, index) => (
-          <BestsellerBookCard key={book.isbn} book={book} rank={isRank && index + 1} />
-        ))}
+        {books &&
+          books.map((book, index) => <BestsellerBookCard key={book.isbn} book={book} rank={isRank && index + 1} />)}
       </Carousel>
     </S.BestsellerBookSlider>
   );
