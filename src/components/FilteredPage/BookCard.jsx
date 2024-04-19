@@ -1,13 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Nodata from '../../components/common/Nodata/Nodata';
 import * as S from './bookCard.styled';
 
 const BooksCard = ({ books }) => {
-  if (!books || books.length === 0) return <p>No books found.</p>;
+  const navigate = useNavigate();
+  if (!books || books.length === 0)
+    return (
+      <p>
+        <Nodata />
+      </p>
+    );
+
+  const goToBookDetailPage = (isbn) => {
+    console.log(isbn);
+    navigate(`/products/${isbn}`);
+  };
 
   return (
     <div>
       {books.map((book) => (
-        <S.BookContainer key={book.itemId}>
+        <S.BookContainer key={book.itemId} onClick={() => goToBookDetailPage(book.isbn)}>
           <S.BookImage src={book.cover} alt={`${book.title} 표지`} />
           <S.BookInfo>
             <S.BookTitle>{book.title}</S.BookTitle>
