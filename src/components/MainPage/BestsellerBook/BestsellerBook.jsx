@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'react-multi-carousel/lib/styles.css';
 import { useBookListQuery } from '../../../hooks/useBookList';
-import './BestsellerBook.style.css';
+// import './BestsellerBook.style.css';
 import BestsellerBookSlider from './BestsellerBookSlider';
+import * as S from './bestsellerBook.styled';
 
 const BestsellerBook = () => {
   ////////////////////////////// 2. 상품 리스트 API //ItemList.aspx //////////////////////////////
@@ -44,12 +45,18 @@ const BestsellerBook = () => {
   };
 
   return (
-    <div className='title'>
-      <h1>{'베스트셀러'}</h1>
+    // <div className='title'>
+    //   <h1>{'베스트셀러'}</h1>
+    //   {bookList && (
+    //     <BestsellerBookSlider title={'베스트셀러'} books={bookList?.item} isRank={true} responsive={responsive} />
+    //   )}
+    // </div>
+    <S.Title>
+      <S.TitleName>{'베스트셀러'}</S.TitleName>
       {bookList && (
         <BestsellerBookSlider title={'베스트셀러'} books={bookList?.item} isRank={true} responsive={responsive} />
       )}
-    </div>
+    </S.Title>
   );
 };
 

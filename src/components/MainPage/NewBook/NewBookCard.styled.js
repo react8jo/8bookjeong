@@ -7,11 +7,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 export default GlobalStyle;
 
-export const BestsellerBookCard = styled.div`
-  margin-right: 30px;
-  cursor: pointer;
-`;
-
 export const BookTitle = styled.div`
   font-size: 15px;
   font-weight: 600;
@@ -33,12 +28,13 @@ export const BookAuthor = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  margin-bottom: 30px;
 `;
 
-export const BestsellerBookCardimg = styled.div`
-  background-image: url(${(props) => props.backgroundImage});
+export const NewBookCardimg = styled.div`
+  background-image: url(${(props) => props.backgroundImage});  
   position: relative;
-  width: 100%;
+  width: 50%;
   height: auto;
   aspect-ratio: 300 / 450;
   border: none;
@@ -51,14 +47,19 @@ export const BestsellerBookCardimg = styled.div`
 }
 `;
 
-export const Ranking = styled.h4`
+export const NewBookTag = styled.h4`
   position: absolute;
-  bottom: 0px;
-  left: -20px;
+  top: -10px;
+  left: -10px;
   z-index: 1;
-  font-family: 'Anton', sans-serif;
-  font-size: 100%;
-  line-height: 1;
-  color: white;
-  text-shadow: 0 3px 6px rgb(0, 0, 0);
+  color: #fff;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4vw;
+  height: 4vw;
+  font-size: 1.3vw;
+  background: #29c552;
 `;
