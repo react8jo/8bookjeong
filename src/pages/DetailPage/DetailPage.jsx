@@ -76,6 +76,7 @@ function DetailPage() {
             <S.PaymentBenefitsDescription>
               서울특별시 영등포구 은행로 11(여의도동,일신빌딩){' '}
             </S.PaymentBenefitsDescription>
+            <S.AddressChange>지역변경 {'▾'}</S.AddressChange>
           </S.PaymentBenefitsContainer>
 
           <S.Line />

@@ -6,14 +6,14 @@ const NewBookCard = ({ book }) => {
   const navigate = useNavigate();
 
   const goToBookDetailPage = (isbn) => {
-    console.log(book); // 콘솔에 도서 정보 출력
+    console.log(book); // 도서 정보를 콘솔에 출력
     navigate(`/products/${isbn}`);
   };
 
-  function getSubstringBeforeWord(inputString, word) {
+  const getSubstringBeforeWord = (inputString, word) => {
     const index = inputString.indexOf(word);
     return index !== -1 ? inputString.substring(0, index) : inputString;
-  }
+  };
 
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -27,12 +27,12 @@ const NewBookCard = ({ book }) => {
 
   return (
     <div>
-      <S.NewBookCardimg $backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
+      <S.NewBookCardImg $backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
         <S.NewBookTag>NEW</S.NewBookTag>
       </S.NewBookCardImg>
       <S.BookTitle>{title}</S.BookTitle>
       <S.BookAuthor>{author}</S.BookAuthor>
-    </S.NewBookCard>
+    </div>
   );
 };
 

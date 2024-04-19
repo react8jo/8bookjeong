@@ -257,3 +257,25 @@ export const ProductInfoTable = styled.div`
     }
   }
 `;
+
+export const AddressChange = styled.button`
+  background-color: #f0f0f0; // 배경색
+  color: #333; // 글자색
+  padding: 10px 20px; // 패딩
+  font-size: 16px; // 글자 크기
+  border: none; // 테두리 없음
+  border-radius: 5px; // 테두리 둥글게
+  cursor: pointer; // 커서 모양 변경
+  transition:
+    background-color 0.3s,
+    color 0.3s; // 배경색과 글자색의 변화 애니메이션
+
+  &:hover {
+    background-color: #e1e1e1; // 호버 시 배경색
+    color: #000; // 호버 시 글자색
+  }
+
+  &:focus {
+    outline: none; // 포커스 시 외곽선 제거
+  }
+`;
