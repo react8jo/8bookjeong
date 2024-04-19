@@ -58,9 +58,7 @@ const BookCard = ({ book }) => {
               <span className='bookSale'>{Number(book.priceStandard * 0.9).toLocaleString()}원</span>
               <span className='bookPrice'>{Number(book.priceStandard).toLocaleString()}원</span>
             </div>
-            <div>
-              <FontAwesomeIcon className='starIcon' icon={faStar} /> {book.customerReviewRank}.0
-            </div>
+            <div>⭐️ {book.customerReviewRank}.0</div>
           </div>
           <div className='bookAdd'>
             <button>찜하기</button>
