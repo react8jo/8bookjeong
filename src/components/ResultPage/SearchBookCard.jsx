@@ -42,7 +42,7 @@ const BookCard = ({ book }) => {
     <S.BookContainer>
       <S.BookCard>
         <S.BookImgLayer onClick={goToBookDetailPage}>
-          <img src={book.cover} alt={book.title} style={imgStyle} />
+          <S.BookCover src={book.cover} alt={book.title} style={imgStyle} />
         </S.BookImgLayer>
         <S.BookInfo>
           <S.TextEllipsis>{book.title}</S.TextEllipsis>
