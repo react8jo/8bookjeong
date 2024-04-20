@@ -189,6 +189,8 @@ export default function ResultPage() {
           breakLabel='...'
           pageCount={totalPages}
           onPageChange={handlePageClick}
+          pageRangeDisplayed={isMobile ? 2 : 3}
+          marginPagesDisplayed={isMobile ? 1 : 2}
           forcePage={start - 1}
           containerClassName='pagination'
           pageClassName='page-item'
