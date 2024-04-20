@@ -38,7 +38,8 @@ const BooksCard = ({ books }) => {
               <S.BookPriceStandard>{`${book.priceStandard.toLocaleString()}원`}</S.BookPriceStandard>
             </S.PriceLine>
             <S.BookDescription>{book.description}</S.BookDescription>
-            <S.BookReview>{`🍀 ${book.customerReviewRank}.0`}</S.BookReview>
+            <S.BookReview>{`⭐️ ${book.customerReviewRank}.0`}</S.BookReview>
+            {/* <S.BookReview>{`🍀 ${book.customerReviewRank}.0`}</S.BookReview> */}
           </S.BookInfo>
         </S.BookContainer>
       ))}
