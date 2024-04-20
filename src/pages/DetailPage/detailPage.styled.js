@@ -5,32 +5,10 @@ export const StyledDetailPage = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  padding-top: 100px;
-  // background-color: pink;
-  color: rgb(137, 146, 39);
+  padding-top: 50px;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
-`;
-
-export const BookImage = styled.img`
-  width: 300px;
-  height: auto;
-  margin-right: 40px; // 데스크탑 뷰에서 사용
-  margin-bottom: 50px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease-in-out;
-
-  &:hover {
-    transform: scale(1.04);
-  }
-
-  @media (max-width: 760px) {
-    margin-right: 0; // 모바일 뷰에서 오른쪽 마진 제거
-    margin-left: auto; // 왼쪽 마진 자동 조정
-    margin-right: auto; // 오른쪽 마진 자동 조정
-    display: block; // 블록 레벨 요소로 설정
-  }
 `;
 
 export const BookContent = styled.div`
@@ -49,7 +27,7 @@ export const BookInfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
-  color: #003366;
+  color: #4b3620;
 `;
 
 export const StyledTitle = styled.h1`
@@ -62,7 +40,7 @@ export const BookMeta = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #003366;
+  color: #4b3620;
 `;
 
 export const ButtonGroup = styled.div`
@@ -75,24 +53,25 @@ export const ButtonGroup = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #899227;
+  background-color: #4b3620;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 16px 36px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  border-radius: 8px;
 
   &:hover {
-    background-color: RGB(110, 117, 31);
+    background-color: #885b2b;
   }
 `;
 
 export const PurchaseButton = styled(Button)`
-  background-color: #1b3720;
+  background-color: #ff7737;
 
   &:hover {
-    background-color: #21542a;
+    background-color: #e55715;
   }
 `;
 

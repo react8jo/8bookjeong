@@ -9,6 +9,7 @@ import AddressChange from '../../components/DetailPage/AddressChange /AddressCha
 import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 import Header from '../../components/common/Header/Header';
 import Footer from '../../components/common/Footer/Footer';
+import BookImg from '../../components/DetailPage/BookImg/BookImg';
 
 function DetailPage() {
   const { isbn13 } = useParams();
@@ -50,7 +51,8 @@ function DetailPage() {
       <Header />
       <S.StyledDetailPage>
         <S.BookContent>
-          <S.BookImage src={book.item[0].cover} alt={`Cover of the book ${book.item[0].title}`} />
+          <BookImg cover={book.item[0].cover} title={book.item[0].title} />
+
           <S.BookInfoContainer>
             <S.InfoHeader>
               <S.TaxDeductionLabel>소득공제</S.TaxDeductionLabel>
@@ -136,7 +138,6 @@ function DetailPage() {
             <S.Line />
             <S.SectionTitle>책 소개</S.SectionTitle>
             <S.BookDescription>{book.item[0].description || 'No description available.'}</S.BookDescription>
-            {/* <S.BookDescription>{book.item[0].description}</S.BookDescription> */}
             <S.Line />
             <S.SectionTitle>Link</S.SectionTitle>
             <S.Content>
