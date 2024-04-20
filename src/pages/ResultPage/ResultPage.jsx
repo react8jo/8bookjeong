@@ -14,6 +14,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 import Loading from '../../components/common/Loading/Loading';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import ReactPaginate from 'react-paginate';
 
 const displayOptions = [
   { displayName: '10개', apiName: 10 },
@@ -37,8 +38,7 @@ export default function ResultPage() {
   const [maxOption, setMaxOption] = useState(10);
   const [activeMaxSortIndex, setMaxSortIndex] = useState(0);
   const [page, setPage] = useState(1);
-  const [startPage, setStartPage] = useState(2);
-  const [endPage, setEndPage] = useState(7);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768); //pagination mobile, pc 적용
 
   const query = q.get('query');
   const start = q.get('start');
@@ -80,8 +80,6 @@ export default function ResultPage() {
     setActiveSortIndex(index);
 
     setPage(1);
-    setStartPage(2);
-    setEndPage(7);
   };
 
   const handleMaxItemClick = (item, index) => {
@@ -93,6 +91,18 @@ export default function ResultPage() {
     navigate(`/result/?query=${query}&start=${page}&sort=${sortOption}&maxResults=${maxOption}`);
   }, [sortOption, maxOption, navigate, query, page]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   if (isLoading) {
     return <Loading />;
   }
@@ -100,35 +110,10 @@ export default function ResultPage() {
     return <NotFoundPage />;
   }
 
-  const handlePageChange = (pageNumber) => {
-    setPage(pageNumber);
-  };
+  const totalPages = data ? Math.ceil(data.totalResults / data.itemsPerPage) : 0;
 
-  const handleNextPage = () => {
-    if (
-      Math.ceil(data.totalResults / data.itemsPerPage) <= endPage &&
-      startPage <= Math.ceil(data.totalResults / data.itemsPerPage)
-    ) {
-      return;
-    } else {
-      const newStart = startPage + 6;
-      const newEnd = endPage + 6;
-      setPage(newStart);
-      setStartPage(newStart);
-      setEndPage(newEnd);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (startPage === 2) {
-      return;
-    } else {
-      const newStart = startPage - 6;
-      const newEnd = endPage - 6;
-      setPage(newStart);
-      setStartPage(newStart);
-      setEndPage(newEnd);
-    }
+  const handlePageClick = ({ selected }) => {
+    setPage(selected + 1);
   };
 
   return (
@@ -176,41 +161,47 @@ export default function ResultPage() {
             ))}
         </Row>
       </div>
-      <div className='paginationArea'>
-        <span className='pageMove' onClick={handlePrevPage}>
-          &#60;
-        </span>
-        <span className={page === 1 ? 'pageActive' : ''} onClick={() => handlePageChange(1)}>
-          1
-        </span>
-        {startPage !== 2 && <span>...</span>}
-        {Array.from(
-          { length: Math.min(endPage, Math.ceil(data.totalResults / data.itemsPerPage) - 1) - startPage + 1 },
-          (_, i) => {
-            const pageNumber = startPage + i;
-            return (
-              <span
-                key={pageNumber}
-                className={pageNumber === data.startIndex ? 'pageActive' : ''}
-                onClick={() => handlePageChange(pageNumber)}>
-                {pageNumber}
-              </span>
-            );
-          }
-        )}
-        {!(
-          Math.ceil(data.totalResults / data.itemsPerPage) <= endPage &&
-          startPage <= Math.ceil(data.totalResults / data.itemsPerPage)
-        ) && <span>...</span>}
-        <span
-          className={page === Math.ceil(data.totalResults / data.itemsPerPage) ? 'pageActive' : ''}
-          onClick={() => handlePageChange(Math.ceil(data.totalResults / data.itemsPerPage))}>
-          {Math.ceil(data.totalResults / data.itemsPerPage)}
-        </span>
-        <span className='pageMove' onClick={handleNextPage}>
-          &#62;
-        </span>
-      </div>
+      <S.PaginationArea>
+        {/* <ReactPaginate
+          nextLabel={isMobile ? '>' : 'next >'}
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={isMobile ? 2 : 3}
+          marginPagesDisplayed={isMobile ? 1 : 2}
+          pageCount={totalPages} //전체 페이지
+          previousLabel={isMobile ? '<' : '< prev'}
+          pageClassName='page-item'
+          pageLinkClassName='page-link'
+          previousClassName='page-item'
+          previousLinkClassName='page-link'
+          nextClassName='page-item'
+          nextLinkClassName='page-link'
+          breakLabel='...'
+          breakClassName='page-item'
+          breakLinkClassName='page-link'
+          containerClassName='pagination'
+          activeClassName='active'
+          renderOnZeroPageCount={null}
+          forcePage={page - 1}
+        /> */}
+        <ReactPaginate
+          previousLabel='<'
+          nextLabel='>'
+          breakLabel='...'
+          pageCount={totalPages}
+          onPageChange={handlePageClick}
+          forcePage={start - 1}
+          containerClassName='pagination'
+          pageClassName='page-item'
+          pageLinkClassName='page-link'
+          activeClassName='active'
+          previousClassName='previous page-item'
+          nextClassName='next page-item'
+          disabledClassName='disabled'
+          breakLinkClassName='page-link'
+          previousLinkClassName='page-link'
+          nextLinkClassName='page-link'
+        />
+      </S.PaginationArea>
     </div>
   );
 }

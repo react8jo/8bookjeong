@@ -51,3 +51,9 @@ export const Line = styled.hr`
   background-color: #aaa;
   border: none;
 `;
+
+export const PaginationArea = styled.div`
+  margin: 2em;
+  display: flex;
+  justify-content: center;
+`;
