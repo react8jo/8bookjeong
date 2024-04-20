@@ -29,4 +29,8 @@ export const SortItem = styled.li`
       font-weight: bold;
     }
   }
+  @media (max-width: 768px) {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
 `;
