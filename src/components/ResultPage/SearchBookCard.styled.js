@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const firstColor = '#4b3620';
+const firstColorHover = '#755c43ea';
 const secondColor = '#ff7737';
 
 export const BookDetail = styled.div`
@@ -82,7 +83,7 @@ export const BookImg = styled.div`
 
 export const BookAdd = styled.button`
   margin-top: 20px;
-  background-color: rgb(137, 146, 39);
+  background-color: ${firstColor};
   color: white;
   border: none;
   padding: 5px 10px;
@@ -90,7 +91,7 @@ export const BookAdd = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(180, 190, 65);
+    background-color: ${firstColorHover};
   }
 
   @media (max-width: 768px) {
