@@ -194,15 +194,15 @@ export default function ResultPage() {
           marginPagesDisplayed={isMobile ? 1 : 2}
           forcePage={start - 1}
           containerClassName='SearchPagination'
-          pageClassName='page-item'
-          pageLinkClassName='page-link'
-          activeClassName='active'
-          previousClassName='previous page-item'
-          nextClassName='next page-item'
-          disabledClassName='disabled'
-          breakLinkClassName='page-link'
-          previousLinkClassName='page-link'
-          nextLinkClassName='page-link'
+          pageClassName='filter-page-item'
+          pageLinkClassName='filter-page-link'
+          activeClassName='filter-active'
+          previousClassName='filter-previous filter-page-item'
+          nextClassName='filter-next filter-page-item'
+          disabledClassName='filter-disabled'
+          breakLinkClassName='filter-page-link'
+          previousLinkClassName='filter-page-link'
+          nextLinkClassName='filter-page-link'
         />
       </S.PaginationArea>
     </div>

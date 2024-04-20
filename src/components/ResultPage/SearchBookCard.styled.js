@@ -115,6 +115,15 @@ export const BookImgLayer = styled.div`
   }
 `;
 
+export const BookCover = styled.img`
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease-in-out;
+  &:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+  }
+`;
+
 export const BookSecondInfo = styled.div``;
 
 export const BookThirdInfo = styled.div``;
