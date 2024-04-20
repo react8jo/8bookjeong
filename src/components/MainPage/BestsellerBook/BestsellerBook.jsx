@@ -70,6 +70,7 @@ const BestsellerBook = () => {
     //   )}
     // </div>
     <S.Title>
+      <hr></hr>
       <ContentTitle>베스트셀러</ContentTitle>
       {bookList && (
         <BestsellerBookSlider title={'베스트셀러'} books={bookList?.item} isRank={true} responsive={responsive} />

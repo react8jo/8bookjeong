@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'react-multi-carousel/lib/styles.css';
 import { Buttons, ButtonArea, ContentTitle } from '../../../assets/style/globalStyle.styled';
+import styled from 'styled-components';
 // import {
 //   useBookCategoryTotListQuery,
 //   useBookCategory1ListQuery,
@@ -184,25 +185,19 @@ const ChoiceBook = () => {
 
   const [selectedTab, setSelectedTab] = useState('detailTot');
 
+  // const [isClicked, setIsClicked] = useState(false);
+  // const [selectedButton, setSelectedButton] = useState('detailTot');
+
+  const handleClickTab = (buttonId) => {
+    setSelectedTab(buttonId);
+    // setSelectedButton(buttonId);
+  };
+
+  const getButtonClassName = (buttonId) => {
+    return selectedTab === buttonId ? 'clicked' : 'nonclick'; // 선택된 버튼에는 selected 클래스, 선택되지 않은 버튼에는 unselected 클래스를 적용
+  };
   if (isLoading) {
-    return (
-      <S.Title>
-        <ContentTitle>추천</ContentTitle>
-        <ButtonArea>
-          <S.ButtonList>
-            <Buttons>종합</Buttons>
-            <Buttons>소설</Buttons>
-            <Buttons>경제</Buttons>
-            <Buttons>자기계발</Buttons>
-            <Buttons>인문</Buttons>
-            <Buttons>여행</Buttons>
-            <Buttons>매거진</Buttons>
-            <Buttons>예술</Buttons>
-            <Buttons>만화</Buttons>
-          </S.ButtonList>
-        </ButtonArea>
-      </S.Title>
-    );
+    return <S.Title></S.Title>;
   }
 
   if (isError) {
@@ -213,53 +208,73 @@ const ChoiceBook = () => {
     <div>
       <S.Title>
         <ContentTitle>추천</ContentTitle>
-        <ButtonArea>
-          <S.ButtonList>
-            {/* <Buttons className='lg secondaryColor' */}
-            <Buttons className='lg' onClick={() => setSelectedTab('detailTot')}>
-              종합
-            </Buttons>
-            {/* <Buttons onClick={() => setSelectedTab('detail1')}>소설/시</Buttons> */}
-            <Buttons onClick={() => setSelectedTab('detail1')}>소설</Buttons>
-            {/* <Buttons onClick={() => setSelectedTab('detail2')}>경제/경영</Buttons> */}
-            <Buttons onClick={() => setSelectedTab('detail2')}>경제</Buttons>
-            <Buttons onClick={() => setSelectedTab('detail3')}>자기계발</Buttons>
-            <Buttons onClick={() => setSelectedTab('detail4')}>인문</Buttons>
-            {/* <Buttons onClick={() => setSelectedTab('detail4')}>인문/교양</Buttons> */}
-            <Buttons onClick={() => setSelectedTab('detail5')}>여행</Buttons>
-            <Buttons onClick={() => setSelectedTab('detail6')}>매거진</Buttons>
-            {/* <Buttons onClick={() => setSelectedTab('detail7')}>예술/문화</Buttons> */}
-            <Buttons onClick={() => setSelectedTab('detail7')}>예술</Buttons>
-            <Buttons onClick={() => setSelectedTab('detail8')}>만화</Buttons>
-          </S.ButtonList>
-          {selectedTab === 'detailTot' && (
-            <ChoiceBookSlider title={'추천'} books={detailTot?.item} responsive={responsive} />
-          )}
-          {selectedTab === 'detail1' && (
-            <ChoiceBookSlider title={'추천'} books={detail1?.item} responsive={responsive} />
-          )}
-          {selectedTab === 'detail2' && (
-            <ChoiceBookSlider title={'추천'} books={detail2?.item} responsive={responsive} />
-          )}
-          {selectedTab === 'detail3' && (
-            <ChoiceBookSlider title={'추천'} books={detail3?.item} responsive={responsive} />
-          )}
-          {selectedTab === 'detail4' && (
-            <ChoiceBookSlider title={'추천'} books={detail4?.item} responsive={responsive} />
-          )}
-          {selectedTab === 'detail5' && (
-            <ChoiceBookSlider title={'추천'} books={detail5?.item} responsive={responsive} />
-          )}
-          {selectedTab === 'detail6' && (
-            <ChoiceBookSlider title={'추천'} books={detail6?.item} responsive={responsive} />
-          )}
-          {selectedTab === 'detail7' && (
-            <ChoiceBookSlider title={'추천'} books={detail7?.item} responsive={responsive} />
-          )}
-          {selectedTab === 'detail8' && (
-            <ChoiceBookSlider title={'추천'} books={detail8?.item} responsive={responsive} />
-          )}
-        </ButtonArea>
+        <S.ButtonList>
+          <S.CategoryButton
+            id='detailTot'
+            onClick={(event) => handleClickTab('detailTot')}
+            className={getButtonClassName('detailTot')}>
+            종합
+          </S.CategoryButton>
+          <S.CategoryButton
+            id='detail1'
+            onClick={(event) => handleClickTab('detail1')}
+            className={getButtonClassName('detail1')}>
+            소설
+          </S.CategoryButton>
+          <S.CategoryButton
+            id='detail2'
+            onClick={(event) => handleClickTab('detail2')}
+            className={getButtonClassName('detail2')}>
+            경제
+          </S.CategoryButton>
+          <S.CategoryButton
+            id='detail3'
+            onClick={(event) => handleClickTab('detail3')}
+            className={getButtonClassName('detail3')}>
+            자기계발
+          </S.CategoryButton>
+          <S.CategoryButton
+            id='detail4'
+            onClick={(event) => handleClickTab('detail4')}
+            className={getButtonClassName('detail4')}>
+            인문
+          </S.CategoryButton>
+          <S.CategoryButton
+            id='detail5'
+            onClick={(event) => handleClickTab('detail5')}
+            className={getButtonClassName('detail5')}>
+            여행
+          </S.CategoryButton>
+          <S.CategoryButton
+            id='detail6'
+            onClick={(event) => handleClickTab('detail6')}
+            className={getButtonClassName('detail6')}>
+            매거진
+          </S.CategoryButton>
+          <S.CategoryButton
+            id='detail7'
+            onClick={(event) => handleClickTab('detail7')}
+            className={getButtonClassName('detail7')}>
+            예술
+          </S.CategoryButton>
+          <S.CategoryButton
+            id='detail8'
+            onClick={(event) => handleClickTab('detail8')}
+            className={getButtonClassName('detail8')}>
+            만화
+          </S.CategoryButton>
+        </S.ButtonList>
+        {selectedTab === 'detailTot' && (
+          <ChoiceBookSlider title={'추천'} books={detailTot?.item} responsive={responsive} />
+        )}
+        {selectedTab === 'detail1' && <ChoiceBookSlider title={'추천'} books={detail1?.item} responsive={responsive} />}
+        {selectedTab === 'detail2' && <ChoiceBookSlider title={'추천'} books={detail2?.item} responsive={responsive} />}
+        {selectedTab === 'detail3' && <ChoiceBookSlider title={'추천'} books={detail3?.item} responsive={responsive} />}
+        {selectedTab === 'detail4' && <ChoiceBookSlider title={'추천'} books={detail4?.item} responsive={responsive} />}
+        {selectedTab === 'detail5' && <ChoiceBookSlider title={'추천'} books={detail5?.item} responsive={responsive} />}
+        {selectedTab === 'detail6' && <ChoiceBookSlider title={'추천'} books={detail6?.item} responsive={responsive} />}
+        {selectedTab === 'detail7' && <ChoiceBookSlider title={'추천'} books={detail7?.item} responsive={responsive} />}
+        {selectedTab === 'detail8' && <ChoiceBookSlider title={'추천'} books={detail8?.item} responsive={responsive} />}
       </S.Title>
     </div>
   );

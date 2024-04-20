@@ -31,10 +31,19 @@ export const Button = styled.button`
   border-radius: 32px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: 2px solid ${primaryColor}; /* 아웃라인 스타일과 색상을 지정합니다. */
 `;
 
 export const CategoryButton = styled(Button)`
   &:hover {
+    color: white;
+    background-color: ${primaryColor};
+  }
+  &.nonclick {
+    color: ${primaryColor};
+    background-color: white;
+  }
+  &.clicked {
     color: white;
     background-color: ${primaryColor};
   }

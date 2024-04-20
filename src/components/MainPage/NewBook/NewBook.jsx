@@ -81,6 +81,7 @@ const NewBook = () => {
 
   return (
     <S.Title>
+      <hr></hr>
       {/* <S.TitleName>{'신간'}</S.TitleName> */}
       <ContentTitle>신간</ContentTitle>
       {bookList && <NewBookSlider title={'신간'} books={bookList?.item} responsive={responsive} />}
