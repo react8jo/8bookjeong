@@ -1,12 +1,34 @@
 import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-export const NewBookCard = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+  @import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+`;
+export default GlobalStyle;
+
+export const BookTitle = styled.div`
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+  width: 140px;
+  padding: 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+export const BookAuthor = styled.div`
+  font-size: 0.8vw;
+  font-size: 12px;
+  color: #999;
+  width: 130px;
+  padding: 0 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 30px;
 `;
 
 export const NewBookCardImg = styled.div`
@@ -32,6 +54,7 @@ export const NewBookTag = styled.h4`
   left: -10px;
   z-index: 1;
   color: #fff;
+  // color: #6C523D;
   border-radius: 100%;
   overflow: hidden;
   display: flex;
@@ -40,16 +63,7 @@ export const NewBookTag = styled.h4`
   width: 4vw;
   height: 4vw;
   font-size: 1.3vw;
-  background: #29c552;
-`;
-
-export const BookTitle = styled.h3`
-  margin-top: 8px;
-  font-size: 1.2em;
-  font-weight: bold;
-`;
-
-export const BookAuthor = styled.p`
-  font-size: 0.9em;
-  color: #666;
+  background: rgb(255, 119, 55);
+  // background: #29c552;
+  // background: #F0EDD9;
 `;

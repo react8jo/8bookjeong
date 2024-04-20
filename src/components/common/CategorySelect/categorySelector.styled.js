@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-
+import { primaryColor } from '../../../assets/style/globalStyle.styled';
 // 스타일드 컴포넌트
 export const HamburgerButton = styled.button`
   background: none;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   width: 50px;
   box-shadow: rgba(0, 0, 0, 0.26) 0px 1px 4px;
   cursor: pointer;
@@ -12,6 +12,7 @@ export const HamburgerButton = styled.button`
   top: 30px;
   right: 50px;
   z-index: 100;
+  color: primaryColor;
 `;
 
 export const CategoryGrid = styled.div`

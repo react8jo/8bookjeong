@@ -45,24 +45,28 @@ const BookCard = ({ book }) => {
         </S.BookImgLayer>
         <S.BookInfo>
           <S.TextEllipsis>{book.title}</S.TextEllipsis>
-          <S.BookDetail>
-            <S.BookDetailInfo>{book.author}</S.BookDetailInfo>
-            <S.BookDetailInfo>
-              {book.pubDate} / {book.publisher}
-            </S.BookDetailInfo>
-          </S.BookDetail>
-          <S.BookTag>
-            <S.BookTagInfo># {book.categoryName.split('>')[book.categoryName.split('>').length - 1]}</S.BookTagInfo>
-            <S.BookTagInfo># {book.adult ? '성인' : '전체 연령'}</S.BookTagInfo>
-          </S.BookTag>
-          <S.BookSub>
-            <S.BookSubInfo>
-              <S.BookSalePercent>10%</S.BookSalePercent>
-              <S.BookSale>{Number(book.priceStandard * 0.9).toLocaleString()}원</S.BookSale>
-              <S.BookPrice>{Number(book.priceStandard).toLocaleString()}원</S.BookPrice>
-            </S.BookSubInfo>
-            <S.BookSubInfo>⭐️ {book.customerReviewRank}.0</S.BookSubInfo>
-          </S.BookSub>
+          <S.BookSecondInfo>
+            <S.BookDetail>
+              <S.BookDetailInfo>{book.author}</S.BookDetailInfo>
+              <S.BookDetailInfo>
+                {book.pubDate} / {book.publisher}
+              </S.BookDetailInfo>
+            </S.BookDetail>
+            <S.BookTag>
+              <S.BookTagInfo># {book.categoryName.split('>')[book.categoryName.split('>').length - 1]}</S.BookTagInfo>
+              <S.BookTagInfo># {book.adult ? '성인' : '전체 연령'}</S.BookTagInfo>
+            </S.BookTag>
+          </S.BookSecondInfo>
+          <S.BookThirdInfo>
+            <S.BookSub>
+              <S.BookSubInfo>
+                <S.BookSalePercent>10%</S.BookSalePercent>
+                <S.BookSale>{Number(book.priceStandard * 0.9).toLocaleString()}원</S.BookSale>
+                <S.BookPrice>{Number(book.priceStandard).toLocaleString()}원</S.BookPrice>
+              </S.BookSubInfo>
+              <S.BookSubInfo>⭐️ {book.customerReviewRank}.0</S.BookSubInfo>
+            </S.BookSub>
+          </S.BookThirdInfo>
           <S.BookAdd>찜하기</S.BookAdd>
         </S.BookInfo>
       </S.BookCard>

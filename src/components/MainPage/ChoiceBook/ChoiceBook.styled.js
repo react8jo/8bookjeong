@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { primaryColor } from '../../../assets/style/globalStyle.styled';
 
 export const Title = styled.div`
-  margin-top: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   margin-left: 0rem;
   font-size: 24px;
   font-weight: 700;
@@ -16,7 +17,7 @@ export const TitleName = styled.h3`
 export const ButtonList = styled.div`
   display: flex;
   justify-content: left;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
 `;
 
 export const Button = styled.button`
@@ -30,10 +31,19 @@ export const Button = styled.button`
   border-radius: 32px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: 2px solid ${primaryColor}; /* 아웃라인 스타일과 색상을 지정합니다. */
 `;
 
 export const CategoryButton = styled(Button)`
   &:hover {
+    color: white;
+    background-color: ${primaryColor};
+  }
+  &.nonclick {
+    color: ${primaryColor};
+    background-color: white;
+  }
+  &.clicked {
     color: white;
     background-color: ${primaryColor};
   }

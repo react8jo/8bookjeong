@@ -36,22 +36,22 @@ export default function NewBookCarousel({ items = [] }) {
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {items.map((book, index) => (
-          <S.CarouselSlide
-            key={index}
-            style={{ backgroundColor: colors[index % colors.length] }}
-            onClick={() => goToBookDetailPage(book.isbn)}>
-            <S.SlideImage>
-              <S.SlideImageContent style={{ backgroundImage: `url(${book.cover})` }} />
+          <S.CarouselSlide key={index} onClick={() => goToBookDetailPage(book.isbn)}>
+            <S.SlideImage backgroundColor={colors[index % colors.length]}>
+              <S.SlideImageContent backgroundImage={book.cover} />
+              <S.SlideContent backgroundColor={colors[index % colors.length]}>
+                <S.SlideTitle>{book.title}</S.SlideTitle>
+                <S.SlideDescription>
+                  <S.SlideInfo>
+                    <div className='category'>{book.categoryName}</div>
+                    <div>{book.author}</div>
+                  </S.SlideInfo>
+                </S.SlideDescription>
+              </S.SlideContent>
+              <S.SlideIndex>
+                {currentSlide + 1} / {items.length}
+              </S.SlideIndex>
             </S.SlideImage>
-            <S.SlideContent style={{ backgroundColor: colors[index % colors.length] }}>
-              <S.SlideTitle>{book.title}</S.SlideTitle>
-              <S.SlideDescription>
-                <S.SlideInfo>
-                  <div>{book.author}</div>
-                  <div>{book.publisher}</div>
-                </S.SlideInfo>
-              </S.SlideDescription>
-            </S.SlideContent>
           </S.CarouselSlide>
         ))}
       </S.CarouselSlider>

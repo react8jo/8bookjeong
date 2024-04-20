@@ -5,127 +5,114 @@ import Button from 'react-bootstrap/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as S from './CartPage.styled';
+import { useNavigate } from 'react-router-dom';
+import { Buttons, ButtonArea, ContentTitle } from '../../assets/style/globalStyle.styled';
 
 export default function CartPage() {
+  const navigate = useNavigate();
+  const handleOrder = () => {
+    navigate(`/payment`);
+  };
+
   return (
     <div>
-      <S.ContentTitle>장바구니</S.ContentTitle>
-      <div>
-        <S.CartHeader>
-          <ul>
-            <li>
-              <Form.Check type='checkbox' />
-            </li>
-            <li>상품정보</li>
-            <li>수량</li>
-            <li>상품금액</li>
-          </ul>
-        </S.CartHeader>
-        <S.Table>
-          <colgroup>
-            <col width='50' />
-            <col width='100' />
-            <col width='*' />
-            <col width='150' />
-            <col width='200' />
-            <col width='50' />
-          </colgroup>
-          <thead className='hidden'>
-            <tr>
-              <th>
-                <Form.Check type='checkbox' />
-              </th>
-              <th scope='col' colspan='2'>
-                상품정보
-              </th>
-              <th scope='col'>수량</th>
-              <th scope='col'>상품금액</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <Form.Check type='checkbox' id='bookImg' />
-              </td>
-              <td>
+      <ContentTitle className='center'>장바구니</ContentTitle>
+      <S.CartHeader>
+        <ul>
+          <li>
+            <Form.Check type='checkbox' />
+          </li>
+          <li>상품정보</li>
+          <li>수량</li>
+          <li>상품금액</li>
+        </ul>
+      </S.CartHeader>
+
+      <S.CartList>
+        <ul className='body'>
+          <li>
+            <div className='imgArea'>
+              <Form.Check type='checkbox' id='bookImg' />
+              <div>
                 <label htmlFor='bookImg'>
                   <img
                     src='https://image.aladin.co.kr/product/33749/10/cover200/k872930961_2.jpg'
                     alt='이상한 과자 가게 전천당 20'
                   />
                 </label>
-              </td>
-              <td className='alignTop'>
-                <div className='bookInfo'>
-                  <p className='publisher'>길벗스쿨</p>
-                  <p className='title'>이상한 과자 가게 전천당 20</p>
-                  <p className='price'>
-                    13,000 <span>원</span>
-                  </p>
-                  <p className='shipping'>택배배송 / 유료배송 (도서 1만5천원 이상 무료)</p>
-                </div>
-              </td>
-              <td>
-                <S.Counter>
-                  <InputGroup>
-                    <Button variant='outline-secondary'>-</Button>
-                    <Form.Control type='number' placeholder='1' />
-                    <Button variant='outline-secondary'>+</Button>
-                  </InputGroup>
-                </S.Counter>
-              </td>
-              <td>
+              </div>
+            </div>
+            <div className='InfoArea'>
+              <div className='bookInfo'>
+                <p className='publisher'>길벗스쿨</p>
+                <p className='title'>이상한 과자 가게 전천당 20</p>
                 <p className='price'>
                   13,000 <span>원</span>
                 </p>
-                <S.Button type='button'>주문하기</S.Button>
-              </td>
-              <td className='alignTop'>
-                <CloseButton />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Form.Check type='checkbox' id='bookImg2' />
-              </td>
-              <td>
+                <p className='shipping'>택배배송 / 유료배송 (도서 1만5천원 이상 무료)</p>
+              </div>
+              <S.Counter>
+                <InputGroup>
+                  <Button variant='outline-secondary'>-</Button>
+                  <Form.Control type='number' placeholder='1' />
+                  <Button variant='outline-secondary'>+</Button>
+                </InputGroup>
+              </S.Counter>
+              <div>
+                <p className='price'>
+                  <span className='m'>상품 금액</span>
+                  <span>
+                    13,000 <span>원</span>
+                  </span>
+                </p>
+                <Buttons type='button' className='secondaryColor' onClick={() => handleOrder()}>
+                  주문하기
+                </Buttons>
+              </div>
+              <CloseButton />
+            </div>
+          </li>
+          <li>
+            <div className='imgArea'>
+              <Form.Check type='checkbox' id='bookImg2' />
+              <div>
                 <label htmlFor='bookImg2'>
                   <img src='https://image.aladin.co.kr/product/33116/15/cover200/k062937128_3.jpg' alt='' />
                 </label>
-              </td>
-              <td className='alignTop'>
-                <div className='bookInfo'>
-                  <p className='publisher'>북로망스</p>
-                  <p className='title'>메리골드 마음 사진관</p>
-                  <p className='price'>
-                    17,000 <span>원</span>
-                  </p>
-                  <p className='shipping'>택배배송 / 무료배송</p>
-                </div>
-              </td>
-              <td>
-                <S.Counter>
-                  <InputGroup>
-                    <Button variant='outline-secondary'>-</Button>
-                    <Form.Control type='number' placeholder='1' />
-                    <Button variant='outline-secondary'>+</Button>
-                  </InputGroup>
-                </S.Counter>
-              </td>
-              <td>
+              </div>
+            </div>
+            <div className='InfoArea'>
+              <div className='bookInfo'>
+                <p className='publisher'>북로망스</p>
+                <p className='title'>메리골드 마음 사진관</p>
                 <p className='price'>
                   17,000 <span>원</span>
                 </p>
-                <S.Button type='button'>주문하기</S.Button>
-              </td>
-              <td className='alignTop'>
-                <CloseButton />
-              </td>
-            </tr>
-          </tbody>
-        </S.Table>
-      </div>
+                <p className='shipping'>택배배송 / 무료배송</p>
+              </div>
+              <S.Counter>
+                <InputGroup>
+                  <Button variant='outline-secondary'>-</Button>
+                  <Form.Control type='number' placeholder='1' />
+                  <Button variant='outline-secondary'>+</Button>
+                </InputGroup>
+              </S.Counter>
+              <div>
+                <p className='price'>
+                  <span className='m'>상품 금액</span>
+                  <span>
+                    17,000 <span>원</span>
+                  </span>
+                </p>
+                <Buttons type='button' className='secondaryColor' onClick={() => handleOrder()}>
+                  주문하기
+                </Buttons>
+              </div>
+              <CloseButton />
+            </div>
+          </li>
+        </ul>
+      </S.CartList>
       <S.CartTotal>
         <div className='item'>
           <span className='title'>총 상품금액</span>
@@ -152,11 +139,11 @@ export default function CartPage() {
           </span>
         </div>
       </S.CartTotal>
-      <S.ButtonArea>
-        <S.Button type='button' className='lg'>
+      <ButtonArea>
+        <Buttons type='button' className='lg secondaryColor' onClick={() => handleOrder()}>
           주문하기
-        </S.Button>
-      </S.ButtonArea>
+        </Buttons>
+      </ButtonArea>
     </div>
   );
 }

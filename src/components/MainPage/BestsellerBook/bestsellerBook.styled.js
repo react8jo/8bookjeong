@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Title = styled.div`
-  margin-top: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   margin-left: 0rem;
   font-size: 24px;
   font-weight: 700;

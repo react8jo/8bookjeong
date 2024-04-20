@@ -27,18 +27,10 @@ export const SlideImage = styled.div`
   align-items: center;
   height: 400px;
   padding: 0 4rem;
-`;
 
-export const SlideImageContent = styled.div`
-  width: 200px;
-  height: 300px;
-  background-image: url(${(props) => props.backgroundImage});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  margin-left: auto;
-  margin-right: 6rem;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const SlideContent = styled.div`
@@ -54,6 +46,16 @@ export const SlideContent = styled.div`
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: 420px) {
+    display: none;
+  }
 `;
 
 export const SlideTitle = styled.h3`
@@ -63,10 +65,50 @@ export const SlideTitle = styled.h3`
   overflow: hidden;
   white-space: wrap;
   text-overflow: ellipsis;
+  z-index: 20;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+export const SlideImageContent = styled.div`
+  width: 200px;
+  height: 300px;
+  background-image: url(${(props) => props.backgroundImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: 6rem;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 export const SlideDescription = styled.div`
   margin-top: 0.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SlideIndex = styled.div`
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 0.8rem;
+  background-color: rgb(255, 255, 255, 0.4);
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
 `;
 
 export const SlideInfo = styled.div`
@@ -75,6 +117,10 @@ export const SlideInfo = styled.div`
   display: flex;
   flexdirection: column;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SlideControls = styled.div`
@@ -89,15 +135,28 @@ export const SlideControls = styled.div`
 `;
 
 export const ControlButton = styled.button`
-  backgroundcolor: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
   border: none;
-  padding: 8px 12px;
-  fontsize: 16px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: backgroundColor 0.3s ease;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
 
   &:hover {
-    backgroundcolor: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 `;
 
