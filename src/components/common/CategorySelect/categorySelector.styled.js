@@ -5,14 +5,19 @@ export const HamburgerButton = styled.button`
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.3);
   width: 50px;
+  height: 40px;
   box-shadow: rgba(0, 0, 0, 0.26) 0px 1px 4px;
   cursor: pointer;
   font-size: 30px;
   position: absolute;
   top: 30px;
-  right: 50px;
+  right: 100px;
   z-index: 100;
   color: primaryColor;
+
+  @media (max-width: 768px) {
+    right: 20px;
+  }
 `;
 
 export const CategoryGrid = styled.div`
@@ -24,7 +29,7 @@ export const CategoryGrid = styled.div`
   border: 1px solid #ccc;
   position: absolute;
   top: 90px;
-  right: 50px;
+  right: 100px;
   margin: auto;
   width: 100%;
   max-width: 960px;
@@ -39,6 +44,7 @@ export const CategoryGrid = styled.div`
     grid-template-columns: repeat(4, 1fr);
     width: 70%;
     font-size: 12px;
+    right: 20px;
   }
 `;
 

@@ -5,10 +5,10 @@ import BookCard from '../../components/FilteredPage/BookCard';
 import Loading from '../../components/common/Loading/Loading';
 import Nodata from '../../components/common/Nodata/Nodata';
 import ReactPaginate from 'react-paginate';
-import './Pagination.css';
 import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 
 import * as S from './filteredPage.styled';
+import './Pagination.css';
 
 const FilteredPage = () => {
   const [query] = useState('이'); //검색어 (문자열) (필수값)
