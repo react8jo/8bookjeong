@@ -13,7 +13,6 @@ export const SearchQuery = styled.span`
 
 export const SortArea = styled.div`
   padding: 0.3em;
-  border-bottom: 1px solid rgb(189, 189, 189);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,6 +22,7 @@ export const SortItem = styled.li`
   display: inline-block;
   margin-left: 1em;
   cursor: pointer;
+  padding: 10px;
   & {
     &.active {
       color: rgb(137, 146, 39);
@@ -32,5 +32,22 @@ export const SortItem = styled.li`
   @media (max-width: 768px) {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    padding: 0px;
   }
+  @media (min-width: 769px) {
+    // 모바일 화면 크기 이상일 때만 hover 효과 적용
+    &:hover {
+      border-radius: 24px;
+      color: white;
+      background-color: rgb(137, 146, 39);
+    }
+  }
+`;
+
+export const Line = styled.hr`
+  width: 100%;
+  margin: 5px 0;
+  height: 2px;
+  background-color: #aaa;
+  border: none;
 `;

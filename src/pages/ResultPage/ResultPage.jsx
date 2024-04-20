@@ -153,7 +153,8 @@ export default function ResultPage() {
           ))}
         </ul>
         <DropdownButton
-          variant='outline-success'
+          variant='outline-success-500'
+          className='dropDown'
           id='dropdown-basic-button'
           title={displayOptions[activeMaxSortIndex].displayName}>
           {displayOptions.map((item, index) => (
@@ -163,6 +164,7 @@ export default function ResultPage() {
           ))}
         </DropdownButton>
       </S.SortArea>
+      <S.Line />
       <div>
         <Row>
           {data &&
