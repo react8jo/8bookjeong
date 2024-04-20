@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const AdBannerLayout = styled.div`
-  background-color: #333;
   width: 100%;
   height: 10rem;
 `;
@@ -17,6 +16,7 @@ export const BannerItem = styled.div`
   height: 10rem;
   padding: 1rem 2rem;
   position: relative;
+  border-radius: 15px;
 `;
 export const Ad = styled.div`
   position: absolute;
