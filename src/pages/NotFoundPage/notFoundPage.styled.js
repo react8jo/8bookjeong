@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { primaryColor, secondaryColor } from '../../assets/style/globalStyle.styled';
 
 const ani = keyframes`
     100% {
@@ -7,7 +8,10 @@ const ani = keyframes`
 `;
 
 export const NotFound = styled.div`
-  height: calc(100% - 100px);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   padding: 40px 0 50px;
   text-align: center;
 
@@ -16,16 +20,27 @@ export const NotFound = styled.div`
     font-size: 90px;
 
     svg {
-      margin-right: 20px;
+      margin: 0 10px;
       font-size: 80px;
       animation: ${ani} 6s linear infinite;
+    }
+
+    b {
+      font-size: 104px;
+      font-weight: bolder;
     }
   }
 
   p {
-    margin-top: 30px;
+    margin-top: 15px;
+    background-color: rgba(67, 67, 67, 0.15);
+    border-radius: 4px;
+    padding: 15px 30px;
     color: #434343;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 17px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
