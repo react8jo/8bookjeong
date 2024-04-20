@@ -21,9 +21,9 @@ export const NewBookCardImg = styled.div`
   transition: all 300ms;
   box-shadow: 0 3px 8px rgb(141, 138, 138);
   cursor: pointer;
-  &:hover {
-    box-shadow: 0 6px 12px rgb(141, 138, 138);
-  }
+  @ media(hover: hover) and (pointer: fine) {
+    cursor: pointer;
+}
 `;
 
 export const NewBookTag = styled.h4`

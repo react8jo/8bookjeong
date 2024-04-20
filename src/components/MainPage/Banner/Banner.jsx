@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import * as S from './banner.styled';
-import { useNewSpecialBookListQuery } from '../../../hooks/useBookList';
-import { useBookBlogBestQuery } from '../../../hooks/useBookList';
+// import { useNewSpecialBookListQuery } from '../../../hooks/useBookList';
+// import { useBookBlogBestQuery } from '../../../hooks/useBookList';
+import { useNewSpecialBookListQuery, useBookBlogBestQuery } from '../../../hooks/useBookList';
 
 import NewBookCarousel from './NewBookCarousel/NewBookCarousel';
 import BlogBestSellerCarousel from './BlogBestSellerCarousel/BlogBestSellerCarousel';
@@ -9,8 +10,26 @@ import BlogBestSellerCarousel from './BlogBestSellerCarousel/BlogBestSellerCarou
 import Loading from '../../common/Loading/Loading';
 
 export default function Banner() {
-  const { data: newBookList, isLoading, isError } = useNewSpecialBookListQuery();
-  const { data: bookBlogBestList } = useBookBlogBestQuery();
+  // const { data: newBookList, isLoading, isError } = useNewSpecialBookListQuery();
+  // const { data: bookBlogBestList } = useBookBlogBestQuery();
+  //api호출수정
+  const [startNew] = useState('1');
+  const [maxResultsNew] = useState('10');
+  const [categoryIdNew] = useState('0');
+  const [querytypeNew] = useState('ItemNewSpecial');
+  const {
+    data: newBookList,
+    isLoading,
+    isError,
+    error
+  } = useNewSpecialBookListQuery({ querytypeNew, startNew, maxResultsNew, categoryIdNew });
+
+  const [startBlog] = useState('1');
+  const [maxResultsBlog] = useState('20');
+  const [categoryIdBlog] = useState('0');
+  const [querytypeBlog] = useState('BlogBest');
+  const { data: bookBlogBestList } = useBookBlogBestQuery({ querytypeBlog, startBlog, maxResultsBlog, categoryIdBlog });
+
   const [bannerType, setBannerType] = useState('best');
 
   if (isLoading) {
