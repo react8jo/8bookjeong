@@ -5,6 +5,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useBookSearchQuery } from '../../hooks/useBookSearch';
 
 import './ResultPage.style.css';
+import '../FilteredPage/Pagination.css';
 import * as S from './ResultPage.styled';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
