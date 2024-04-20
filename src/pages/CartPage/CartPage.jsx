@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as S from './CartPage.styled';
 import { useNavigate } from 'react-router-dom';
 import { Buttons, ButtonArea, ContentTitle } from '../../assets/style/globalStyle.styled';
+import ContentArea from '../../components/common/Content/ContentArea';
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function CartPage() {
   };
 
   return (
-    <div>
+    <ContentArea>
       <ContentTitle className='center'>장바구니</ContentTitle>
       <S.CartHeader>
         <ul>
@@ -144,6 +145,6 @@ export default function CartPage() {
           주문하기
         </Buttons>
       </ButtonArea>
-    </div>
+    </ContentArea>
   );
 }
