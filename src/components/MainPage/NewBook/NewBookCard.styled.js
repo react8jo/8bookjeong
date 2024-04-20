@@ -54,6 +54,7 @@ export const NewBookTag = styled.h4`
   left: -10px;
   z-index: 1;
   color: #fff;
+  // color: #6C523D;
   border-radius: 100%;
   overflow: hidden;
   display: flex;
@@ -63,4 +64,5 @@ export const NewBookTag = styled.h4`
   height: 4vw;
   font-size: 1.3vw;
   background: #29c552;
+  // background: #F0EDD9;
 `;

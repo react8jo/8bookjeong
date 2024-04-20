@@ -80,17 +80,33 @@ const ChoiceBook = () => {
   //     slidesToSlide: 1
   //   }
   // };
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1400 },
+  //     items: 4
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1400, min: 1000 },
+  //     items: 3
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 1000, min: 0 },
+  //     items: 2,
+  //     slidesToSlide: 1
+  //   }
+  // };
+
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1400 },
+      breakpoint: { max: 3000, min: 1300 },
       items: 4
     },
     tablet: {
-      breakpoint: { max: 1400, min: 1000 },
-      items: 3
+      breakpoint: { max: 1300, min: 768 },
+      items: 2
     },
     mobile: {
-      breakpoint: { max: 1000, min: 0 },
+      breakpoint: { max: 768, min: 0 },
       items: 2,
       slidesToSlide: 1
     }
