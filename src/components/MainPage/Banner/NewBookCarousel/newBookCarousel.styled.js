@@ -27,6 +27,10 @@ export const SlideImage = styled.div`
   align-items: center;
   height: 400px;
   padding: 0 4rem;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const SlideContent = styled.div`
@@ -42,6 +46,16 @@ export const SlideContent = styled.div`
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: 420px) {
+    display: none;
+  }
 `;
 
 export const SlideTitle = styled.h3`
@@ -51,6 +65,10 @@ export const SlideTitle = styled.h3`
   overflow: hidden;
   white-space: wrap;
   text-overflow: ellipsis;
+  z-index: 20;
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const SlideImageContent = styled.div`
@@ -63,9 +81,19 @@ export const SlideImageContent = styled.div`
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   margin-left: auto;
   margin-right: 6rem;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
+
 export const SlideDescription = styled.div`
   margin-top: 0.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SlideIndex = styled.div`
@@ -80,6 +108,7 @@ export const SlideIndex = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 30;
 `;
 
 export const SlideInfo = styled.div`
@@ -88,6 +117,10 @@ export const SlideInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SlideControls = styled.div`
