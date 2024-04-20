@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 // 내용 전체 컨테이너
 export const Container = styled.div`
-  margin-top: 50px;
+  margin-top: 20px;
   display: flex;
-  justify-content: center;
-  width: 95vw;
+  justify-content: left;
+  width: 100%;
 `;
 
 // 내용 전체 컨테이너
@@ -17,6 +17,7 @@ export const ContainerForCenter = styled.div`
 export const Categories = styled.div`
   width: 170px; // 사이드바 너비
   margin-top: 30px;
+  margin-left: 20px;
   padding-right: 30px;
   padding-top: 10px;
   font-size: 1.2rem;
