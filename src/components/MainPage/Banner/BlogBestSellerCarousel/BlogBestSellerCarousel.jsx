@@ -6,32 +6,32 @@ export default function BlogBestSellerCarousel({ items }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const colors = [
-    'rgb(255, 187, 187)',
-    'rgb(187, 221, 255)',
-    'rgb(255, 221, 187)',
-    'rgb(221, 187, 255)',
     'rgb(255, 255, 204)',
-    'rgb(255, 204, 229)',
     'rgb(229, 255, 204)',
-    'rgb(255, 213, 170)',
+    'rgb(187, 221, 255)',
+    'rgb(255, 229, 204)',
+    'rgb(213, 255, 170)',
     'rgb(187, 255, 221)',
     'rgb(255, 187, 221)',
-    'rgb(255, 255, 170)',
     'rgb(255, 204, 204)',
     'rgb(221, 255, 187)',
     'rgb(204, 255, 229)',
+    'rgb(255, 187, 187)',
+    'rgb(255, 221, 187)',
+    'rgb(221, 187, 255)',
+    'rgb(255, 204, 229)',
+    'rgb(255, 213, 170)',
+    'rgb(255, 255, 170)',
     'rgb(204, 229, 255)',
-    'rgb(255, 255, 187)',
     'rgb(255, 170, 170)',
-    'rgb(229, 204, 255)',
-    'rgb(255, 229, 204)',
-    'rgb(213, 255, 170)'
+    'rgb(255, 255, 187)',
+    'rgb(229, 204, 255)'
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
-    }, 4000);
+    }, 5000);
     return () => {
       clearInterval(interval);
     };
