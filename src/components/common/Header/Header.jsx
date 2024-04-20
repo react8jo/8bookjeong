@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './header.styled';
 import { Outlet, Link } from 'react-router-dom';
 import CategorySelector from '../CategorySelect/CategorySelect';
-import logo from '../../../assets/logo.png';
+import logo from '../../../assets/images/logo.png';
 
 const Header = () => {
   return (

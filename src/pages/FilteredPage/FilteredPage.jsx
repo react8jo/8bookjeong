@@ -5,14 +5,15 @@ import BookCard from '../../components/FilteredPage/BookCard';
 import Loading from '../../components/common/Loading/Loading';
 import Nodata from '../../components/common/Nodata/Nodata';
 import ReactPaginate from 'react-paginate';
+import Footer from '../../components/common/Footer/Footer';
+import './FilteredPage.styled.css';
 
 import * as S from './filteredPage.styled';
 
 const FilteredPage = () => {
   const [query] = useState('이'); //검색어 (문자열) (필수값)
   const [maxResults] = useState(10); //1이상 100d이하 양의정수 기본값1 //검색결과 한페이지당 최대 출력개수
-  const [page, setPage] = useState(1);
-  const [start, setStart] = useState(2);
+  const [start, setStart] = useState(1);
   const { categoryId } = useParams();
   const navigate = useNavigate();
 
@@ -54,36 +55,41 @@ const FilteredPage = () => {
     { id: 4670, name: '역사만화' }
   ];
 
-  const { data: filteredBooks, isLoading, isError } = useBookSearchQuery({ query, maxResults, categoryId });
+  const {
+    data: filteredBooks,
+    isLoading,
+    isError
+  } = useBookSearchQuery({
+    query,
+    maxResults,
+    categoryId,
+    start // 페이지 상태 추가
+  });
+
+  console.log(filteredBooks);
+
+  // 전체 페이지 수 계산
+  const totalPages = filteredBooks ? Math.ceil(filteredBooks.totalResults / filteredBooks.itemsPerPage) : 0;
 
   const handleCategorySelectSide = (categoryId) => {
     navigate(`/books/${categoryId}`);
   };
 
-  const handlePageClick = (event) => {
-    setPage(event.selected + 1);
+  // 다음 페이지 이동
+  const handlePageClick = (page) => {
+    setStart(page.selected + 1);
   };
 
-  if (isLoading)
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
-  if (isError)
-    return (
-      <div>
-        <Nodata />
-      </div>
-    );
+  if (isLoading) return <Loading />;
+  if (isError) return <Nodata />;
 
   return (
     <>
       <S.Container>
         <S.ContainerForCenter>
           <S.Categories>
-            {categories.map((category) => (
-              <S.Category key={category.id} onClick={() => handleCategorySelectSide(category.id)}>
+            {categories.map((category, index) => (
+              <S.Category key={index} onClick={() => handleCategorySelectSide(category.id)}>
                 {category.name}
               </S.Category>
             ))}
@@ -91,29 +97,27 @@ const FilteredPage = () => {
           <S.BookList>
             <BookCard books={filteredBooks.item || []} />
           </S.BookList>
-          <ReactPaginate
-            nextLabel='next'
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={10}
-            marginPagesDisplayed={2}
-            pageCount={Math.ceil(filteredBooks.totalResults / maxResults)}
-            previousLabel='previous'
-            pageClassName='page-item'
-            pageLinkClassName='page-link'
-            previousClassName='page-item'
-            previousLinkClassName='page-link'
-            nextClassName='page-item'
-            nextLinkClassName='page-link'
-            breakLabel='...'
-            breakClassName='page-item'
-            breakLinkClassName='page-link'
-            containerClassName='pagination'
-            activeClassName='active'
-            renderOnZeroPageCount={null}
-            forcePage={page - 1} // 현재 페이지를 강제로 설정
-          />
         </S.ContainerForCenter>
       </S.Container>
+      <ReactPaginate
+        previousLabel='<'
+        nextLabel='>'
+        breakLabel='...'
+        pageCount={totalPages}
+        onPageChange={handlePageClick}
+        forcePage={start - 1}
+        containerClassName='pagination'
+        pageClassName='page-item'
+        pageLinkClassName='page-link'
+        activeClassName='active'
+        previousClassName='previous page-item'
+        nextClassName='next page-item'
+        disabledClassName='disabled'
+        breakLinkClassName='page-link'
+        previousLinkClassName='page-link'
+        nextLinkClassName='page-link'
+      />
+      <Footer />
     </>
   );
 };
