@@ -5,6 +5,10 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   margin-right: 10px;
+
+  @media (max-width: 760px) {
+    margin-bottom: 20px;
+  }
 `;
 
 const Button = styled.button`

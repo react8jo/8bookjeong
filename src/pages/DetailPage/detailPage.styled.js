@@ -10,6 +10,12 @@ export const StyledDetailPage = styled.div`
   margin: 0 auto;
   width: 100%;
 `;
+export const ReviewAndCategoryContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 10px;
+`;
 
 export const BookContent = styled.div`
   display: flex;
@@ -34,6 +40,7 @@ export const StyledTitle = styled.h1`
   font-size: 28px;
   font-weight: bold;
   color: black;
+  line-height: 1.4;
 `;
 
 export const BookMeta = styled.div`
@@ -45,11 +52,15 @@ export const BookMeta = styled.div`
 
 export const ButtonGroup = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: row; // 기본은 행 방향
   gap: 10px;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 50px;
+
+  @media (max-width: 760px) {
+    flex-direction: column; // 모바일 뷰에서는 열 방향
+  }
 `;
 
 export const Button = styled.button`
@@ -57,6 +68,7 @@ export const Button = styled.button`
   color: white;
   border: none;
   padding: 16px 36px;
+
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -92,8 +104,16 @@ export const Content = styled.p`
 export const InfoHeader = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
   margin-bottom: 16px;
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 `;
 
 export const TaxDeductionLabel = styled.span`
@@ -121,7 +141,7 @@ export const BookInfo = styled.div`
 
 // 도서 카테고리
 export const BookCategory = styled.div`
-  margin-top: 10px;
+  // margin-top: 10px;
   font-size: 14px;
 `;
 
@@ -141,12 +161,18 @@ export const BookData = styled.p`
   font-size: 14px;
 `;
 
-// 한 줄에 표시되는 책 정보 라인
-export const PriceLine = styled.div`
-  display: flex;
-  justify-content: flex-start;
+export const PriceGrid = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(3, auto);
+  gap: 10px;
   align-items: center;
-  margin-top: 20px;
+`;
+
+export const PriceLabel = styled.span`
+  font-size: 14px;
+  color: #666;
+  font-weight: bold;
 `;
 
 // 할인율
@@ -186,7 +212,7 @@ export const BookReview = styled.p`
   margin-top: 20px;
   color: #000;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
 `;
 export const PaymentBenefitsContainer = styled.div`
   display: flex;

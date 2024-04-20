@@ -58,28 +58,46 @@ function DetailPage() {
 
           <S.BookInfoContainer>
             <S.InfoHeader>
-              <S.TaxDeductionLabel>소득공제</S.TaxDeductionLabel>
-              <S.BestSellerRank>{book.item[0].subInfo.bestSellerRank}</S.BestSellerRank>
+              <div>
+                <S.TaxDeductionLabel>소득공제</S.TaxDeductionLabel>
+                <S.BestSellerRank>{book.item[0].subInfo.bestSellerRank}</S.BestSellerRank>
+              </div>
+              <S.BookCategory>{book.item[0].categoryName}</S.BookCategory>
             </S.InfoHeader>
             <S.StyledTitle>{book.item[0].title}</S.StyledTitle>
 
             <S.BookInfo>
-              <S.BookCategory>{book.item[0].categoryName}</S.BookCategory>
+              <S.ReviewAndCategoryContainer>
+                <S.BookReview>{`★ ${book.item[0].customerReviewRank}.0`}</S.BookReview>
+                <S.BookInfoLine>
+                  <S.BookData>{book.item[0].author}</S.BookData>
+                  <S.BookData>|</S.BookData>
+                  <S.BookData>{book.item[0].publisher}</S.BookData>
+                  <S.BookData>|</S.BookData>
+                  <S.BookData>{book.item[0].pubDate}</S.BookData>
+                </S.BookInfoLine>
+              </S.ReviewAndCategoryContainer>
+
               <S.Line />
-              <S.BookInfoLine>
-                <S.BookData>{book.item[0].author}</S.BookData>
-                <S.BookData>|</S.BookData>
-                <S.BookData>{book.item[0].publisher}</S.BookData>
-                <S.BookData>|</S.BookData>
-                <S.BookData>{book.item[0].pubDate}</S.BookData>
-              </S.BookInfoLine>
-              <S.PriceLine>
+
+              {/* <S.PriceLine>
                 <S.BookSalePercent>{`${((book.item[0].priceStandard - book.item[0].priceSales) / book.item[0].priceStandard) * 100}%`}</S.BookSalePercent>
                 <S.BookPriceSales>{`${book.item[0].priceSales.toLocaleString()}원`}</S.BookPriceSales>
                 <S.BookPriceStandard>{`${book.item[0].priceStandard.toLocaleString()}원`}</S.BookPriceStandard>
-              </S.PriceLine>
+              </S.PriceLine> */}
+              <S.PriceGrid>
+                <S.PriceLabel>정가</S.PriceLabel>
+                <S.BookPriceStandard>{`${book.item[0].priceStandard.toLocaleString()}원`}</S.BookPriceStandard>
 
-              <S.BookReview>{`⭐️ ${book.item[0].customerReviewRank}.0`}</S.BookReview>
+                <S.PriceLabel>판매가</S.PriceLabel>
+                <S.BookPriceSales>{`${book.item[0].priceSales.toLocaleString()}원`}</S.BookPriceSales>
+                <S.BookSalePercent>{`${((book.item[0].priceStandard - book.item[0].priceSales) / book.item[0].priceStandard) * 100}%`}</S.BookSalePercent>
+
+                <S.PriceLabel>팔북정 포인트</S.PriceLabel>
+                <S.BookData>{`${book.item[0].mileage.toLocaleString()}원`}</S.BookData>
+              </S.PriceGrid>
+
+              {/* <S.BookReview>{`⭐️ ${book.item[0].customerReviewRank}.0`}</S.BookReview> */}
             </S.BookInfo>
 
             <S.Line />
