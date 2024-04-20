@@ -73,7 +73,7 @@ export default function ResultPage() {
   const { data, isLoading, isError } = useBookSearchQuery({ query, start, maxResults, sort, categoryId });
   //api호출수정////////////////////////////////////////////////////////////////////////////////////////////
 
-  console.log('ResultPage ', data);
+  //console.log('ResultPage ', data);
 
   const handleSortItemClick = (item, index) => {
     setSortOption(item.apiName);
