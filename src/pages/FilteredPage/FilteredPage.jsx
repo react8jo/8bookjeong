@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useBookSearchQuery } from '../../hooks/useBookSearch';
-import ReactPaginate from 'react-paginate';
 import BookCard from '../../components/FilteredPage/BookCard';
 import Loading from '../../components/common/Loading/Loading';
 import Nodata from '../../components/common/Nodata/Nodata';
+import ReactPaginate from 'react-paginate';
 
 import * as S from './filteredPage.styled';
 
 const FilteredPage = () => {
   const [query] = useState('이'); //검색어 (문자열) (필수값)
-  const [maxResults] = useState('100'); //1이상 100d이하 양의정수 기본값1 //검색결과 한페이지당 최대 출력개수
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+  const [maxResults] = useState(10); //1이상 100d이하 양의정수 기본값1 //검색결과 한페이지당 최대 출력개수
   const [page, setPage] = useState(1);
+  const [start, setStart] = useState(2);
   const { categoryId } = useParams();
-
   const navigate = useNavigate();
 
   const categories = [
@@ -58,18 +56,12 @@ const FilteredPage = () => {
 
   const { data: filteredBooks, isLoading, isError } = useBookSearchQuery({ query, maxResults, categoryId });
 
-  useEffect(() => {
-    if (filteredBooks) {
-      console.log('Book Data : ', filteredBooks);
-    }
-  }, [filteredBooks]);
-
   const handleCategorySelectSide = (categoryId) => {
     navigate(`/books/${categoryId}`);
   };
 
-  const handlePageClick = (page) => {
-    setPage(page.selected + 1);
+  const handlePageClick = (event) => {
+    setPage(event.selected + 1);
   };
 
   if (isLoading)
@@ -99,32 +91,29 @@ const FilteredPage = () => {
           <S.BookList>
             <BookCard books={filteredBooks.item || []} />
           </S.BookList>
+          <ReactPaginate
+            nextLabel='next'
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={10}
+            marginPagesDisplayed={2}
+            pageCount={Math.ceil(filteredBooks.totalResults / maxResults)}
+            previousLabel='previous'
+            pageClassName='page-item'
+            pageLinkClassName='page-link'
+            previousClassName='page-item'
+            previousLinkClassName='page-link'
+            nextClassName='page-item'
+            nextLinkClassName='page-link'
+            breakLabel='...'
+            breakClassName='page-item'
+            breakLinkClassName='page-link'
+            containerClassName='pagination'
+            activeClassName='active'
+            renderOnZeroPageCount={null}
+            forcePage={page - 1} // 현재 페이지를 강제로 설정
+          />
         </S.ContainerForCenter>
       </S.Container>
-      <ReactPaginate
-        nextLabel='next'
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={10}
-        marginPagesDisplayed={2}
-        pageCount={filteredBooks.total_pages}
-        previousLabel='previous'
-        pageClassName='page-item'
-        pageLinkClassName='page-link'
-        previousClassName='page-item'
-        previousLinkClassName='page-link'
-        nextClassName='page-item'
-        nextLinkClassName='page-link'
-        breakLabel='...'
-        breakClassName='page-item'
-        breakLinkClassName='page-link'
-        containerClassName='pagination'
-        activeClassName='active'
-        renderOnZeroPageCount={null}
-        //현재 페이지
-        //하지만 리액트 페이지네이션은 0부터 시작함
-        //따라서 -1을 해줘야함
-        forcePage={page - 1}
-      />
     </>
   );
 };
