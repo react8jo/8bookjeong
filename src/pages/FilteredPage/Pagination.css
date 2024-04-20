@@ -6,6 +6,14 @@
   gap: 16px; /* 각 아이템 사이의 간격 */
 }
 
+.SearchPagination {
+  margin: 0px;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  gap: 16px; /* 각 아이템 사이의 간격 */
+}
+
 .page-item {
   display: flex;
   width: 36px;

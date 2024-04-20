@@ -193,7 +193,7 @@ export default function ResultPage() {
           pageRangeDisplayed={isMobile ? 2 : 3}
           marginPagesDisplayed={isMobile ? 1 : 2}
           forcePage={start - 1}
-          containerClassName='pagination'
+          containerClassName='SearchPagination'
           pageClassName='page-item'
           pageLinkClassName='page-link'
           activeClassName='active'
