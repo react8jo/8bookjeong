@@ -116,7 +116,6 @@ const FilteredPage = () => {
         previousLinkClassName='page-link'
         nextLinkClassName='page-link'
       />
-      이것이 페이
     </>
   );
 };
