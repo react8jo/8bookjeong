@@ -28,7 +28,7 @@ export const BookContainer = styled.div`
 `;
 
 // 도서 이미지
-export const BookImage = styled.img`
+export const BookCover = styled.img`
   width: 148px;
   height: auto;
   margin-right: 16px;

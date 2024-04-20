@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useBookSearchQuery } from '../../hooks/useBookSearch';
 import BookCard from '../../components/FilteredPage/BookCard';
 import Loading from '../../components/common/Loading/Loading';
 import Nodata from '../../components/common/Nodata/Nodata';
 import ReactPaginate from 'react-paginate';
-import Footer from '../../components/common/Footer/Footer';
-import './FilteredPage.styled.css';
+import './Pagination.css';
+import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 
 import * as S from './filteredPage.styled';
 
@@ -32,11 +32,11 @@ const FilteredPage = () => {
     { id: 110284, name: '북유럽여행' },
     { id: 4668, name: '교양만화' },
 
-    { id: 104315, name: '인지 심리학' },
+    { id: 90456, name: '인테리어' },
     { id: 89481, name: '외국 과학소설' },
     { id: 172, name: '재테크/투자' },
     { id: 336, name: '성공' },
-    { id: 64679, name: '미국여행' },
+    { id: 63688, name: '스페인여행' },
     { id: 3747, name: '가족만화' },
 
     { id: 4673, name: '인문/교양' },
@@ -46,11 +46,10 @@ const FilteredPage = () => {
     { id: 63849, name: '독일여행' },
     { id: 4671, name: '실용만화' },
 
-    { id: 57804, name: '생명과학' },
+    { id: 2951, name: '인간관계' },
     { id: 50922, name: '독일소설' },
     { id: 261, name: '마케팅/세일즈' },
     { id: 70221, name: '시간관리' },
-    // { id: 2951, name: '인간관계' },
     { id: 50840, name: '세계일주여행' },
     { id: 4670, name: '역사만화' }
   ];
@@ -65,7 +64,6 @@ const FilteredPage = () => {
     categoryId,
     start // 페이지 상태 추가
   });
-
   console.log(filteredBooks);
 
   // 전체 페이지 수 계산
@@ -85,6 +83,7 @@ const FilteredPage = () => {
 
   return (
     <>
+      <AdBanner />
       <S.Container>
         <S.ContainerForCenter>
           <S.Categories>
@@ -117,7 +116,6 @@ const FilteredPage = () => {
         previousLinkClassName='page-link'
         nextLinkClassName='page-link'
       />
-      <Footer />
     </>
   );
 };

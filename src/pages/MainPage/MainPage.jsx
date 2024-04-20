@@ -38,6 +38,7 @@ import BestsellerBook from '../../components/MainPage/BestsellerBook/BestsellerB
 import ChoiceBook from '../../components/MainPage/ChoiceBook/ChoiceBook';
 import NewBook from '../../components/MainPage/NewBook/NewBook';
 import * as S from './mainPage.styled';
+import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 
 export default function MainPage() {
   return (
@@ -45,6 +46,7 @@ export default function MainPage() {
       <S.MainPageLayout>
         <Banner />
         <BestsellerBook />
+        <AdBanner />
         <ChoiceBook />
         <NewBook />
       </S.MainPageLayout>
