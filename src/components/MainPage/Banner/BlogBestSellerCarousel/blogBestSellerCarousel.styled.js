@@ -114,6 +114,10 @@ export const SlideIndicators = styled.div`
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const IndicatorButton = styled.button`
