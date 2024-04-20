@@ -31,6 +31,10 @@ export const BookContent = styled.div`
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
+
+  @media (max-width: 760px) {
+    flex-direction: column;
+  }
 `;
 
 export const BookInfoContainer = styled.div`
