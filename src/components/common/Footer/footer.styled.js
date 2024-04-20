@@ -2,14 +2,14 @@ import styled from 'styled-components';
 
 export const FooterLayout = styled.footer`
   border-top: 1px solid #666;
-  padding: 1rem;
+  padding: 1rem 0;
   font-size: 0.8rem;
   color: #666;
 `;
 
 export const FooterContent = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
+  // max-width: 1200px;
+  // margin: 0 auto;
 `;
 export const CompanyInfo = styled.div`
   display: flex;
@@ -27,6 +27,7 @@ export const CompanyText = styled.p`
   margin: 0;
 `;
 export const ToggleButton = styled.button`
+  padding-left: 0;
   background: none;
   border: none;
   color: #666;
@@ -37,15 +38,22 @@ export const ToggleButton = styled.button`
 
 export const AdditionalInfo = styled.div`
   margin-top: 10px;
+  background-color: #e9e9e9;
+  border-radius: 4px;
+  padding: 15px 15px;
 
   p {
     margin: 5px 0;
+    line-height: 1.1rem;
   }
 `;
 
 export const Copyright = styled.p`
   margin-top: 20px;
-  text-align: center;
+  // text-align: center;
+  margin-bottom: -1rem;
+  padding: 10px 0;
+  background-color: #e9e9e9;
 `;
 export const ButtonList = styled.ul`
   list-style: none;

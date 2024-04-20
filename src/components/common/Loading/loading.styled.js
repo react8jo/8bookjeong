@@ -6,9 +6,11 @@ const ani = keyframes`
 `;
 export const IsLoading = styled.span`
   display: inline-grid;
-  position: absolute;
+  // position: absolute;
+  position: fixed;
   left: 50%;
-  top: 50%;
+  // top: 50%;
+  top: 44%;
   transform: translate(-50%, -50%);
 
   &:before,

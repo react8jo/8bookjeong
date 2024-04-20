@@ -4,7 +4,6 @@ import Popup from '../../components/common/Popup/Popup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as S from './PaymentPage.styled';
 import { Buttons, ButtonArea, SubTitle, ContentTitle, SectionTitle } from '../../assets/style/globalStyle.styled';
-import ContentArea from '../../components/common/Content/ContentArea';
 
 export default function PaymentPage() {
   const [modalShow, setModalShow] = useState(false);
@@ -15,7 +14,7 @@ export default function PaymentPage() {
 
   return (
     <>
-      <ContentArea>
+      <div>
         <ContentTitle className='center'>주문/결제하기</ContentTitle>
         <S.CartHeader>
           <ul>
@@ -222,7 +221,7 @@ export default function PaymentPage() {
             </div>
           </div>
         </S.PaymentType>
-      </ContentArea>
+      </div>
       <Popup show={modalShow} onHide={() => setModalShow(false)} />
     </>
   );

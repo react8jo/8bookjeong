@@ -116,3 +116,23 @@ export const SubTitle = styled.h4`
     color: ${secondaryColor};
   }
 `;
+
+export const ContentInner = styled.div`
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+
+  &.layoutFlex {
+    display: flex;
+  }
+
+  @media (min-width: 769px) and (max-width: 1279px) {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 15px;
+  }
+`;

@@ -3,20 +3,26 @@ import { primaryColor } from '../../../assets/style/globalStyle.styled';
 // 스타일드 컴포넌트
 export const HamburgerButton = styled.button`
   background: none;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  width: 50px;
-  height: 40px;
-  box-shadow: rgba(0, 0, 0, 0.26) 0px 1px 4px;
+  border: 1px solid ${primaryColor};
+  width: 45px;
+  height: 45px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 30px;
   position: absolute;
-  top: 30px;
-  right: 100px;
+  top: 50%;
+  right: 0;
   z-index: 100;
-  color: primaryColor;
+  color: ${primaryColor};
+  transform: translateY(-50%);
+
+  @media (max-width: 1279px) {
+    right: 15px;
+  }
 
   @media (max-width: 768px) {
-    right: 20px;
+    top: 29px;
+    transform: inherit;
   }
 `;
 
@@ -42,9 +48,11 @@ export const CategoryGrid = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
-    width: 70%;
+    width: calc(100% - 30px);
+    right: inherit;
+    background-color: #4b3620;
     font-size: 12px;
-    right: 20px;
+    border-radius: 4px;
   }
 `;
 
@@ -60,6 +68,34 @@ export const CategoryItem = styled.div`
     font-weight: 600;
   }
   @media (max-width: 768px) {
+    position: relative;
+    color: #fff;
     font-size: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    padding: 8px;
+    word-break: keep-all;
+    line-height: 1.2rem;
+
+    &:nth-child(4n + 1) {
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+    }
+
+    &:nth-last-child(1),
+    &:nth-last-child(2) {
+      border-color: transparent;
+    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   left: 0;
+    //   top: 15px;
+    //   width: 1px;
+    //   height: 7px;
+    //   background-color: rgba(255, 255, 255, 0.4);
+    // }
   }
 `;

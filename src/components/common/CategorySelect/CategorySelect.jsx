@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './categorySelector.styled';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const CategorySelector = () => {
   const navigate = useNavigate();
@@ -54,7 +56,9 @@ const CategorySelector = () => {
 
   return (
     <>
-      <S.HamburgerButton onClick={toggleMenu}>&#9776;</S.HamburgerButton>
+      <S.HamburgerButton onClick={toggleMenu}>
+        <FontAwesomeIcon icon={faBars} />
+      </S.HamburgerButton>
       {isOpen && (
         <S.CategoryGrid>
           {categories.map((category, index) => (
