@@ -16,13 +16,20 @@ export const StyledDetailPage = styled.div`
 export const BookImage = styled.img`
   width: 300px;
   height: auto;
-  margin-right: 40px;
+  margin-right: 40px; // 데스크탑 뷰에서 사용
   margin-bottom: 50px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease-in-out;
 
   &:hover {
     transform: scale(1.04);
+  }
+
+  @media (max-width: 760px) {
+    margin-right: 0; // 모바일 뷰에서 오른쪽 마진 제거
+    margin-left: auto; // 왼쪽 마진 자동 조정
+    margin-right: auto; // 오른쪽 마진 자동 조정
+    display: block; // 블록 레벨 요소로 설정
   }
 `;
 
