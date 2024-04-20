@@ -51,8 +51,8 @@ export default function NewBookCarousel({ items }) {
                 <S.SlideTitle>{book.title}</S.SlideTitle>
                 <S.SlideDescription>
                   <S.SlideInfo>
-                    <div>{book.categoryName}</div>
-                    <div> {book.author}</div>
+                    <div className='category'>{book.categoryName}</div>
+                    <div>{book.author}</div>
                   </S.SlideInfo>
                 </S.SlideDescription>
               </S.SlideContent>
