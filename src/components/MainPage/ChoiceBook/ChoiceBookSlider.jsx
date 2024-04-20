@@ -5,7 +5,7 @@ import ChoiceBookCard from './ChoiceBookCard';
 import * as S from './ChoiceBookSlider.styled';
 
 const ChoiceBookSlider = ({ title, books, responsive }) => {
-  // console.log('books', books);
+  console.log('books', books);
   return (
     <S.ChoiceBookSlider>
       {books && (

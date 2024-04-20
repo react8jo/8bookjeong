@@ -16,7 +16,7 @@ export const TitleName = styled.h3`
 export const ButtonList = styled.div`
   display: flex;
   justify-content: left;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
 `;
 
 export const Button = styled.button`
