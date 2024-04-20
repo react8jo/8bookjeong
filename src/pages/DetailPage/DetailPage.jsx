@@ -11,6 +11,8 @@ import Header from '../../components/common/Header/Header';
 import Footer from '../../components/common/Footer/Footer';
 import BookImg from '../../components/DetailPage/BookImg/BookImg';
 import ScrollToTopButton from '../../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
+import ProductInfo from '../../components/DetailPage/ProductInfo/ProductInfo';
+import QuantitySelector from '../../components/DetailPage/QuantitySelector/QuantitySelector';
 
 function DetailPage() {
   const { isbn13 } = useParams();
@@ -100,6 +102,7 @@ function DetailPage() {
             <S.Line />
 
             <S.ButtonGroup>
+              <QuantitySelector />
               <S.Button>장바구니에 담기</S.Button>
               <S.PurchaseButton>바로 구매하기</S.PurchaseButton>
             </S.ButtonGroup>
@@ -110,28 +113,7 @@ function DetailPage() {
         <div ref={bookInfoRef}>
           <div>
             <S.SectionTitle>품목정보</S.SectionTitle>
-            <S.ProductInfoTable>
-              <table>
-                <tbody>
-                  <tr>
-                    <th>발행일</th>
-                    <td>{book.item[0].pubDate}</td>
-                  </tr>
-                  <tr>
-                    <th>쪽수</th>
-                    <td>{book.item[0].subInfo.itemPage}</td>
-                  </tr>
-                  <tr>
-                    <th>ISBN13</th>
-                    <td>{book.item[0].isbn13}</td>
-                  </tr>
-                  <tr>
-                    <th>ISBN10</th>
-                    <td>{book.item[0].isbn}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </S.ProductInfoTable>
+            <ProductInfo book={book} />
             <S.SectionTitle>관련 분류</S.SectionTitle>
             <S.Content>카테고리 분류</S.Content>
             <S.BookDescription>{book.item[0].categoryName}</S.BookDescription>
