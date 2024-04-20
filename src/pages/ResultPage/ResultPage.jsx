@@ -6,6 +6,7 @@ import { useBookSearchQuery } from '../../hooks/useBookSearch';
 
 import './ResultPage.style.css';
 import * as S from './ResultPage.styled';
+import '../FilteredPage/Pagination.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SearchBookCard from '../../components/ResultPage/SearchBookCard';
@@ -120,7 +121,7 @@ export default function ResultPage() {
     <div className='text'>
       <S.SearchCount>
         <h4>
-          <S.SearchQuery>{data && data.query}</S.SearchQuery> 검색 결과: 총{' '}
+          <S.SearchQuery>▶ {data && data.query}</S.SearchQuery> 검색 결과: 총{' '}
           {data && data.totalResults && data.totalResults.toLocaleString()}건
         </h4>
       </S.SearchCount>

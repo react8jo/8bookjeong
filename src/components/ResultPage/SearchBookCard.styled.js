@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-
-const firstColor = '#4b3620';
-const firstColorHover = '#755c43ea';
-const secondColor = '#ff7737';
+import { secondaryColor } from '../../assets/style/globalStyle.styled';
 
 export const BookDetail = styled.div`
   font-size: small;
@@ -45,7 +42,7 @@ export const BookSale = styled.span`
 `;
 export const BookSalePercent = styled.span`
   font-size: large;
-  color: ${secondColor};
+  color: ${secondaryColor};
   font-weight: bold;
   margin-right: 5px;
 
@@ -79,24 +76,6 @@ export const BookCard = styled.div`
 export const BookImg = styled.div`
   width: 200px;
   object-fit: cover;
-`;
-
-export const BookAdd = styled.button`
-  margin-top: 20px;
-  background-color: ${firstColor};
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 25px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${firstColorHover};
-  }
-
-  @media (max-width: 768px) {
-    margin-top: 0px;
-  }
 `;
 
 export const BookInfo = styled.div`
