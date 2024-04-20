@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'react-multi-carousel/lib/styles.css';
+import { Buttons, ButtonArea, ContentTitle } from '../../../assets/style/globalStyle.styled';
+import styled from 'styled-components';
 // import {
 //   useBookCategoryTotListQuery,
 //   useBookCategory1ListQuery,
@@ -80,17 +82,33 @@ const ChoiceBook = () => {
   //     slidesToSlide: 1
   //   }
   // };
+  // const responsive = {
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1400 },
+  //     items: 4
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1400, min: 1000 },
+  //     items: 3
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 1000, min: 0 },
+  //     items: 2,
+  //     slidesToSlide: 1
+  //   }
+  // };
+
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1400 },
+      breakpoint: { max: 3000, min: 1300 },
       items: 4
     },
     tablet: {
-      breakpoint: { max: 1400, min: 1000 },
-      items: 3
+      breakpoint: { max: 1300, min: 768 },
+      items: 2
     },
     mobile: {
-      breakpoint: { max: 1000, min: 0 },
+      breakpoint: { max: 768, min: 0 },
       items: 2,
       slidesToSlide: 1
     }
@@ -167,26 +185,19 @@ const ChoiceBook = () => {
 
   const [selectedTab, setSelectedTab] = useState('detailTot');
 
+  // const [isClicked, setIsClicked] = useState(false);
+  // const [selectedButton, setSelectedButton] = useState('detailTot');
+
+  const handleClickTab = (buttonId) => {
+    setSelectedTab(buttonId);
+    // setSelectedButton(buttonId);
+  };
+
+  const getButtonClassName = (buttonId) => {
+    return selectedTab === buttonId ? 'clicked' : 'nonclick'; // 선택된 버튼에는 selected 클래스, 선택되지 않은 버튼에는 unselected 클래스를 적용
+  };
   if (isLoading) {
-    return (
-      <S.Title>
-        <S.TitleName>추천</S.TitleName>
-        <S.ButtonList>
-          <S.CategoryButton variant='success'>종합</S.CategoryButton>
-          <S.CategoryButton variant='success'>소설/시</S.CategoryButton>
-          <S.CategoryButton variant='success'>경제/경영</S.CategoryButton>
-          <S.CategoryButton variant='success'>자기계발</S.CategoryButton>
-          <S.CategoryButton variant='success'>인문/교양</S.CategoryButton>
-          <S.CategoryButton variant='success'>여행</S.CategoryButton>
-          <S.CategoryButton variant='success'>매거진</S.CategoryButton>
-          <S.CategoryButton variant='success'>예술/문화</S.CategoryButton>
-          <S.CategoryButton variant='success'>만화</S.CategoryButton>
-          <div>
-            <Loading />
-          </div>
-        </S.ButtonList>
-      </S.Title>
-    );
+    return <S.Title></S.Title>;
   }
 
   if (isError) {
@@ -196,46 +207,63 @@ const ChoiceBook = () => {
   return (
     <div>
       <S.Title>
-        <S.TitleName>추천</S.TitleName>
+        <ContentTitle>추천</ContentTitle>
         <S.ButtonList>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('0')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detailTot')}>
+          <S.CategoryButton
+            id='detailTot'
+            onClick={(event) => handleClickTab('detailTot')}
+            className={getButtonClassName('detailTot')}>
             종합
           </S.CategoryButton>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('1')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detail1')}>
-            소설/시
+          <S.CategoryButton
+            id='detail1'
+            onClick={(event) => handleClickTab('detail1')}
+            className={getButtonClassName('detail1')}>
+            소설
           </S.CategoryButton>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('170')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detail2')}>
-            경제/경영
+          <S.CategoryButton
+            id='detail2'
+            onClick={(event) => handleClickTab('detail2')}
+            className={getButtonClassName('detail2')}>
+            경제
           </S.CategoryButton>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('336')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detail3')}>
+          <S.CategoryButton
+            id='detail3'
+            onClick={(event) => handleClickTab('detail3')}
+            className={getButtonClassName('detail3')}>
             자기계발
           </S.CategoryButton>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('656')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detail4')}>
-            인문/교양
+          <S.CategoryButton
+            id='detail4'
+            onClick={(event) => handleClickTab('detail4')}
+            className={getButtonClassName('detail4')}>
+            인문
           </S.CategoryButton>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('1196')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detail5')}>
+          <S.CategoryButton
+            id='detail5'
+            onClick={(event) => handleClickTab('detail5')}
+            className={getButtonClassName('detail5')}>
             여행
           </S.CategoryButton>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('2913')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detail6')}>
+          <S.CategoryButton
+            id='detail6'
+            onClick={(event) => handleClickTab('detail6')}
+            className={getButtonClassName('detail6')}>
             매거진
           </S.CategoryButton>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('517')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detail7')}>
-            예술/문화
+          <S.CategoryButton
+            id='detail7'
+            onClick={(event) => handleClickTab('detail7')}
+            className={getButtonClassName('detail7')}>
+            예술
           </S.CategoryButton>
-          {/* <S.CategoryButton variant='success' onClick={() => handleBookList('2551')}> */}
-          <S.CategoryButton variant='success' onClick={() => setSelectedTab('detail8')}>
+          <S.CategoryButton
+            id='detail8'
+            onClick={(event) => handleClickTab('detail8')}
+            className={getButtonClassName('detail8')}>
             만화
           </S.CategoryButton>
         </S.ButtonList>
-        {/* {detailTot && <ChoiceBookSlider title={'추천'} books={detailTot?.item} responsive={responsive} />} */}
         {selectedTab === 'detailTot' && (
           <ChoiceBookSlider title={'추천'} books={detailTot?.item} responsive={responsive} />
         )}
