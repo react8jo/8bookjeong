@@ -10,6 +10,7 @@ import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 import Header from '../../components/common/Header/Header';
 import Footer from '../../components/common/Footer/Footer';
 import BookImg from '../../components/DetailPage/BookImg/BookImg';
+import ScrollToTopButton from '../../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
 
 function DetailPage() {
   const { isbn13 } = useParams();
@@ -107,7 +108,6 @@ function DetailPage() {
         {/* <AdBanner /> */}
         <TabsComponent activeTab={activeTab} onTabClick={setActiveTab} />
         <div ref={bookInfoRef}>
-          <S.Line />
           <div>
             <S.SectionTitle>품목정보</S.SectionTitle>
             <S.ProductInfoTable>
@@ -151,6 +151,7 @@ function DetailPage() {
         <div ref={deliveryRef}>
           <ReturnExchangeTable />
         </div>
+        <ScrollToTopButton />
       </S.StyledDetailPage>
       <Footer />
     </>
