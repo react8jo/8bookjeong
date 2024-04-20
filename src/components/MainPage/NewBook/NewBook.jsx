@@ -17,6 +17,7 @@ const NewBook = () => {
   // MaxResults : 1이상 100d이하 양의정수 기본값1 //검색결과 한페이지당 최대 출력개수
   // CategoryId : 양의정수 - 분야의 고유 번호(기본값:0, 전체) (참고 : 알라딘 모든 분야 카테고리) 특정 분야로 검색결과를 제한함
   // 알라딘카테고리파일url : https://image.aladin.co.kr/img/files/aladin_Category_CID_20210927.xls
+  //api호출수정//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   const [start, setStart] = useState('1');
   const [maxResults, setMaxResults] = useState('10');
   const [categoryId, setCategoryId] = useState('0');
@@ -28,6 +29,7 @@ const NewBook = () => {
     error,
     refetch
   } = useBookListQuery({ querytype, start, maxResults, categoryId });
+  //api호출수정//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   // useEffect(() => {
   //   if (bookList) {

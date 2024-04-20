@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as S from './detailPage.styled';
 import { useParams } from 'react-router-dom';
-import { useBookDetailsQuery } from '../../hooks/useBookDetails';
+// import { useBookDetailsQuery } from '../../hooks/useBookDetails';
+import { useBookDetailQuery } from '../../hooks/useBookDetail';
 import ReturnExchangeTable from '../../components/DetailPage/DetailFooter/DetailFooter';
 import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
 
 function DetailPage() {
   const { isbn13 } = useParams();
-  const { data: book, isLoading, isError, error } = useBookDetailsQuery({ isbn: isbn13 });
+  //api호출수정//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // const { data: book, isLoading, isError, error } = useBookDetailsQuery({ isbn: isbn13 });
+  const { data: book, isLoading, isError, error } = useBookDetailQuery({ isbn: isbn13 });
+  //api호출수정//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   const [activeTab, setActiveTab] = useState('bookInfo');
   const bookInfoRef = useRef(null);
   const deliveryRef = useRef(null);
