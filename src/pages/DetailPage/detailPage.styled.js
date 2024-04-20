@@ -85,7 +85,7 @@ export const Line = styled.hr`
 
 export const Content = styled.p`
   margin: 5px 0 20px 0;
-  color: #899227;
+  color: #4b3620;
   font-size: 18px;
 `;
 
@@ -210,8 +210,9 @@ export const PaymentBenefitsDescription = styled.span`
 `;
 export const SectionTitle = styled.h2`
   margin-bottom: 10px;
-  color: #899227;
+  color: #885b2b;
   font-size: 22px;
+  font-weight: 600;
 `;
 
 export const ProductInfoTable = styled.div`

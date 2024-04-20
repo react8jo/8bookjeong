@@ -37,7 +37,8 @@ export const ReturnExchangeTable = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  margin-bottom: 10px;
-  color: #899227;
+  margin-bottom: 20px;
+  color: #885b2b;
   font-size: 22px;
+  font-weight: 400;
 `;
