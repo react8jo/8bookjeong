@@ -15,13 +15,12 @@ export const CarouselSlider = styled.div`
 
 export const CarouselSlide = styled.div`
   flex: 0 0 auto;
-  width: 50%;
+  width: ${(props) => `calc(100% / ${props.$slidesPerView})`};
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-
   background-color: ${(props) => props.$backgroundColor};
 `;
 
