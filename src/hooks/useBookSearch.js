@@ -3,7 +3,7 @@ import api from '../services/api';
 
 const fetchBookSearch = async ({ query, start, maxResults, sort, categoryId }) => {
   return await api.get(
-    `/search?query=${query}&start=${start}&Sort=${sort}&maxResults=${maxResults}&categoryId=${categoryId}`
+    `/search?query=${query}&start=${start}&sort=${sort}&maxResults=${maxResults}&categoryId=${categoryId}`
   );
 };
 export const useBookSearchQuery = ({ query, start, maxResults, sort, categoryId }) => {
