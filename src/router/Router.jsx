@@ -17,9 +17,9 @@ export default function Router() {
         <Route path='result' element={<ResultPage />} />
         <Route path='/payment' element={<PaymentPage />} />
         <Route path='/cart' element={<CartPage />} />
-        <Route path='/products/:isbn13' element={<DetailPage />} />
         <Route path='*' element={<NotFoundPage />} />
       </Route>
+      <Route path='/products/:isbn13' element={<DetailPage />} />
     </Routes>
   );
 }

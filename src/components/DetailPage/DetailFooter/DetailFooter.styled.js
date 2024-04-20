@@ -4,8 +4,8 @@ export const ReturnExchangeTable = styled.div`
   width: 100%;
   overflow-x: auto;
   margin-top: 20px;
-  margin-bottom: 100px;
-  padding-bottom: 100px;
+  padding-top: 80px;
+  padding-bottom: 50px;
 
   table {
     width: 100%;
