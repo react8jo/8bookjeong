@@ -135,15 +135,28 @@ export const SlideControls = styled.div`
 `;
 
 export const ControlButton = styled.button`
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
   border: none;
-  padding: 8px 12px;
-  font-size: 16px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border-radius: 50%;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 `;
 

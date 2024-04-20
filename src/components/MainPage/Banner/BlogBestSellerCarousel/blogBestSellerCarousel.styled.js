@@ -96,24 +96,29 @@ export const SlideControls = styled.div`
 
 export const ControlButton = styled.button`
   background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  border: none;
-  font-size: 27px;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  border: none;
   width: 40px;
   height: 40px;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   border-radius: 50%;
-
+  color: white;
   &:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
-`;
 
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+`;
 export const SlideIndicators = styled.div`
   position: absolute;
   bottom: 16px;
