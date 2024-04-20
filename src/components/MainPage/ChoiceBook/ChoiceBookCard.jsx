@@ -39,6 +39,7 @@ const ChoiceBookCard = ({ book }) => {
       <div>
         <S.BookTitle>{title}</S.BookTitle>
         <S.BookAuthor>{author}</S.BookAuthor>
+        <S.BookAuthor>{book?.publisher}</S.BookAuthor>
       </div>
     </S.ChoiceBookCard>
   );

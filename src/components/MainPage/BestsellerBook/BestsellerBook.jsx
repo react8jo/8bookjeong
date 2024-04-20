@@ -4,6 +4,7 @@ import { useBookListQuery } from '../../../hooks/useBookList';
 // import './BestsellerBook.style.css';
 import BestsellerBookSlider from './BestsellerBookSlider';
 import * as S from './bestsellerBook.styled';
+import { ContentTitle } from '../../../assets/style/globalStyle.styled';
 
 const BestsellerBook = () => {
   ////////////////////////////// 2. 상품 리스트 API //ItemList.aspx //////////////////////////////
@@ -37,17 +38,26 @@ const BestsellerBook = () => {
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+    desktopL: {
+      breakpoint: { max: 3000, min: 1800 },
       items: 5
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
+    desktopS: {
+      breakpoint: { max: 1800, min: 1500 },
+      items: 4
+    },
+    tabletL: {
+      breakpoint: { max: 1500, min: 1000 },
       items: 3
+    },
+    mobileS: {
+      breakpoint: { max: 1000, min: 464 },
+      items: 2,
+      slidesToSlide: 1
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 2,
+      items: 1,
       slidesToSlide: 1
     }
   };
@@ -60,7 +70,7 @@ const BestsellerBook = () => {
     //   )}
     // </div>
     <S.Title>
-      <S.TitleName>{'베스트셀러'}</S.TitleName>
+      <ContentTitle>베스트셀러</ContentTitle>
       {bookList && (
         <BestsellerBookSlider title={'베스트셀러'} books={bookList?.item} isRank={true} responsive={responsive} />
       )}

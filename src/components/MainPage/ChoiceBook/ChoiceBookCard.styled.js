@@ -61,26 +61,37 @@ export const ChoiceBookCard = styled.div`
 // };
 
 export const BookTitle = styled.div`
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   margin-top: 0.8rem;
   margin-bottom: 0.5rem;
   width: 180px;
-  padding: 0 5px;
+  padding: 0 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: left; /* 왼쪽 정렬 추가 */
+  // @media (min-width: 1300px) and (max-width: 3000px) {
+  //   width: 300px;
+  //   text-overflow: ellipsis;
+  // }
+  // @media (min-width: 768px) and (max-width: 1300px) {
+  //   width: 300px;
+  // }
 `;
 
 export const BookAuthor = styled.div`
   font-size: 0.8vw;
-  font-size: 12px;
+  font-size: 13px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
   color: #999;
   width: 190px;
-  padding: 0 5px;
+  padding: 0 10px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: left; /* 왼쪽 정렬 추가 */
 `;
 
 export const ChoiceBookCardimg = styled.div`

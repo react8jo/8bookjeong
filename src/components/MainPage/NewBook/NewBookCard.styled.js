@@ -12,7 +12,7 @@ export const BookTitle = styled.div`
   font-weight: 600;
   margin-top: 0.8rem;
   margin-bottom: 0.5rem;
-  width: 180px;
+  width: 140px;
   padding: 0 5px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -23,7 +23,7 @@ export const BookAuthor = styled.div`
   font-size: 0.8vw;
   font-size: 12px;
   color: #999;
-  width: 190px;
+  width: 130px;
   padding: 0 5px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -63,6 +63,7 @@ export const NewBookTag = styled.h4`
   width: 4vw;
   height: 4vw;
   font-size: 1.3vw;
-  background: #29c552;
+  background: rgb(255, 119, 55);
+  // background: #29c552;
   // background: #F0EDD9;
 `;
