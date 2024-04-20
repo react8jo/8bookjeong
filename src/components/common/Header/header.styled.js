@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { primaryColor, secondaryColor } from '../../../assets/style/globalStyle.styled';
 
 export const Navbar = styled.nav`
   display: flex;
@@ -35,11 +36,11 @@ export const SearchContainer = styled.form`
 `;
 
 export const SearchInput = styled.input`
-  border: 1px solid rgb(137, 146, 39);
+  border: 1px solid ${primaryColor};
   outline: none;
   border-radius: 24px;
   color: #333;
-  width: 300px;
+  width: 350px;
   height: 30px;
   margin-right: 8px;
   padding: 0.3em 3em 0.3em 3em;
@@ -50,13 +51,13 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchIcon = styled.span`
-  color: rgb(137, 146, 39);
+  color: ${primaryColor};
   position: relative;
   left: 30px;
 `;
 
 export const DeleteIcon = styled.span`
-  color: rgb(137, 146, 39);
+  color: ${primaryColor};
   position: relative;
   right: 35px;
 `;
