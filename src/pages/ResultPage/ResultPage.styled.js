@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
+const firstColor = '#4b3620';
+const secondColor = '#ff7737';
+
 export const SearchCount = styled.div`
   margin-top: 1em;
   margin-left: 5em;
 `;
 
 export const SearchQuery = styled.span`
-  color: rgb(137, 146, 39);
+  color: ${secondColor};
   font-weight: bold;
   font-size: large;
 `;
@@ -25,7 +28,7 @@ export const SortItem = styled.li`
   padding: 10px;
   & {
     &.active {
-      color: rgb(137, 146, 39);
+      color: ${firstColor};
       font-weight: bold;
     }
   }
@@ -39,7 +42,7 @@ export const SortItem = styled.li`
     &:hover {
       border-radius: 24px;
       color: white;
-      background-color: rgb(137, 146, 39);
+      background-color: ${firstColor};
     }
   }
 `;

@@ -2,49 +2,15 @@
   margin-top: 1em;
 }
 
-.paginationArea {
-  margin-top: 2em;
-  margin-bottom: 3em;
-  text-align: center;
-}
-.paginationArea span {
-  cursor: pointer;
-  margin-left: 0.5em;
-  padding: 0.2em 0.5em;
-  border: 1px solid white;
-  border-radius: 5px;
-}
-.paginationArea span.pageActive {
-  color: rgb(137, 146, 39);
-  font-weight: bold;
-  padding: 0.2em 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.paginationArea span:hover {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-.paginationArea span.pageMove {
-  cursor: pointer;
-  margin-left: 0.5em;
-  padding: 0.2em 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  @media (max-width: 768px) {
-    margin-left: 0em;
-  }
-}
-
 .dropDown {
-  border: 1px solid rgb(137, 146, 39);
+  border: 1px solid #4b3620;
   border-radius: 6px;
   background-color: white;
 }
 
 .dropDown:hover {
   color: white;
-  background-color: rgb(137, 146, 39);
+  background-color: #4b3620;
 }
 
 /* .page-item a {

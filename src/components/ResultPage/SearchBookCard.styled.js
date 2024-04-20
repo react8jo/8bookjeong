@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+const firstColor = '#4b3620';
+const secondColor = '#ff7737';
+
 export const BookDetail = styled.div`
   font-size: small;
   color: gray;
@@ -41,7 +44,7 @@ export const BookSale = styled.span`
 `;
 export const BookSalePercent = styled.span`
   font-size: large;
-  color: rgb(255, 119, 55);
+  color: ${secondColor};
   font-weight: bold;
   margin-right: 5px;
 
