@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import { primaryColor } from '../../../assets/style/globalStyle.styled';
+import hexToRgb from '../../../constants/color';
+
+const primaryColorRgb = hexToRgb(primaryColor);
+
 export const BannerLayout = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,18 +25,14 @@ export const Button = styled.button`
   font-size: 16px;
   font-weight: bold;
   color: ${primaryColor};
-  border: none;
-  background-color: white;
-  border-radius: 32px;
+  border: 1px solid ${primaryColor};
+  border-bottom: ${({ selected }) => (selected ? `2px solid ${primaryColor}` : `1px solid ${primaryColor}`)};
+  background-color: ${({ selected }) => (selected ? `rgba(${primaryColorRgb}, 0.1)` : 'white')};
+  border-radius: 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
 `;
 
-export const NewButton = styled(Button)`
-  &:hover {
-    color: white;
-    background-color: ${primaryColor};
-  }
-`;
+export const NewButton = styled(Button)``;
 
 export const BestSeller = styled(NewButton)``;

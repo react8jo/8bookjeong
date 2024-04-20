@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import * as S from './banner.styled';
-// import { useNewSpecialBookListQuery } from '../../../hooks/useBookList';
-// import { useBookBlogBestQuery } from '../../../hooks/useBookList';
+
 import { useNewSpecialBookListQuery, useBookBlogBestQuery } from '../../../hooks/useBookList';
 
 import NewBookCarousel from './NewBookCarousel/NewBookCarousel';
@@ -51,8 +50,12 @@ export default function Banner() {
   return (
     <S.BannerLayout>
       <S.ButtonList>
-        <S.BestSeller onClick={showBest}>블로그 베스트셀러</S.BestSeller>
-        <S.NewButton onClick={showNew}>주목할만한 신간</S.NewButton>
+        <S.BestSeller onClick={showBest} selected={bannerType === 'best'}>
+          블로그 베스트셀러
+        </S.BestSeller>
+        <S.NewButton onClick={showNew} selected={bannerType === 'new'}>
+          주목할만한 신간
+        </S.NewButton>
       </S.ButtonList>
       {bannerType === 'best' && bookBlogBestList && <BlogBestSellerCarousel items={bookBlogBestList.item} />}
       {bannerType === 'new' && newBookList && <NewBookCarousel items={newBookList.item} />}
