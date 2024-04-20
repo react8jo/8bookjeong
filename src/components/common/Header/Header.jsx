@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <S.Navbar>
-      <Link to='/'>
+      <Link onClick={() => deleteKeyword()} to='/'>
         <S.Logo src={logo} alt='로고' />
       </Link>
       <S.SearchContainer>
