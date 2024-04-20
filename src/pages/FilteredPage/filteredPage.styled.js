@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 // 내용 전체 컨테이너
 export const Container = styled.div`
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   width: 95vw;

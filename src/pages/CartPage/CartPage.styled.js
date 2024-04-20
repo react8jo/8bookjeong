@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-//137,146,39
+import { primaryColor, secondaryColor } from '../../assets/style/globalStyle.styled';
+
 export const Counter = styled.div`
   input {
     text-align: center;
@@ -15,12 +16,7 @@ export const Counter = styled.div`
     -moz-appearance: textfield;
   }
 `;
-export const ContentTitle = styled.h2`
-  margin-bottom: 35px;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-`;
+
 export const CartHeader = styled.div`
   ul {
     display: table;
@@ -46,6 +42,11 @@ export const CartHeader = styled.div`
         width: 250px;
       }
     }
+  }
+
+  .form-check-input:checked {
+    background-color: ${primaryColor};
+    border-color: ${primaryColor};
   }
 
   @media screen and (max-width: 768px) {
@@ -105,7 +106,7 @@ export const CartList = styled.div`
           width: 200px;
 
           .price {
-            color: #899227;
+            color: ${secondaryColor};
             font-weight: bold;
             margin-bottom: 15px;
           }
@@ -147,8 +148,8 @@ export const CartList = styled.div`
         display: none;
       }
       .form-check-input:checked {
-        background-color: #899227;
-        border-color: #899227;
+        background-color: ${primaryColor};
+        border-color: ${primaryColor};
       }
     }
   }
@@ -215,124 +216,6 @@ export const CartList = styled.div`
     }
   }
 `;
-export const Table = styled.table`
-  width: 100%;
-  table-layout: fixed;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-
-  thead {
-    th {
-      padding: 10px;
-      background-color: #f2f2f2;
-
-      &:first-child {
-        border-radius: 2px 0 0 2px;
-      }
-      &:last-child {
-        border-radius: 0 2px 2px 0;
-      }
-    }
-
-    &.hidden {
-      visibility: collapse;
-
-      th {
-        padding: 0;
-        height: 0;
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      td {
-        padding: 15px 10px;
-        vertical-align: middle;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
-
-        &.alignTop {
-          position: relative;
-          vertical-align: top;
-          text-align: left;
-        }
-
-        img {
-          width: 100%;
-        }
-
-        > .price {
-          color: #899227;
-          font-weight: bold;
-          margin-bottom: 15px;
-        }
-      }
-    }
-  }
-
-  .bookInfo {
-    height: 100%;
-    padding-bottom: 20px;
-
-    .publisher {
-      color: #8e8e8e;
-      font-size: 12px;
-    }
-    .title {
-      margin-top: 10px;
-      font-size: 18px;
-    }
-
-    .price {
-      margin-top: 15px;
-    }
-    .shipping {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      color: #8e8e8e;
-      font-size: 12px;
-    }
-  }
-`;
-
-export const Button = styled.button`
-  background-color: #899227;
-  padding: 10px 15px;
-  border: 0;
-  border-radius: 4px;
-  color: #fff;
-
-  &.sm {
-    padding: 5px 7px;
-    font-size: 13px;
-  }
-  &.lg {
-    padding: 15px 20px;
-    font-size: 22px;
-  }
-`;
-
-export const ButtonArea = styled.div`
-  margin-top: 35px;
-  text-align: center;
-
-  &.left {
-    text-align: left;
-  }
-  &.right {
-    text-align: right;
-  }
-
-  button {
-    margin-right: 7px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-`;
 
 export const CartTotal = styled.div`
   display: flex;
@@ -384,7 +267,7 @@ export const CartTotal = styled.div`
     }
     &:last-child {
       .price {
-        color: #899227;
+        color: ${secondaryColor};
       }
     }
   }

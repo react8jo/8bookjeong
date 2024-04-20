@@ -3,9 +3,8 @@ import styled from 'styled-components';
 // 단일도서 전체 컨테이너
 export const BookContainer = styled.div`
   display: flex;
-  padding: 24px 0 0 16px;
-  margin-top: 36px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 36px 0 36px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   width: 984px;
   height: 220px;
   cursor: pointer;
@@ -152,7 +151,7 @@ export const PriceLine = styled.div`
 // 할인율
 export const BookSalePercent = styled.p`
   margin-right: 8px;
-  color: rgb(137, 146, 39);
+  color: #ff7737;
   ${'' /* color: #4dac27; */}
   font-size: 16px;
   font-weight: bold;

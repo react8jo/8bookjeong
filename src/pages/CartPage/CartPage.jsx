@@ -6,6 +6,7 @@ import CloseButton from 'react-bootstrap/CloseButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as S from './CartPage.styled';
 import { useNavigate } from 'react-router-dom';
+import { Buttons, ButtonArea, ContentTitle } from '../../assets/style/globalStyle.styled';
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ export default function CartPage() {
 
   return (
     <div>
-      <S.ContentTitle>장바구니</S.ContentTitle>
+      <ContentTitle className='center'>장바구니</ContentTitle>
       <S.CartHeader>
         <ul>
           <li>
@@ -64,9 +65,9 @@ export default function CartPage() {
                     13,000 <span>원</span>
                   </span>
                 </p>
-                <S.Button type='button' onClick={() => handleOrder()}>
+                <Buttons type='button' className='secondaryColor' onClick={() => handleOrder()}>
                   주문하기
-                </S.Button>
+                </Buttons>
               </div>
               <CloseButton />
             </div>
@@ -103,9 +104,9 @@ export default function CartPage() {
                     17,000 <span>원</span>
                   </span>
                 </p>
-                <S.Button type='button' onClick={() => handleOrder()}>
+                <Buttons type='button' className='secondaryColor' onClick={() => handleOrder()}>
                   주문하기
-                </S.Button>
+                </Buttons>
               </div>
               <CloseButton />
             </div>
@@ -138,11 +139,11 @@ export default function CartPage() {
           </span>
         </div>
       </S.CartTotal>
-      <S.ButtonArea>
-        <S.Button type='button' className='lg' onClick={() => handleOrder()}>
+      <ButtonArea>
+        <Buttons type='button' className='lg secondaryColor' onClick={() => handleOrder()}>
           주문하기
-        </S.Button>
-      </S.ButtonArea>
+        </Buttons>
+      </ButtonArea>
     </div>
   );
 }
