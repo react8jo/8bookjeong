@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const firstColor = '#4b3620';
+const firstColorHover = '#755c43ea';
+const secondColor = '#ff7737';
+
 export const BookDetail = styled.div`
   font-size: small;
   color: gray;
@@ -11,26 +15,43 @@ export const BookDetailInfo = styled.div`
 
 export const BookSub = styled.div`
   margin-top: 20px;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
 `;
 
 export const BookSubInfo = styled.div`
   margin-bottom: 10px;
+  @media (max-width: 768px) {
+    font-size: small;
+  }
 `;
 
 export const BookPrice = styled.span`
-  font-size: x-small;
+  font-size: small;
   color: gray;
   text-decoration: line-through;
+  @media (max-width: 768px) {
+    font-size: x-small;
+  }
 `;
 
 export const BookSale = styled.span`
   font-weight: bold;
   margin-right: 5px;
+  @media (max-width: 768px) {
+    font-size: small;
+  }
 `;
 export const BookSalePercent = styled.span`
-  color: red;
+  font-size: large;
+  color: ${secondColor};
   font-weight: bold;
   margin-right: 5px;
+
+  @media (max-width: 768px) {
+    font-size: small;
+  }
 `;
 
 export const TextEllipsis = styled.div`
@@ -42,10 +63,12 @@ export const TextEllipsis = styled.div`
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 20px;
+  font-size: larger;
 
   @media (max-width: 768px) {
     margin-bottom: 10px;
     margin-top: 10px;
+    font-size: medium;
   }
 `;
 
@@ -60,7 +83,7 @@ export const BookImg = styled.div`
 
 export const BookAdd = styled.button`
   margin-top: 20px;
-  background-color: rgb(137, 146, 39);
+  background-color: ${firstColor};
   color: white;
   border: none;
   padding: 5px 10px;
@@ -68,11 +91,11 @@ export const BookAdd = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: rgb(180, 190, 65);
+    background-color: ${firstColorHover};
   }
 
   @media (max-width: 768px) {
-    margin-top: 5px;
+    margin-top: 0px;
   }
 `;
 
@@ -80,7 +103,7 @@ export const BookInfo = styled.div`
   margin-left: 1em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 `;
 
 export const BookContainer = styled.div`
@@ -112,3 +135,7 @@ export const BookImgLayer = styled.div`
     height: 200px;
   }
 `;
+
+export const BookSecondInfo = styled.div``;
+
+export const BookThirdInfo = styled.div``;

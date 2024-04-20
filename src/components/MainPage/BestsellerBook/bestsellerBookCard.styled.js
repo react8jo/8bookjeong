@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
 export default GlobalStyle;
 
 export const BestsellerBookCard = styled.div`
-  margin-right: 30px;
+  margin-right: 40px;
   cursor: pointer;
 `;
 

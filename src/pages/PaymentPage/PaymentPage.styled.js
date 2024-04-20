@@ -1,27 +1,5 @@
 import styled from 'styled-components';
-
-export const ContentTitle = styled.h2`
-  margin-bottom: 35px;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-`;
-
-export const SubTitle = styled.h3`
-  margin: 40px 0 20px;
-  font-size: 25px;
-  font-weight: bold;
-
-  &.line {
-    margin-bottom: 0;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-  }
-  &.sm {
-    font-size: 18px;
-    margin: 30px 0 10px;
-  }
-`;
+import { primaryColor, secondaryColor } from '../../assets/style/globalStyle.styled';
 
 export const CartHeader = styled.div`
   ul {
@@ -275,46 +253,9 @@ export const Total = styled.p`
   span {
     display: inline-block;
     margin-left: 10px;
-    color: #899227;
+    color: ${secondaryColor};
     font-size: 25px;
     font-weight: bold;
-  }
-`;
-
-export const Button = styled.button`
-  background-color: #899227;
-  padding: 10px 15px;
-  border: 0;
-  border-radius: 4px;
-  color: #fff;
-
-  &.sm {
-    padding: 5px 7px;
-    font-size: 13px;
-  }
-  &.lg {
-    padding: 15px 20px;
-    font-size: 22px;
-  }
-`;
-
-export const ButtonArea = styled.div`
-  margin-top: 35px;
-  text-align: center;
-
-  &.left {
-    text-align: left;
-  }
-  &.right {
-    text-align: right;
-  }
-
-  button {
-    margin-right: 7px;
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 `;
 
@@ -322,8 +263,8 @@ export const PaymentType = styled.div`
   display: flex;
 
   .form-check-input:checked {
-    background-color: #899227;
-    border-color: #899227;
+    background-color: ${primaryColor};
+    border-color: ${primaryColor};
   }
   .form-check-input {
     margin-top: 0;
@@ -334,7 +275,7 @@ export const PaymentType = styled.div`
 
     .info {
       overflow: hidden;
-      border: 2px solid #899227;
+      border: 2px solid ${secondaryColor};
       padding-bottom: 30px;
       border-radius: 10px;
       background-color: #f2f2f2;
@@ -367,7 +308,7 @@ export const PaymentType = styled.div`
               font-size: 23px;
             }
             span:last-child {
-              color: #899227;
+              color: ${secondaryColor};
             }
           }
         }

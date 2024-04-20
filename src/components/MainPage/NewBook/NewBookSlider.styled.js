@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
 export default GlobalStyle;
 
 export const NewBookSlider = styled.section`
-  padding: 3% 0;
+  padding: 0% 0;
   font-family: 'Anton', sans-serif;
   font-size: clamp(100px, 7vw, 140px);
 `;
@@ -16,4 +16,8 @@ export const NewBookSlider = styled.section`
 export const CarouselContainer = styled.div`
   padding: 25px 0;
   overflow: hidden;
+`;
+
+export const NewBookCardDiv = styled.div`
+  padding-left: 7px;
 `;

@@ -10,8 +10,8 @@ const BestsellerBookSlider = ({ title, books, responsive, isRank }) => {
     <S.BestsellerBookSlider>
       <Carousel
         infinite={true}
-        // autoPlay={true}
-        // autoplaySpeed='5000'
+        autoPlay={true}
+        autoplaySpeed='5000'
         // vertical={true} // 세로 캐러셀
         // arrows={false}
         // renderArrowsWhenDisabled={false}

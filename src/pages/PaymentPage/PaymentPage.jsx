@@ -3,12 +3,11 @@ import Form from 'react-bootstrap/Form';
 import Popup from '../../components/common/Popup/Popup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as S from './PaymentPage.styled';
+import { Buttons, ButtonArea, SubTitle, ContentTitle, SectionTitle } from '../../assets/style/globalStyle.styled';
 
 export default function PaymentPage() {
   const [modalShow, setModalShow] = useState(false);
 
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
   const handlePopup = () => {
     setModalShow(true);
   };
@@ -16,7 +15,7 @@ export default function PaymentPage() {
   return (
     <>
       <div>
-        <S.ContentTitle>주문/결제하기</S.ContentTitle>
+        <ContentTitle className='center'>주문/결제하기</ContentTitle>
         <S.CartHeader>
           <ul>
             <li>상품정보</li>
@@ -96,8 +95,8 @@ export default function PaymentPage() {
         <S.Total>
           총 주문금액 <span>30,000원</span>
         </S.Total>
-        <S.SubTitle>배송정보</S.SubTitle>
-        <S.SubTitle className='sm'>주문자 정보</S.SubTitle>
+        <SectionTitle>배송정보</SectionTitle>
+        <SubTitle>주문자 정보</SubTitle>
         <S.shippingInfo>
           <ul>
             <li>
@@ -126,7 +125,7 @@ export default function PaymentPage() {
             </li>
           </ul>
         </S.shippingInfo>
-        <S.SubTitle className='sm'>배송지 정보</S.SubTitle>
+        <SubTitle>배송지 정보</SubTitle>
         <S.shippingInfo>
           <ul>
             <li>
@@ -152,7 +151,7 @@ export default function PaymentPage() {
               <span className='cell'>
                 <span className='buttonSet'>
                   <Form.Control type='text' placeholder='04524' />
-                  <S.Button>우편번호 조회</S.Button>
+                  <Buttons>우편번호 조회</Buttons>
                 </span>
                 <Form.Control type='text' placeholder='서울특별시 중구 세종대로 110' className='mt-2' />
                 <Form.Control type='text' placeholder='1층' className='mt-2' />
@@ -168,7 +167,7 @@ export default function PaymentPage() {
         </S.shippingInfo>
         <S.PaymentType>
           <div className='payType'>
-            <S.SubTitle>결제수단</S.SubTitle>
+            <SectionTitle>결제수단</SectionTitle>
             <div className='typeList'>
               <Form.Check inline label='신용/체크카드' name='type' type='radio' id='type01' />
               <Form.Check inline label='무통장 입금' name='type' type='radio' id='type02' />
@@ -178,7 +177,7 @@ export default function PaymentPage() {
             </div>
           </div>
           <div className='payInfo'>
-            <S.SubTitle>최종결제 정보</S.SubTitle>
+            <SectionTitle>최종결제 정보</SectionTitle>
             <div className='info'>
               <ul>
                 <li>
@@ -213,11 +212,11 @@ export default function PaymentPage() {
                   type='checkbox'
                   id='orderCheck'
                 />
-                <S.ButtonArea>
-                  <S.Button className='lg' onClick={() => handlePopup()}>
+                <ButtonArea>
+                  <Buttons className='lg secondaryColor' onClick={() => handlePopup()}>
                     결제하기
-                  </S.Button>
-                </S.ButtonArea>
+                  </Buttons>
+                </ButtonArea>
               </div>
             </div>
           </div>

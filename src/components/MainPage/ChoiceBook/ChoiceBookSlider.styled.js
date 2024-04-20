@@ -7,12 +7,12 @@ const GlobalStyle = createGlobalStyle`
 export default GlobalStyle;
 
 export const ChoiceBookSlider = styled.section`
-  padding: 3% 0;
+  // padding: 3% 0;
   font-family: 'Anton', sans-serif;
   font-size: clamp(100px, 7vw, 140px);
 `;
 
 export const CarouselContainer = styled.div`
-  padding: 25px 0;
+  padding: 125px 0;
   overflow: hidden;
 `;

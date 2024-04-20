@@ -38,7 +38,8 @@ const ChoiceBookCard = ({ book }) => {
         onClick={() => goToBookDetailPage(book.isbn)}></S.ChoiceBookCardimg>
       <div>
         <S.BookTitle>{title}</S.BookTitle>
-        <S.BookAuthor>{title}</S.BookAuthor>
+        <S.BookAuthor>{author}</S.BookAuthor>
+        <S.BookAuthor>{book?.publisher}</S.BookAuthor>
       </div>
     </S.ChoiceBookCard>
   );
