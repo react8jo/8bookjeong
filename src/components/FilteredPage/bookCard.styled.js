@@ -16,10 +16,11 @@ export const BookContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 450px;
-    height: 170px;
+    width: 100%;
+    height: auto;
+    min-height: 147px;
     align-items: center;
-    padding: 16px;
+    padding: 15px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
   }
 `;
@@ -34,8 +35,8 @@ export const BookCover = styled.img`
     width: 100px;
   }
   @media (max-width: 768px) {
+    flex-shrink: 0;
     width: 80px;
-    margin: 16px;
   }
 `;
 
@@ -45,9 +46,12 @@ export const BookInfo = styled.div`
   display: flex;
   flex-direction: column;
   padding: 5px 0 0 15px;
+  word-break: keep-all;
 
   @media (max-width: 768px) {
+    flex-grow: 1;
     padding-right: 5px;
+    padding: 0 0 0 15px;
   }
 `;
 
