@@ -109,12 +109,9 @@ function DetailPage() {
             <S.PaymentBenefitsContainer>
               <S.PaymentBenefitsTitle>배송안내</S.PaymentBenefitsTitle>
               <S.PaymentBenefitsDescription>
-                서울특별시 영등포구 은행로 11(여의도동,일신빌딩){' '}
-              </S.PaymentBenefitsDescription>
-              <div>
                 <h2>주소: {address}</h2>
                 <AddressChange setAddress={setAddress} />
-              </div>
+              </S.PaymentBenefitsDescription>
             </S.PaymentBenefitsContainer>
 
             <S.Line />

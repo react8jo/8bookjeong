@@ -229,14 +229,24 @@ export const PaymentBenefitsTitle = styled.span`
   font-weight: normal;
 `;
 
-export const PaymentBenefitsDescription = styled.span`
-  font-size: 14px;
-  color: #333;
-  font-weight: normal;
+// export const PaymentBenefitsDescription = styled.span`
+//   font-size: 14px;
+//   color: #333;
+//   font-weight: normal;
+// `;
+export const PaymentBenefitsDescription = styled.div`
+  display: flex; // Flexbox 사용
+  align-items: center; // 세로 중앙 정렬
+  gap: 20px; // 요소 사이 간격
+  margin-bottom: 10px;
+  color: #666;
 `;
+
 export const SectionTitle = styled.h2`
   margin-bottom: 10px;
   color: #885b2b;
   font-size: 22px;
   font-weight: 600;
+  padding-top: 15px;
+  padding-bottom: 4px;
 `;

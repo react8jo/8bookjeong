@@ -1,40 +1,21 @@
 import styled from 'styled-components';
 
-export const AddressChange = styled.button`
-  background-color: #f0f0f0;
-  color: #333;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+// 위젯 컨테이너 스타일 정의
+export const PostcodeWidget = styled.div`
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  position: absolute;
+  width: 20%;
+  height: 400px;
+  z-index: 1;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ccc;
+  top: 100%;
+  left: 0;
 
-  &:hover {
-    background-color: #e1e1e1;
-    color: #000;
+  // 모바일 뷰에서 위치 조정
+  @media (max-width: 768px) {
+    width: 100%; // 모바일에서는 너비를 100%로 조정
+    left: auto; // 왼쪽 정렬 무시
+    right: 0; // 오른쪽 끝에 위치
   }
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-export const PaymentBenefitsContainer = styled.div`
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
-export const PaymentBenefitsTitle = styled.h4`
-  margin-bottom: 10px;
-  color: #333;
-`;
-
-export const PaymentBenefitsDescription = styled.div`
-  margin-bottom: 10px;
-  color: #666;
 `;
