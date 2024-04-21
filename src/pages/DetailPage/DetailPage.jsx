@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useBookDetailQuery } from '../../hooks/useBookDetail';
 import ReturnExchangeTable from '../../components/DetailPage/DetailFooter/DetailFooter';
 import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
-import AddressChange from '../../components/DetailPage/AddressChange /AddressChange';
+import AddressChange from '../../components/DetailPage/AddressChange/AddressChange';
 import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 // import Header from '../../components/common/Header/Header';
 // import Footer from '../../components/common/Footer/Footer';
@@ -71,9 +71,9 @@ function DetailPage() {
                 <S.BookReview>{`★ ${book.item[0].customerReviewRank}.0`}</S.BookReview>
                 <S.BookInfoLine>
                   <S.BookData>{book.item[0].author}</S.BookData>
-                  <S.BookData>|</S.BookData>
+                  <S.BookData> | </S.BookData>
                   <S.BookData>{book.item[0].publisher}</S.BookData>
-                  <S.BookData>|</S.BookData>
+                  <S.BookData> | </S.BookData>
                   <S.BookData>{book.item[0].pubDate}</S.BookData>
                 </S.BookInfoLine>
               </S.ReviewAndCategoryContainer>
