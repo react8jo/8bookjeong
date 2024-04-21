@@ -13,7 +13,7 @@ export const StyledDetailPage = styled.div`
 export const ReviewAndCategoryContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 28px;
   margin-bottom: 10px;
 `;
 
@@ -143,6 +143,7 @@ export const BookInfo = styled.div`
 export const BookCategory = styled.div`
   // margin-top: 10px;
   font-size: 14px;
+  font-weight: 600;
 `;
 
 // 한 줄에 표시되는 책 정보 라인
@@ -150,7 +151,9 @@ export const BookInfoLine = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap; // 내용이 많아지면 다음 줄로 넘어가도록 설정
   margin-top: 10px;
+  gap: 4px; // 요소 사이에 간격 추가
 `;
 
 // 책 정보
@@ -195,6 +198,9 @@ export const PriceLabel = styled.span`
 export const BookData = styled.p`
   font-size: 16px;
   color: #666;
+  margin: 0; // 마진 초기화
+  line-height: 18px; // 라인 높이 설정
+  flex-wrap: nowrap;
 `;
 
 /////////
@@ -208,7 +214,7 @@ export const BookDescription = styled.p`
 
 // 평점
 export const BookReview = styled.p`
-  margin-top: 20px;
+  margin-top: 10px;
   color: #000;
   font-weight: bold;
   font-size: 16px;
