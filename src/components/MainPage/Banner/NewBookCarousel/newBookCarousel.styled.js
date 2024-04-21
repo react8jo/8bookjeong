@@ -17,7 +17,7 @@ export const CarouselSlide = styled.div`
   flex: 0 0 auto;
   width: 100%;
   box-sizing: border-box;
-  background-color: ${(props) => props.backgroundColor};
+  background: ${(props) => `linear-gradient(270deg, ${props.backgroundColor}, rgba(0, 0, 0, 0.8))`};
 `;
 
 export const SlideImage = styled.div`
@@ -42,7 +42,7 @@ export const SlideContent = styled.div`
   left: 0;
   padding: 3rem 4rem;
   height: 100%;
-  background: ${(props) => `linear-gradient(270deg, ${props.backgroundColor}, rgba(0, 0, 0, 0.8))`};
+
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   width: 50%;
@@ -115,7 +115,7 @@ export const SlideInfo = styled.div`
   font-size: 0.8rem;
   margin-bottom: 4px;
   display: flex;
-  flexdirection: column;
+  flex-direction: column;
   gap: 0.5rem;
 
   @media (max-width: 768px) {
@@ -128,7 +128,7 @@ export const SlideControls = styled.div`
   top: 50%;
   transform: translateY(-50%);
   display: flex;
-  justifycontent: space-between;
+  justify-content: space-between;
   width: 100%;
   padding: 0 16px;
   box-sizing: border-box;
@@ -171,8 +171,8 @@ export const SlideIndicators = styled.div`
 export const IndicatorButton = styled.button`
   width: 12px;
   height: 12px;
-  borderradius: 50%;
-  backgroundcolor: ${(props) => (props.active ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
+  border-radius: 50%;
+  background-color: ${(props) => (props.active ? '#fff' : 'rgba(255, 255, 255, 0.5)')};
   margin: 0 4px;
   border: none;
   cursor: pointer;

@@ -6,6 +6,7 @@ export const Navbar = styled.nav`
   box-sizing: border-box;
 
   .layoutFlex {
+    display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 20px 75px 20px 0;

@@ -16,6 +16,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import Loading from '../../components/common/Loading/Loading';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import ReactPaginate from 'react-paginate';
+import ScrollToTopButton from '../../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
 
 const displayOptions = [
   { displayName: '10개', apiName: 10 },
@@ -115,6 +116,14 @@ export default function ResultPage() {
 
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
+    scrollToTop();
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -163,27 +172,6 @@ export default function ResultPage() {
         </Row>
       </div>
       <S.PaginationArea>
-        {/* <ReactPaginate
-          nextLabel={isMobile ? '>' : 'next >'}
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={isMobile ? 2 : 3}
-          marginPagesDisplayed={isMobile ? 1 : 2}
-          pageCount={totalPages} //전체 페이지
-          previousLabel={isMobile ? '<' : '< prev'}
-          pageClassName='page-item'
-          pageLinkClassName='page-link'
-          previousClassName='page-item'
-          previousLinkClassName='page-link'
-          nextClassName='page-item'
-          nextLinkClassName='page-link'
-          breakLabel='...'
-          breakClassName='page-item'
-          breakLinkClassName='page-link'
-          containerClassName='pagination'
-          activeClassName='active'
-          renderOnZeroPageCount={null}
-          forcePage={page - 1}
-        /> */}
         <ReactPaginate
           previousLabel='<'
           nextLabel='>'
@@ -205,6 +193,7 @@ export default function ResultPage() {
           nextLinkClassName='filter-page-link'
         />
       </S.PaginationArea>
+      <ScrollToTopButton />
     </div>
   );
 }

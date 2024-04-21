@@ -24,15 +24,15 @@ export const Button = styled.button`
   margin: 0 10px;
   font-size: 16px;
   font-weight: bold;
-  color: ${primaryColor};
-  border: 1px solid ${primaryColor};
-  border-bottom: ${({ selected }) => (selected ? `2px solid ${primaryColor}` : `1px solid ${primaryColor}`)};
-  background-color: ${({ selected }) => (selected ? `rgba(${primaryColorRgb}, 0.1)` : 'white')};
-  border-radius: 0;
+  color: ${({ selected }) => (selected ? 'white' : `rgba(${primaryColorRgb})`)};
+  border: none;
+  background-color: ${({ selected }) => (selected ? `rgba(${primaryColorRgb})` : 'white')};
+  border-radius: 32px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: 2px solid ${primaryColor};
 `;
 
 export const NewButton = styled(Button)``;
 
-export const BestSeller = styled(NewButton)``;
+export const BestSeller = styled(Button)``;
