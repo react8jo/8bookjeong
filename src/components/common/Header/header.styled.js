@@ -136,6 +136,7 @@ export const SearchIcon = styled.span`
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
+  font-size: 16px;
 `;
 
 export const DeleteIcon = styled.span`
@@ -146,6 +147,7 @@ export const DeleteIcon = styled.span`
   padding: 10px 7px;
   transform: translateY(-50%);
   cursor: pointer;
+  font-size: 16px;
 `;
 
 export const SearchToggle = styled.button`
