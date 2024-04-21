@@ -93,7 +93,7 @@ export const shippingInfo = styled.div`
 
         .phone {
           input {
-            width: 28.9%;
+            width: 28.5%;
           }
         }
       }

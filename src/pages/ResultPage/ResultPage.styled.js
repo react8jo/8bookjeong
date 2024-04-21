@@ -5,6 +5,10 @@ export const SearchCount = styled.div`
   margin-top: 1em;
   margin-left: 2em;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    margin: 0 0 20px 5px;
+  }
 `;
 
 export const SearchQuery = styled.span`
