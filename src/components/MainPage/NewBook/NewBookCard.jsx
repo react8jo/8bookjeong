@@ -26,13 +26,13 @@ const NewBookCard = ({ book }) => {
   }, [book]);
 
   return (
-    <div>
+    <S.NewBookCardBox>
       <S.NewBookCardImg $backgroundImage={book.cover} onClick={() => goToBookDetailPage(book.isbn)}>
         <S.NewBookTag>NEW</S.NewBookTag>
       </S.NewBookCardImg>
       <S.BookTitle>{title}</S.BookTitle>
       <S.BookAuthor>{author}</S.BookAuthor>
-    </div>
+    </S.NewBookCardBox>
   );
 };
 

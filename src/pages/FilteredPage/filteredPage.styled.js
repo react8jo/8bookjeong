@@ -44,12 +44,17 @@ export const Category = styled.div`
 export const BookList = styled.div`
   flex: 1; // 남은 공간을 모두 차지
 
-  @media (max-width: 1024px) {
-    width: 700px;
+  // @media (max-width: 1024px) {
+  //   width: 700px;
+  // }
+
+  @media (max-width: 1200px) {
+    width: 100%;
   }
 
   @media (max-width: 768px) {
-    width: 370px;
+    // width: 370px;
+    width: 100%;
     //width: 280px;
     // padding: 5px;
   }
