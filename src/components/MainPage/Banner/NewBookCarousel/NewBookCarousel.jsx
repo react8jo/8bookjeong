@@ -36,7 +36,10 @@ export default function NewBookCarousel({ items = [] }) {
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
         {items.map((book, index) => (
-          <S.CarouselSlide key={index} onClick={() => goToBookDetailPage(book.isbn)}>
+          <S.CarouselSlide
+            key={index}
+            onClick={() => goToBookDetailPage(book.isbn)}
+            backgroundColor={colors[index % colors.length]}>
             <S.SlideImage backgroundColor={colors[index % colors.length]}>
               <S.SlideImageContent backgroundImage={book.cover} />
               <S.SlideContent backgroundColor={colors[index % colors.length]}>
@@ -61,7 +64,7 @@ export default function NewBookCarousel({ items = [] }) {
       </S.SlideControls>
       <S.SlideIndicators>
         {items.map((_, index) => (
-          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} $={index === currentSlide} />
+          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} active={index === currentSlide} />
         ))}
       </S.SlideIndicators>
     </S.CarouselContainer>
