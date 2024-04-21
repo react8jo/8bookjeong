@@ -197,7 +197,24 @@ const ChoiceBook = () => {
     return selectedTab === buttonId ? 'clicked' : 'nonclick'; // 선택된 버튼에는 selected 클래스, 선택되지 않은 버튼에는 unselected 클래스를 적용
   };
   if (isLoading) {
-    return <S.Title></S.Title>;
+    return (
+      <div>
+        <S.Title>
+          <ContentTitle>추천</ContentTitle>
+          <S.ButtonList>
+            <S.CategoryButton>종합</S.CategoryButton>
+            <S.CategoryButton>소설</S.CategoryButton>
+            <S.CategoryButton>경제</S.CategoryButton>
+            <S.CategoryButton>자기계발</S.CategoryButton>
+            <S.CategoryButton>인문</S.CategoryButton>
+            <S.CategoryButton>여행</S.CategoryButton>
+            <S.CategoryButton>매거진</S.CategoryButton>
+            <S.CategoryButton>예술</S.CategoryButton>
+            <S.CategoryButton>만화 </S.CategoryButton>
+          </S.ButtonList>
+        </S.Title>
+      </div>
+    );
   }
 
   if (isError) {
