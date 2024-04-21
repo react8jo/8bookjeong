@@ -45,7 +45,7 @@ const QuantitySelector = () => {
     if (quantity > 1) {
       setQuantity((prev) => prev - 1);
     } else {
-      alert('1개 이상 구매 가능합니다.'); // 수량이 1개일 때 경고 메시지 표시
+      alert('1개 이상 구매 가능합니다.');
     }
   };
 

@@ -9,6 +9,7 @@ import Footer from '../components/common/Footer/Footer';
 import Header from '../components/common/Header/Header';
 import ContentArea from '../components/common/Content/ContentArea';
 import { ContentInner } from '../assets/style/globalStyle.styled';
+import ScrollToTopButton from '../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
 
 const AppLayout = () => {
   return (
@@ -19,6 +20,7 @@ const AppLayout = () => {
           <Outlet />
         </ContentInner>
       </ContentArea>
+      <ScrollToTopButton />
       <Footer />
     </S.AppLayout>
   );
