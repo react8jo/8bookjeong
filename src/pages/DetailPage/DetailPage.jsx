@@ -9,7 +9,7 @@ import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
 import AddressChange from '../../components/DetailPage/AddressChange/AddressChange';
 import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 import BookImg from '../../components/DetailPage/BookImg/BookImg';
-import ScrollToTopButton from '../../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
+// import ScrollToTopButton from '../../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
 import ProductInfo from '../../components/DetailPage/ProductInfo/ProductInfo';
 import QuantitySelector from '../../components/DetailPage/QuantitySelector/QuantitySelector';
 import DeliveryEstimate from '../../components/DetailPage/DeliveryEstimate/DeliveryEstimate';
@@ -156,7 +156,7 @@ function DetailPage() {
         <div ref={deliveryRef}>
           <ReturnExchangeTable />
         </div>
-        <ScrollToTopButton />
+        {/* <ScrollToTopButton /> */}
       </S.StyledDetailPage>
     </>
   );
