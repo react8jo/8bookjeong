@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import * as S from './newBookCarousel.styled';
 import { useNavigate } from 'react-router-dom';
-export default function NewBookCarousel({ items }) {
+import * as S from './newBookCarousel.styled';
+
+export default function NewBookCarousel({ items = [] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const colors = [
@@ -18,28 +19,19 @@ export default function NewBookCarousel({ items }) {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
-    }, 3000);
-    return () => {
-      clearInterval(interval);
-    };
+    if (items.length > 0) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
   }, [items]);
 
-  const goToSlide = (slideIndex) => {
-    setCurrentSlide(slideIndex);
-  };
+  const goToSlide = (slideIndex) => setCurrentSlide(slideIndex);
+  const goToPrevSlide = () => setCurrentSlide((prevSlide) => (prevSlide - 1 + items.length) % items.length);
+  const goToNextSlide = () => setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
+  const goToBookDetailPage = (isbn) => navigate(`/products/${isbn}`);
 
-  const goToPrevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide - 1 + items.length) % items.length);
-  };
-
-  const goToNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % items.length);
-  };
-  const goToBookDetailPage = (isbn) => {
-    navigate(`/products/${isbn}`);
-  };
   return (
     <S.CarouselContainer>
       <S.CarouselSlider style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
@@ -69,7 +61,7 @@ export default function NewBookCarousel({ items }) {
       </S.SlideControls>
       <S.SlideIndicators>
         {items.map((_, index) => (
-          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} active={index === currentSlide} />
+          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} $={index === currentSlide} />
         ))}
       </S.SlideIndicators>
     </S.CarouselContainer>

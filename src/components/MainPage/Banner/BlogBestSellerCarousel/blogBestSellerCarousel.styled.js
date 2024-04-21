@@ -27,7 +27,6 @@ export const CarouselSlide = styled.div`
 export const SlideImage = styled.div`
   width: 200px;
   height: 300px;
-
   margin: 20px 0;
 `;
 

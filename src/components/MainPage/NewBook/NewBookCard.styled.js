@@ -31,8 +31,8 @@ export const BookAuthor = styled.div`
   margin-bottom: 30px;
 `;
 
-export const NewBookCardimg = styled.div`
-  background-image: url(${(props) => props.$backgroundImage});  
+export const NewBookCardImg = styled.div`
+  background-image: url(${(props) => props.$backgroundImage});
   position: relative;
   width: 50%;
   height: auto;

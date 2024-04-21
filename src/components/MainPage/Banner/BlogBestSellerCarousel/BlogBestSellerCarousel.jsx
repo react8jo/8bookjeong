@@ -76,7 +76,7 @@ export default function BlogBestSellerCarousel({ items }) {
               <S.SlideDescription>
                 <S.SlideInfo>
                   <div>{book.author}</div>
-                  <div>{book.p}</div>
+                  <div>{book.publisher}</div>
                 </S.SlideInfo>
               </S.SlideDescription>
             </S.SlideContent>
