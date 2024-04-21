@@ -11,6 +11,7 @@ export const BannerLayout = styled.div`
   justify-content: center;
   padding-top: 1rem;
   background-color: #fff;
+  z-index: 100;
 `;
 
 export const ButtonList = styled.div`
