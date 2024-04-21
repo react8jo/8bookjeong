@@ -35,6 +35,14 @@ export const SortItem = styled.li`
       color: ${primaryColor};
       font-weight: bold;
     }
+    &.nonclick {
+      color: ${primaryColor};
+      background-color: white;
+    }
+    &.clicked {
+      color: white;
+      background-color: ${primaryColor};
+    }
   }
   @media (max-width: 768px) {
     margin-top: 0.5em;
@@ -64,4 +72,8 @@ export const PaginationArea = styled.div`
   margin: 2em;
   display: flex;
   justify-content: center;
+`;
+
+export const ContentsLoding = styled.div`
+  height: 2250px;
 `;

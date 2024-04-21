@@ -15,9 +15,14 @@ export const TitleName = styled.h3`
 `;
 
 export const ButtonList = styled.div`
-  display: flex;
+  // display: flex;
   justify-content: left;
   // margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: fit-content;
+  cursor: pointer;
 `;
 
 export const Button = styled.button`

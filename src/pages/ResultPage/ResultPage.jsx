@@ -106,7 +106,45 @@ export default function ResultPage() {
   }, []);
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <>
+        <div className='text'>
+          <S.SearchCount>
+            <h4>
+              <S.SearchQuery>▶</S.SearchQuery> 검색 결과:
+            </h4>
+          </S.SearchCount>
+          <S.SortArea>
+            <ul>
+              {sortOptions.map((item, index) => (
+                <S.SortItem
+                  className={`${index === activeSortIndex ? 'active' : ''}`}
+                  onClick={() => {
+                    handleSortItemClick(item, index);
+                  }}
+                  key={item.apiName}>
+                  {item.displayName}
+                </S.SortItem>
+              ))}
+            </ul>
+            <DropdownButton
+              variant='outline-success-500'
+              className='dropDown'
+              id='dropdown-basic-button'
+              title={displayOptions[activeMaxSortIndex].displayName}>
+              {displayOptions.map((item, index) => (
+                <Dropdown.Item key={item.apiName} onClick={() => handleMaxItemClick(item, index)}>
+                  {item.displayName}
+                </Dropdown.Item>
+              ))}
+            </DropdownButton>
+          </S.SortArea>
+          <S.ContentsLoding />
+          <S.Line />
+          <Loading />
+        </div>
+      </>
+    );
   }
   if (isError) {
     return <NotFoundPage />;
@@ -138,7 +176,8 @@ export default function ResultPage() {
         <ul>
           {sortOptions.map((item, index) => (
             <S.SortItem
-              className={`${index === activeSortIndex ? 'active' : ''}`}
+              // className={`${index === activeSortIndex ? 'active' : ''}`}
+              className={`${index === activeSortIndex ? 'clicked' : 'nonclick'}`}
               onClick={() => {
                 handleSortItemClick(item, index);
               }}

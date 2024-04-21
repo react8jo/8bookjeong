@@ -78,7 +78,25 @@ const FilteredPage = () => {
     setStart(page.selected + 1);
   };
 
-  if (isLoading) return <Loading />;
+  if (isLoading) {
+    return (
+      <>
+        <AdBanner />
+        <S.Container>
+          <S.ContainerForCenter>
+            <S.Categories>
+              {categories.map((category, index) => (
+                <S.Category key={index} onClick={() => handleCategorySelectSide(category.id)}>
+                  {category.name}
+                </S.Category>
+              ))}
+            </S.Categories>
+            <Loading></Loading>
+          </S.ContainerForCenter>
+        </S.Container>
+      </>
+    );
+  }
   if (isError) return <Nodata />;
 
   return (
