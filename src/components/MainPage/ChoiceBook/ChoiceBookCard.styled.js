@@ -66,7 +66,7 @@ export const BookTitle = styled.div`
   margin-top: 0.8rem;
   margin-bottom: 0.5rem;
   width: 180px;
-  padding: 0 10px;
+  padding: 0 28px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -87,7 +87,7 @@ export const BookAuthor = styled.div`
   margin-bottom: 0.3rem;
   color: #999;
   width: 190px;
-  padding: 0 10px;
+  padding: 0 28px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
