@@ -121,9 +121,11 @@ export const ContentInner = styled.div`
   position: relative;
   width: 1280px;
   margin: 0 auto;
+  overflow: hidden;
 
   &.layoutFlex {
     display: flex;
+    overflow: inherit;
   }
 
   @media (min-width: 769px) and (max-width: 1279px) {
