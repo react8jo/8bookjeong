@@ -138,7 +138,7 @@ function DetailPage() {
             <S.SectionTitle>책 소개</S.SectionTitle>
             <S.BookDescription>{book.item[0].description || 'No description available.'}</S.BookDescription>
             <S.Line />
-            <S.SectionTitle>Link</S.SectionTitle>
+            <S.SectionTitle>책 정보</S.SectionTitle>
             <S.Content>
               <a href={book.link} target='_blank' rel='noopener noreferrer'>
                 More Details
