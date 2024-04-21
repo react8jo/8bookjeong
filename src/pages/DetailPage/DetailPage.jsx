@@ -90,9 +90,20 @@ function DetailPage() {
                 <S.BookPriceStandard>{`${book.item[0].priceStandard.toLocaleString()}원`}</S.BookPriceStandard>
 
                 <S.PriceLabel>판매가</S.PriceLabel>
-                <S.BookPriceSales>{`${book.item[0].priceSales.toLocaleString()}원`}</S.BookPriceSales>
-                <S.BookSalePercent>{`${((book.item[0].priceStandard - book.item[0].priceSales) / book.item[0].priceStandard) * 100}%`}</S.BookSalePercent>
+                <S.BookPriceSales>
+                  <span>{`${book.item[0].priceSales.toLocaleString()}원`}</span>
+                  <S.DiscountLabel>
+                    {' '}
+                    (
+                    {(
+                      ((book.item[0].priceStandard - book.item[0].priceSales) / book.item[0].priceStandard) *
+                      100
+                    ).toFixed(0)}
+                    % 할인)
+                  </S.DiscountLabel>
+                </S.BookPriceSales>
 
+                {/* <S.BookSalePercent>{`${((book.item[0].priceStandard - book.item[0].priceSales) / book.item[0].priceStandard) * 100}%`}</S.BookSalePercent> */}
                 <S.PriceLabel>팔북정 포인트</S.PriceLabel>
                 <S.BookData>{`${book.item[0].mileage.toLocaleString()}원`}</S.BookData>
               </S.PriceGrid>
@@ -101,15 +112,15 @@ function DetailPage() {
             </S.BookInfo>
 
             <S.Line />
-            <S.PaymentBenefitsContainer>
+            {/* <S.PaymentBenefitsContainer>
               <S.PaymentBenefitsTitle>결제혜택</S.PaymentBenefitsTitle>
               <S.PaymentBenefitsDescription>카드/간편결제 혜택을 확인하세요</S.PaymentBenefitsDescription>
-            </S.PaymentBenefitsContainer>
-            <S.Line />
+            </S.PaymentBenefitsContainer> */}
+            {/* <S.Line /> */}
             <S.PaymentBenefitsContainer>
               <S.PaymentBenefitsTitle>배송안내</S.PaymentBenefitsTitle>
               <S.PaymentBenefitsDescription>
-                <h2>주소: {address}</h2>
+                <h2> {address}</h2>
                 <AddressChange setAddress={setAddress} />
               </S.PaymentBenefitsDescription>
             </S.PaymentBenefitsContainer>

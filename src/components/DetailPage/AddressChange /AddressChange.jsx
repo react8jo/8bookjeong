@@ -14,9 +14,23 @@ const PostcodeWidget = styled.div`
 
   // 모바일 뷰에서 위치 조정
   @media (max-width: 768px) {
-    width: 100%; // 모바일에서는 너비를 100%로 조정
-    left: auto; // 왼쪽 정렬 무시
-    right: 0; // 오른쪽 끝에 위치
+    width: 100%;
+    left: auto;
+    right: 0;
+  }
+`;
+const ChangeButton = styled.button`
+  padding: 8px;
+  border: 2px solid black;
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    color: #4b3620;
+    border: 2px solid #4b3620;
+    // background-color: #f8f8f8;
   }
 `;
 
@@ -63,9 +77,7 @@ const AddressChange = ({ setAddress }) => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <button onClick={togglePostcode} style={{ position: 'relative' }}>
-        지역 변경{'▾'}
-      </button>
+      <ChangeButton onClick={togglePostcode}>지역 변경{'▾'}</ChangeButton>
       <PostcodeWidget isOpen={isPostcodeOpen} ref={elementRef}>
         {/* Postcode 위젯 */}
       </PostcodeWidget>
