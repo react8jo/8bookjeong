@@ -116,6 +116,14 @@ export default function ResultPage() {
 
   const handlePageClick = ({ selected }) => {
     setPage(selected + 1);
+    scrollToTop();
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
