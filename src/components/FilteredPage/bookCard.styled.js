@@ -16,7 +16,7 @@ export const BookContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 500px;
+    width: 450px;
     height: 170px;
     align-items: center;
     padding: 16px;
