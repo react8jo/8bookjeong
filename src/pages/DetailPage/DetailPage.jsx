@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as S from './detailPage.styled';
 import { useParams } from 'react-router-dom';
-// import { useBookDetailsQuery } from '../../hooks/useBookDetails';
+import { useNavigate } from 'react-router-dom';
+
 import { useBookDetailQuery } from '../../hooks/useBookDetail';
 import ReturnExchangeTable from '../../components/DetailPage/DetailFooter/DetailFooter';
 import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
 import AddressChange from '../../components/DetailPage/AddressChange/AddressChange';
 import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
-// import Header from '../../components/common/Header/Header';
-// import Footer from '../../components/common/Footer/Footer';
 import BookImg from '../../components/DetailPage/BookImg/BookImg';
 import ScrollToTopButton from '../../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
 import ProductInfo from '../../components/DetailPage/ProductInfo/ProductInfo';
@@ -24,7 +23,16 @@ function DetailPage() {
   const [activeTab, setActiveTab] = useState('bookInfo');
   const bookInfoRef = useRef(null);
   const deliveryRef = useRef(null);
+  const navigate = useNavigate();
   const [address, setAddress] = useState('서울');
+
+  const handleAddToCart = () => {
+    navigate('/cart'); // '/cart' 경로로 이동
+  };
+
+  const handlePurchase = () => {
+    navigate('/payment'); // '/payment' 경로로 이동
+  };
 
   useEffect(() => {
     if (book) {
@@ -52,7 +60,6 @@ function DetailPage() {
 
   return (
     <>
-      {/* <Header /> */}
       <S.StyledDetailPage>
         <S.BookContent>
           <BookImg cover={book.item[0].cover} title={book.item[0].title} />
@@ -103,8 +110,6 @@ function DetailPage() {
                 <S.PriceLabel>팔북정 포인트</S.PriceLabel>
                 <S.BookData>{`${book.item[0].mileage.toLocaleString()}원`}</S.BookData>
               </S.PriceGrid>
-
-              {/* <S.BookReview>{`⭐️ ${book.item[0].customerReviewRank}.0`}</S.BookReview> */}
             </S.BookInfo>
 
             <S.Line />
@@ -121,8 +126,8 @@ function DetailPage() {
 
             <S.ButtonGroup>
               <QuantitySelector />
-              <S.Button>장바구니에 담기</S.Button>
-              <S.PurchaseButton>바로 구매하기</S.PurchaseButton>
+              <S.Button onClick={handleAddToCart}>장바구니에 담기</S.Button>
+              <S.PurchaseButton onClick={handlePurchase}>바로 구매하기</S.PurchaseButton>
             </S.ButtonGroup>
           </S.BookInfoContainer>
         </S.BookContent>
@@ -153,7 +158,6 @@ function DetailPage() {
         </div>
         <ScrollToTopButton />
       </S.StyledDetailPage>
-      {/* <Footer /> */}
     </>
   );
 }
