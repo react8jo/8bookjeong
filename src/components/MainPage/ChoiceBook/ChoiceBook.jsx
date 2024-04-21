@@ -109,7 +109,7 @@ const ChoiceBook = () => {
     },
     mobile: {
       breakpoint: { max: 768, min: 0 },
-      items: 2,
+      items: 1,
       slidesToSlide: 1
     }
   };
