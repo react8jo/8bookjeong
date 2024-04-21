@@ -5,7 +5,7 @@ export const StyledDetailPage = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  padding-top: 50px;
+  padding-top: 20px;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -97,8 +97,14 @@ export const Line = styled.hr`
 
 export const Content = styled.p`
   margin: 5px 0 20px 0;
-  color: #4b3620;
-  font-size: 18px;
+  color: #333;
+  font-size: 16px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+
+  div {
+    margin-bottom: 10px; // 각 줄 사이에 간격 추가
+  }
 `;
 
 export const InfoHeader = styled.div`
@@ -206,7 +212,7 @@ export const BookData = styled.p`
 /////////
 // 요약
 export const BookDescription = styled.p`
-  margin-top: 20px;
+  // margin-top: 20px;
   color: #595959;
   font-size: 16px;
   line-height: 22px;
@@ -221,16 +227,22 @@ export const BookReview = styled.p`
 `;
 export const PaymentBenefitsContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: row; // 기본적으로 행 방향
+  align-items: start;
   gap: 20px;
   width: 100%;
+  padding-left: 4px;
+
+  @media (max-width: 768px) {
+    flex-direction: column; // 모바일에서는 요소들을 수직 방향으로 쌓음
+  }
 `;
 
 export const PaymentBenefitsTitle = styled.span`
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
-  font-weight: normal;
+  font-weight: 600;
+  white-space: nowrap;
 `;
 
 export const PaymentBenefitsDescription = styled.div`

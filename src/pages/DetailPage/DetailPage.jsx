@@ -13,6 +13,7 @@ import BookImg from '../../components/DetailPage/BookImg/BookImg';
 import ScrollToTopButton from '../../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
 import ProductInfo from '../../components/DetailPage/ProductInfo/ProductInfo';
 import QuantitySelector from '../../components/DetailPage/QuantitySelector/QuantitySelector';
+import DeliveryEstimate from '../../components/DetailPage/DeliveryEstimate/DeliveryEstimate';
 
 function DetailPage() {
   const { isbn13 } = useParams();
@@ -23,7 +24,7 @@ function DetailPage() {
   const [activeTab, setActiveTab] = useState('bookInfo');
   const bookInfoRef = useRef(null);
   const deliveryRef = useRef(null);
-  const [address, setAddress] = useState('기본 주소');
+  const [address, setAddress] = useState('서울');
 
   useEffect(() => {
     if (book) {
@@ -107,13 +108,13 @@ function DetailPage() {
             </S.BookInfo>
 
             <S.Line />
-
             <S.PaymentBenefitsContainer>
-              <S.PaymentBenefitsTitle>배송안내</S.PaymentBenefitsTitle>
               <S.PaymentBenefitsDescription>
-                <h2> {address}</h2>
-                <AddressChange setAddress={setAddress} />
+                <S.PaymentBenefitsTitle>배송안내</S.PaymentBenefitsTitle>
+                <h2>{address}</h2>
+                <AddressChange address={address} setAddress={setAddress} />
               </S.PaymentBenefitsDescription>
+              <DeliveryEstimate address={address} />
             </S.PaymentBenefitsContainer>
 
             <S.Line />
@@ -140,9 +141,9 @@ function DetailPage() {
             <S.Line />
             <S.SectionTitle>책 정보</S.SectionTitle>
             <S.Content>
-              <a href={book.link} target='_blank' rel='noopener noreferrer'>
-                More Details
-              </a>
+              <div>작가: {book.item[0].author}</div>
+              <div>출판사: {book.item[0].publisher}</div>
+              <div>출간일: {book.item[0].pubDate}</div>
             </S.Content>
           </div>
         </div>
