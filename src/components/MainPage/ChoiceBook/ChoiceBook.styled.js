@@ -15,15 +15,22 @@ export const TitleName = styled.h3`
 `;
 
 export const ButtonList = styled.div`
-  display: flex;
+  // display: flex;
   justify-content: left;
   // margin-bottom: 1rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: fit-content;
+  cursor: pointer;
 `;
 
 export const Button = styled.button`
   padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 16px;
+  // margin: 0 10px;
+  margin-bottom: 0.3rem;
+  margin-right: 0.3rem;
+  font-size: 15px;
   font-weight: bold;
   color: ${primaryColor};
   border: none;

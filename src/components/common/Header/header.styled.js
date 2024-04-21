@@ -136,16 +136,18 @@ export const SearchIcon = styled.span`
   top: 50%;
   left: 15px;
   transform: translateY(-50%);
+  font-size: 16px;
 `;
 
 export const DeleteIcon = styled.span`
-  color: ${primaryColor};
   position: absolute;
+  color: ${primaryColor};
   top: 50%;
   right: 10px;
   padding: 10px 7px;
   transform: translateY(-50%);
   cursor: pointer;
+  font-size: 16px;
 `;
 
 export const SearchToggle = styled.button`
@@ -155,13 +157,39 @@ export const SearchToggle = styled.button`
     display: inline-block;
     position: absolute;
     left: 15px;
-    top: 29px;
-    width: 45px;
-    height: 45px;
+    top: 34px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     border-color: transparent;
     background-color: ${primaryColor};
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
+  }
+`;
+
+export const CartButton = styled.button`
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid ${primaryColor};
+  border-radius: 4px;
+  background-color: #fff;
+  transform: translateY(-50%);
+  color: ${primaryColor};
+  font-size: 22px;
+
+  @media (max-width: 1279px) {
+    right: 57px;
+  }
+
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+    top: 34px;
+    transform: inherit;
+    font-size: 18px;
   }
 `;

@@ -6,7 +6,7 @@ import logo from '../../../logo.svg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faCircleXmark, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { ContentInner } from '../../../assets/style/globalStyle.styled';
 
 const Header = () => {
@@ -31,6 +31,9 @@ const Header = () => {
 
   const handleSearchActive = () => {
     searchActive === false ? setSearchActive(true) : setSearchActive(false);
+  };
+  const handleCartLick = () => {
+    navigate(`/cart`);
   };
 
   return (
@@ -60,6 +63,9 @@ const Header = () => {
             <FontAwesomeIcon icon={faCircleXmark} />
           </S.DeleteIcon>
         </S.SearchContainer>
+        <S.CartButton type='button' onClick={() => handleCartLick()}>
+          <FontAwesomeIcon icon={faCartShopping} />
+        </S.CartButton>
         <CategorySelector />
       </ContentInner>
     </S.Navbar>

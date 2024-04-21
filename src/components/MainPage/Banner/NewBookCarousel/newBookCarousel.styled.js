@@ -6,6 +6,7 @@ export const CarouselContainer = styled.div`
   overflow: hidden;
   height: 400px;
   cursor: pointer;
+  z-index: 100;
 `;
 
 export const CarouselSlider = styled.div`
