@@ -144,3 +144,13 @@ export const NewBookTag = styled.h4`
 //   height: 5vw;
 //   // font-size: 0.1vw;
 // }
+
+export const NewBookCardBox = styled.div`
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+`;
