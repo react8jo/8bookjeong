@@ -1,70 +1,212 @@
-# Getting Started with Create React App
+# 📚팔북정
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 서비스 기획
 
-## Available Scripts
+### 👥 팀 소개
 
-In the project directory, you can run:
+|  팀원  |        역할        |                담당 파트                 |                  깃허브 주소                  |
+| :----: | :----------------: | :--------------------------------------: | :-------------------------------------------: |
+| 이현서 | 프로젝트 오너 (PO) |             상세 정보 페이지             |  [pistapixie](https://github.com/pistapixie)  |
+| 김지윤 |   스크럼 마스터    | 블로그추천, 신간 캐러셀, 광고배너, 푸터  |   [kirnjiyun](https://github.com/kirnjiyun)   |
+| 권혁준 |        팀원        |    카테고리 별 필터 기능,페이지네이션    | [redhero8830](https://github.com/redhero8830) |
+|  박샘  |        팀원        | 404페이지, 로딩, 장바구니 및 구매 페이지 |    [seambark](https://github.com/seambark)    |
+| 박영호 |        팀원        |   메인페이지 베스트, 신간, 추천 리스트   |    [ZeroTTTT](https://github.com/ZeroTTTT)    |
+| 이승희 |        팀원        |    검색기능, 검색 결과, 페이지네이션     |      [HSLE24](https://github.com/HSLE24)      |
 
-### `npm start`
+#### 프로젝트 목표
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 팀 목표
+  - 목표 1
+  - 목표 2
+- 개인 목표
+  - 팀원 1: 목표
+  - 팀원 2: 목표
+  - 팀원 3: 목표
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 프로젝트 소개
 
-### `npm test`
+배포 페이지 : https://palbookjung.netlify.app/
+노션 페이지 : https://obtainable-stretch-0df.notion.site/8-c1b91720197948caa0e6d2817541547a
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 🗓️ 개발 일정 및 진행방식
 
-### `npm run build`
+- 개발 기간: 2024.04.14 ~ 2024.04.21
+- 진행 방식: 애자일, 스크럼, 일별 회의 등
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 팀 컨벤션
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 깃 컨벤션
+  - 브랜치 전략
+  - 커밋 메시지 규칙 - 기본 형식: [태그] 제목
+    예) [Feat] 리스트 랜더링 구현 - 태그 종류:
+    Feat: 새로운 기능 추가
+    Modify: 기존 코드의 수정
+    Delete: 코드 또는 파일의 삭제
+    Merge: 브랜치의 병합
+- 코드 컨벤션
+  - 코드 스타일
+  - 네이밍 규칙
+    - code-id: 카멜 케이스 사용
+    - className: 카멜 케이스 사용
+    - 함수명: 카멜 케이스 사용 예) showModal
+    - 이벤트 함수명: handle 접두사 사용 예) handleClick
+    - assets명: 띄어쓰기 대신 언더바 사용, 영어 사용 예) show_modal.jpg
+    - 유틸함수: 별칭 사용 금지
+    - 작명 시 줄임말 사용 금지: 명확한 의미 전달을 위해 줄임말을 사용하지 않습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 🛠️ 기술 및 개발 환경
 
-### `npm run eject`
+- 프론트엔드: 기술 스택 (예: React, Vue, Angular 등)
+- 배포 환경: (예: AWS, Google Cloud, Heroku 등)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### 폴더 구조
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+react-team-1/
+├── node_modules/
+├── public/
+├── src/
+│ ├── assets/
+│ ├── components/
+│ ├── constants/
+│ ├── hooks/
+│ ├── layout/
+│ ├── pages/
+│ ├── router/
+│ ├── services/
+│ ├── App.js
+│ ├── index.js
+│ ├── logo.svg
+│ ├── setupProxy.js
+│ ├── .env
+│ ├── .eslintrc.js
+│ ├── .gitignore
+│ └── .prettierrc
+├── package-lock.json
+├── package.json
+└── README.md
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 서비스 소개
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### 주제
 
-## Learn More
+- 서비스 개요
+- 타겟 사용자
+- 주요 기능
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### 디자인
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 로고 디자인
+  ![팔북정 로고](./src/assets/images/logo.png)
 
-### Code Splitting
+- 컬러 팔레트
+  ![팔북정 로고](./src/assets/images/color.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📱기능 구현 (모바일 버전)
 
-### Analyzing the Bundle Size
+### 홈
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 메인페이지 스크롤
 
-### Making a Progressive Web App
+| 메인페이지 스크롤 |
+| :---------------: |
+|    사진넣는곳     |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- 배너 케러셀 작동하는거
 
-### Advanced Configuration
+| 메인페이지 |
+| :--------: |
+| 사진넣는곳 |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- 메인페이지에서 책 누르면 디테일로 넘어가는거 하나
 
-### Deployment
+| 메인페이지 |
+| :--------: |
+| 사진넣는곳 |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 카테고리 페이지
 
-### `npm run build` fails to minify
+- 카테고리 클릭하기
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| 카테고리 클릭 |
+| :-----------: |
+|  사진넣는곳   |
+
+### 검색 페이지
+
+- 검색어 입력 후 키워드
+
+| 검색어 입력 후 키워드 |
+| :-------------------: |
+|      사진넣는곳       |
+
+- 검색어 입력하고 삭제버튼
+
+| 검색어 입력 후 삭제 |
+| :-----------------: |
+|     사진넣는곳      |
+
+### 디테일 페이지
+
+- 전체 스크롤
+
+| 상세페이지 스크롤 |
+| :---------------: |
+|    사진넣는곳     |
+
+- 관련 기능
+
+| 관련 기능  |
+| :--------: |
+| 사진넣는곳 |
+
+- 관련 기능
+
+| 관련 기능  |
+| :--------: |
+| 사진넣는곳 |
+
+### 장바구니 페이지
+
+- 페이지 1
+
+| 장바구니 페이지1 |
+| :--------------: |
+|    사진넣는곳    |
+
+- 페이지 2
+
+| 장바구니 페이지2 |
+| :--------------: |
+|    사진넣는곳    |
+
+### 기타 페이지
+
+- 404 페이지
+
+| 404 페이지 |
+| :--------: |
+| 사진넣는곳 |
+
+## 🖥️ 기능 구현 (데스크탑버전)
+
+| 메인페이지 스크롤 | 검색어 입력 후 결과 | 상세페이지 스크롤 |
+| :---------------: | :-----------------: | :---------------: |
+|    사진넣는곳     |     사진넣는곳      |    사진넣는곳     |
+
+## 🖋️ 프로젝트 리뷰
+
+### 📍 이슈 / 트러블 슈팅
+
+- 이슈 1: 해결 방안
+- 이슈 2: 해결 방안
+
+### 📍 리팩토링 계획
+
+- 리팩토링 대상 1
+- 리팩토링 대상 2
+
+### 📍 회고
+
+- 프로젝트를 통해 배운 점
+- 개선해야 할 점
+- 향후 계획
