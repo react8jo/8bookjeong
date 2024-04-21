@@ -7,8 +7,8 @@ import ReturnExchangeTable from '../../components/DetailPage/DetailFooter/Detail
 import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
 import AddressChange from '../../components/DetailPage/AddressChange /AddressChange';
 import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
-import Header from '../../components/common/Header/Header';
-import Footer from '../../components/common/Footer/Footer';
+// import Header from '../../components/common/Header/Header';
+// import Footer from '../../components/common/Footer/Footer';
 import BookImg from '../../components/DetailPage/BookImg/BookImg';
 import ScrollToTopButton from '../../components/DetailPage/ScrollToTopButton/ScrollToTopButton';
 import ProductInfo from '../../components/DetailPage/ProductInfo/ProductInfo';
@@ -51,7 +51,7 @@ function DetailPage() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <S.StyledDetailPage>
         <S.BookContent>
           <BookImg cover={book.item[0].cover} title={book.item[0].title} />
@@ -161,7 +161,7 @@ function DetailPage() {
         </div>
         <ScrollToTopButton />
       </S.StyledDetailPage>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

@@ -18,8 +18,8 @@ export default function Router() {
         <Route path='/payment' element={<PaymentPage />} />
         <Route path='/cart' element={<CartPage />} />
         <Route path='*' element={<NotFoundPage />} />
+        <Route path='/products/:isbn13' element={<DetailPage />} />
       </Route>
-      <Route path='/products/:isbn13' element={<DetailPage />} />
     </Routes>
   );
 }
