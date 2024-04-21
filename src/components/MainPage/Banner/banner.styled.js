@@ -19,7 +19,21 @@ export const ButtonList = styled.div`
   margin-bottom: 1rem;
 `;
 
-export const Button = styled.button`
+// export const Button = styled.button`
+//   padding: 10px 20px;
+//   margin: 0 10px;
+//   font-size: 16px;
+//   font-weight: bold;
+//   color: ${primaryColor};
+//   border: 1px solid ${primaryColor};
+//   border-bottom: ${({ selected }) => (selected ? `2px solid ${primaryColor}` : `1px solid ${primaryColor}`)};
+//   background-color: ${({ selected }) => (selected ? `rgba(${primaryColorRgb}, 0.1)` : 'white')};
+//   border-radius: 0;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
+// `;
+
+export const NewButton = styled.button`
   padding: 10px 20px;
   margin: 0 10px;
   font-size: 16px;
@@ -31,8 +45,21 @@ export const Button = styled.button`
   border-radius: 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: fit-content;
+  z-index: 10;
 `;
 
-export const NewButton = styled(Button)``;
-
-export const BestSeller = styled(NewButton)``;
+export const BestSeller = styled.button`
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: ${primaryColor};
+  border: 1px solid ${primaryColor};
+  border-bottom: ${({ selected }) => (selected ? `2px solid ${primaryColor}` : `1px solid ${primaryColor}`)};
+  background-color: ${({ selected }) => (selected ? `rgba(${primaryColorRgb}, 0.1)` : 'white')};
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+`;
