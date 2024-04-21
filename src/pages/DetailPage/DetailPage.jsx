@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useBookDetailQuery } from '../../hooks/useBookDetail';
 import ReturnExchangeTable from '../../components/DetailPage/DetailFooter/DetailFooter';
 import TabsComponent from '../../components/DetailPage/Tabs/Tabs';
-import AddressChange from '../../components/DetailPage/AddressChange /AddressChange';
+import AddressChange from '../../components/DetailPage/AddressChange/AddressChange';
 import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 // import Header from '../../components/common/Header/Header';
 // import Footer from '../../components/common/Footer/Footer';
