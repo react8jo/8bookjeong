@@ -27,8 +27,10 @@ export const ButtonList = styled.div`
 
 export const Button = styled.button`
   padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 16px;
+  // margin: 0 10px;
+  margin-bottom: 0.3rem;
+  margin-right: 0.3rem;
+  font-size: 15px;
   font-weight: bold;
   color: ${primaryColor};
   border: none;

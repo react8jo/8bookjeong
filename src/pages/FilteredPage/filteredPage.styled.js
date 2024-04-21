@@ -49,7 +49,8 @@ export const BookList = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 375px;
-    padding: 5px;
+    width: 370px;
+    //width: 280px;
+    // padding: 5px;
   }
 `;
