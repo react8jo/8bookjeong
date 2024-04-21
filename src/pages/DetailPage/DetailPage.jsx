@@ -27,11 +27,11 @@ function DetailPage() {
   const [address, setAddress] = useState('서울');
 
   const handleAddToCart = () => {
-    navigate('/cart'); // '/cart' 경로로 이동
+    navigate('/cart');
   };
 
   const handlePurchase = () => {
-    navigate('/payment'); // '/payment' 경로로 이동
+    navigate('/payment');
   };
 
   useEffect(() => {

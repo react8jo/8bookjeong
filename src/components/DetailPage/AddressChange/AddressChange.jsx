@@ -12,7 +12,6 @@ const PostcodeWidget = styled.div`
   top: 100%;
   left: 0;
 
-  // 모바일 뷰에서 위치 조정
   @media (max-width: 768px) {
     width: 100%;
     left: auto;

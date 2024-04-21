@@ -103,7 +103,7 @@ export const Content = styled.p`
   padding-top: 10px;
 
   div {
-    margin-bottom: 10px; // 각 줄 사이에 간격 추가
+    margin-bottom: 10px;
   }
 `;
 
@@ -157,9 +157,9 @@ export const BookInfoLine = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap; // 내용이 많아지면 다음 줄로 넘어가도록 설정
+  flex-wrap: wrap;
   margin-top: 10px;
-  gap: 4px; // 요소 사이에 간격 추가
+  gap: 4px;
 `;
 
 // 책 정보
@@ -204,8 +204,8 @@ export const PriceLabel = styled.span`
 export const BookData = styled.p`
   font-size: 16px;
   color: #666;
-  margin: 0; // 마진 초기화
-  line-height: 18px; // 라인 높이 설정
+  margin: 0;
+  line-height: 18px;
   flex-wrap: nowrap;
 `;
 
@@ -227,14 +227,14 @@ export const BookReview = styled.p`
 `;
 export const PaymentBenefitsContainer = styled.div`
   display: flex;
-  flex-direction: row; // 기본적으로 행 방향
+  flex-direction: row;
   align-items: start;
   gap: 20px;
   width: 100%;
   padding-left: 4px;
 
   @media (max-width: 768px) {
-    flex-direction: column; // 모바일에서는 요소들을 수직 방향으로 쌓음
+    flex-direction: column;
   }
 `;
 

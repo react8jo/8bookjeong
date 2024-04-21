@@ -18,10 +18,9 @@ const DeliveryEstimate = ({ address }) => {
     <div>
       <p
         style={{
-          backgroundColor: '#FFF7EF', // 배경색 추가
-          padding: '10px', // 패딩 추가
-          borderRadius: '5px' // 모서리 둥글게 처리
-          // color: white;
+          backgroundColor: '#FFF7EF',
+          padding: '10px',
+          borderRadius: '5px'
         }}>
         {deliveryText}
       </p>
