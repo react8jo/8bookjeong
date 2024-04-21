@@ -17,7 +17,7 @@ export const CarouselSlide = styled.div`
   flex: 0 0 auto;
   width: 100%;
   box-sizing: border-box;
-  background-color: ${(props) => props.backgroundColor};
+  background: ${(props) => `linear-gradient(270deg, ${props.backgroundColor}, rgba(0, 0, 0, 0.8))`};
 `;
 
 export const SlideImage = styled.div`
@@ -42,7 +42,7 @@ export const SlideContent = styled.div`
   left: 0;
   padding: 3rem 4rem;
   height: 100%;
-  background: ${(props) => `linear-gradient(270deg, ${props.backgroundColor}, rgba(0, 0, 0, 0.8))`};
+
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   width: 50%;
