@@ -61,7 +61,7 @@ export default function NewBookCarousel({ items = [] }) {
       </S.SlideControls>
       <S.SlideIndicators>
         {items.map((_, index) => (
-          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} $={index === currentSlide} />
+          <S.IndicatorButton key={index} onClick={() => goToSlide(index)} active={index === currentSlide} />
         ))}
       </S.SlideIndicators>
     </S.CarouselContainer>
