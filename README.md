@@ -59,31 +59,7 @@
 - 프론트엔드: 기술 스택 (예: React, Vue, Angular 등)
 - 배포 환경: (예: AWS, Google Cloud, Heroku 등)
 
-#### 폴더 구조
 
-react-team-1/
-├── node_modules/
-├── public/
-├── src/
-│ ├── assets/
-│ ├── components/
-│ ├── constants/
-│ ├── hooks/
-│ ├── layout/
-│ ├── pages/
-│ ├── router/
-│ ├── services/
-│ ├── App.js
-│ ├── index.js
-│ ├── logo.svg
-│ ├── setupProxy.js
-│ ├── .env
-│ ├── .eslintrc.js
-│ ├── .gitignore
-│ └── .prettierrc
-├── package-lock.json
-├── package.json
-└── README.md
 
 ### 서비스 소개
 
