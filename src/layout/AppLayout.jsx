@@ -7,12 +7,18 @@ import Footer from '../components/common/Footer/Footer';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import Header from '../components/common/Header/Header';
+import ContentArea from '../components/common/Content/ContentArea';
+import { ContentInner } from '../assets/style/globalStyle.styled';
 
 const AppLayout = () => {
   return (
     <S.AppLayout>
       <Header />
-      <Outlet />
+      <ContentArea>
+        <ContentInner>
+          <Outlet />
+        </ContentInner>
+      </ContentArea>
       <Footer />
     </S.AppLayout>
   );

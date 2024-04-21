@@ -5,10 +5,10 @@ import BookCard from '../../components/FilteredPage/BookCard';
 import Loading from '../../components/common/Loading/Loading';
 import Nodata from '../../components/common/Nodata/Nodata';
 import ReactPaginate from 'react-paginate';
-import './Pagination.css';
 import AdBanner from '../../components/MainPage/AdBanner/AdBanner';
 
 import * as S from './filteredPage.styled';
+import './Pagination.css';
 
 const FilteredPage = () => {
   const [query] = useState('이'); //검색어 (문자열) (필수값)
@@ -105,16 +105,17 @@ const FilteredPage = () => {
         pageCount={totalPages}
         onPageChange={handlePageClick}
         forcePage={start - 1}
-        containerClassName='pagination'
-        pageClassName='page-item'
-        pageLinkClassName='page-link'
-        activeClassName='active'
-        previousClassName='previous page-item'
-        nextClassName='next page-item'
-        disabledClassName='disabled'
-        breakLinkClassName='page-link'
-        previousLinkClassName='page-link'
-        nextLinkClassName='page-link'
+        containerClassName='filter-pagination'
+        // containerClassName='pagination'
+        pageClassName='filter-page-item'
+        pageLinkClassName='filter-page-link'
+        activeClassName='filter-active'
+        previousClassName='filter-previous filter-page-item'
+        nextClassName='filter-next filter-page-item'
+        disabledClassName='filter-disabled'
+        breakLinkClassName='filter-page-link'
+        previousLinkClassName='filter-page-link'
+        nextLinkClassName='filter-page-link'
       />
     </>
   );

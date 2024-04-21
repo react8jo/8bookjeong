@@ -1,62 +1,166 @@
 import styled from 'styled-components';
+import { primaryColor, secondaryColor } from '../../../assets/style/globalStyle.styled';
 
 export const Navbar = styled.nav`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 1rem 0;
-  background-color: #fff;
+  position: relative;
+  box-sizing: border-box;
+
+  .layoutFlex {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 75px 20px 0;
+  }
+
+  &.primaryColor {
+    background-color: rgba(75, 54, 32, 0.12);
+  }
+
+  @media (max-width: 1279px) {
+    .layoutFlex {
+      width: 100%;
+    }
+  }
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 1rem 0;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100vw;
+    background-color: inherit;
+
+    .layoutFlex {
+      flex-direction: column;
+      padding: 15px 15px 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    &.primaryColor {
+      background-color: inherit;
+
+      .layoutFlex {
+        background-color: rgba(217, 212, 208, 0.9);
+      }
+    }
+  }
+`;
+
+export const LogoArea = styled.h1`
+  margin-left: -20px;
+
+  a {
+    display: inline-block;
+
+    .hidden {
+      visibility: hidden;
+      position: absolute;
+      left: -999px;
+      height: 0;
+      width: 0;
+    }
+  }
+
+  @media (max-width: 1279px) {
+    margin-left: 0;
   }
 `;
 
 export const Logo = styled.img`
-  width: 8rem;
+  width: 170px;
   height: auto;
-  margin: 0 1.5rem 0 1rem;
 
   @media (max-width: 768px) {
+    width: 9rem;
   }
 `;
 
 export const SearchContainer = styled.form`
   position: relative;
-  display: flex;
-  height: 30px;
-  flex-direction: row;
-  align-items: center;
+  height: 40px;
 
   @media (max-width: 768px) {
-    margin-top: 1rem;
+    width: 100%;
+    height: 0;
+    transition: 0.5s;
+    opacity: 0;
+    font-size: 0;
+
+    input {
+      height: 0;
+      padding: 0;
+      border-color: transparent;
+    }
+    svg {
+      opacity: 0;
+    }
+
+    &.active {
+      height: 40px;
+      margin-top: 1rem;
+      opacity: 1;
+      font-size: 16px;
+
+      input {
+        height: 100%;
+        padding: 4px 40px 4px 45px;
+        border-color: inherit;
+      }
+
+      svg {
+        opacity: 1;
+      }
+    }
   }
 `;
 
 export const SearchInput = styled.input`
-  border: 1px solid rgb(137, 146, 39);
+  border: 1px solid ${primaryColor};
   outline: none;
   border-radius: 24px;
   color: #333;
-  width: 300px;
-  height: 30px;
-  margin-right: 8px;
-  padding: 0.3em 3em 0.3em 3em;
+  width: 450px;
+  min-width: 320px;
+  height: 100%;
+  padding: 4px 40px 4px 45px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     width: 100%;
   }
 `;
 
 export const SearchIcon = styled.span`
-  color: rgb(137, 146, 39);
-  position: relative;
-  left: 30px;
+  color: ${primaryColor};
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
 `;
 
 export const DeleteIcon = styled.span`
-  color: rgb(137, 146, 39);
-  position: relative;
-  right: 35px;
+  color: ${primaryColor};
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  padding: 10px 7px;
+  transform: translateY(-50%);
+  cursor: pointer;
+`;
+
+export const SearchToggle = styled.button`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    top: 29px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: ${primaryColor};
+    color: #fff;
+    font-size: 20px;
+  }
 `;

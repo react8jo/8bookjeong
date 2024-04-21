@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as S from './SearchBookCard.styled';
+import { Buttons } from '../../assets/style/globalStyle.styled';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -41,7 +42,7 @@ const BookCard = ({ book }) => {
     <S.BookContainer>
       <S.BookCard>
         <S.BookImgLayer onClick={goToBookDetailPage}>
-          <img src={book.cover} alt={book.title} style={imgStyle} />
+          <S.BookCover src={book.cover} alt={book.title} style={imgStyle} />
         </S.BookImgLayer>
         <S.BookInfo>
           <S.TextEllipsis>{book.title}</S.TextEllipsis>
@@ -67,7 +68,7 @@ const BookCard = ({ book }) => {
               <S.BookSubInfo>⭐️ {book.customerReviewRank}.0</S.BookSubInfo>
             </S.BookSub>
           </S.BookThirdInfo>
-          <S.BookAdd>찜하기</S.BookAdd>
+          <Buttons type='button'>찜하기</Buttons>
         </S.BookInfo>
       </S.BookCard>
     </S.BookContainer>

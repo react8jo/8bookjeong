@@ -5,24 +5,21 @@ export const BookContainer = styled.div`
   display: flex;
   padding: 36px 0 36px 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  width: 984px;
-  height: 220px;
+  width: 100%;
+  height: 300px;
   cursor: pointer;
 
   @media (max-width: 1024px) {
-    width: 700px;
-    height: 180px;
+    height: 190px;
     align-items: center;
-    padding: 16px 0 0 16px;
-    margin-top: 20px;
+    padding: 16px;
   }
 
   @media (max-width: 768px) {
-    width: 355px;
+    width: 500px;
     height: 170px;
     align-items: center;
     padding: 16px;
-    margin-top: 0px;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
   }
 `;

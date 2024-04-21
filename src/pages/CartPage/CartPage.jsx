@@ -15,7 +15,7 @@ export default function CartPage() {
   };
 
   return (
-    <div>
+    <>
       <ContentTitle className='center'>장바구니</ContentTitle>
       <S.CartHeader>
         <ul>
@@ -144,6 +144,6 @@ export default function CartPage() {
           주문하기
         </Buttons>
       </ButtonArea>
-    </div>
+    </>
   );
 }

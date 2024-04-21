@@ -6,6 +6,7 @@ import { useBookSearchQuery } from '../../hooks/useBookSearch';
 
 import './ResultPage.style.css';
 import * as S from './ResultPage.styled';
+import '../FilteredPage/Pagination.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SearchBookCard from '../../components/ResultPage/SearchBookCard';
@@ -120,7 +121,7 @@ export default function ResultPage() {
     <div className='text'>
       <S.SearchCount>
         <h4>
-          <S.SearchQuery>{data && data.query}</S.SearchQuery> 검색 결과: 총{' '}
+          <S.SearchQuery>▶ {data && data.query}</S.SearchQuery> 검색 결과: 총{' '}
           {data && data.totalResults && data.totalResults.toLocaleString()}건
         </h4>
       </S.SearchCount>
@@ -192,16 +193,16 @@ export default function ResultPage() {
           pageRangeDisplayed={isMobile ? 2 : 3}
           marginPagesDisplayed={isMobile ? 1 : 2}
           forcePage={start - 1}
-          containerClassName='pagination'
-          pageClassName='page-item'
-          pageLinkClassName='page-link'
-          activeClassName='active'
-          previousClassName='previous page-item'
-          nextClassName='next page-item'
-          disabledClassName='disabled'
-          breakLinkClassName='page-link'
-          previousLinkClassName='page-link'
-          nextLinkClassName='page-link'
+          containerClassName='SearchPagination'
+          pageClassName='filter-page-item'
+          pageLinkClassName='filter-page-link'
+          activeClassName='filter-active'
+          previousClassName='filter-previous filter-page-item'
+          nextClassName='filter-next filter-page-item'
+          disabledClassName='filter-disabled'
+          breakLinkClassName='filter-page-link'
+          previousLinkClassName='filter-page-link'
+          nextLinkClassName='filter-page-link'
         />
       </S.PaginationArea>
     </div>

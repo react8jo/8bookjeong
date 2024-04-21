@@ -1,12 +1,20 @@
-.pagination {
-  margin: 75px 0 120px; 
+.filter-pagination {
+  margin: 75px 0 120px;
   display: flex;
   padding: 0;
   justify-content: center;
   gap: 16px; /* 각 아이템 사이의 간격 */
 }
 
-.page-item {
+.SearchPagination {
+  margin: 0px;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  gap: 16px; /* 각 아이템 사이의 간격 */
+}
+
+.filter-page-item {
   display: flex;
   width: 36px;
   height: 36px;
@@ -16,32 +24,37 @@
   transition: transform 0.3s ease;
 }
 
-.page-item:hover {
+.filter-page-item:hover {
   transform: translateY(-1px);
 }
 
-.page-item.active {
-  color: #ffffff;
+.filter-page-item.filter-active {
   background-color: #ff7737;
   font-weight: bold;
 }
 
-.page-link {
+.filter-page-link {
   display: block;
   width: 100%;
   height: 100%;
   line-height: 36px;
   text-align: center;
+  color: #212529;
+  text-decoration: none;
 }
 
-.previous,
-.next {
+.filter-page-link.filter-active {
+  color: white;
+}
+
+.filter-previous,
+.filter-next {
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 /* 비활성화된 버튼에 대한 스타일 */
-.page-item.disabled .page-link {
+.filter-page-item.filter-disabled .filter-page-link {
   cursor: default;
   transform: none;
 }
