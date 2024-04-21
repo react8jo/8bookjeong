@@ -8,6 +8,10 @@ export const Title = styled.div`
   font-size: 24px;
   font-weight: 700;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2.5rem;
+  }
 `;
 
 export const TitleName = styled.h3`

@@ -9,15 +9,22 @@ export const BannerLayout = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 1rem;
   background-color: #fff;
   z-index: 100;
+
+  @media (max-width: 768px) {
+    margin: 0 -15px;
+  }
 `;
 
 export const ButtonList = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.button`
@@ -32,6 +39,12 @@ export const Button = styled.button`
   cursor: pointer;
   transition: background-color 0.3s ease;
   border: 2px solid ${primaryColor};
+
+  @media (max-width: 768px) {
+    margin: 0 5px;
+    padding: 10px 10px;
+    font-size: 15px;
+  }
 `;
 
 export const NewButton = styled(Button)``;

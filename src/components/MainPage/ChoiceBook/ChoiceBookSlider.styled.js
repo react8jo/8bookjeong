@@ -10,6 +10,12 @@ export const ChoiceBookSlider = styled.section`
   // padding: 3% 0;
   font-family: 'Anton', sans-serif;
   font-size: clamp(100px, 7vw, 140px);
+
+  @media (max-width: 768px) {
+    .carousel-container {
+      padding: 0;
+    }
+  }
 `;
 
 export const CarouselContainer = styled.div`

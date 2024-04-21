@@ -12,6 +12,7 @@ export const IsLoading = styled.span`
   // top: 50%;
   top: 44%;
   transform: translate(-50%, -50%);
+  z-index: 90;
 
   &:before,
   &:after {
