@@ -4,11 +4,11 @@ import { primaryColor } from '../../../assets/style/globalStyle.styled';
 export const HamburgerButton = styled.button`
   background: none;
   border: 1px solid ${primaryColor};
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 22px;
   position: absolute;
   top: 50%;
   right: 0;
@@ -21,8 +21,10 @@ export const HamburgerButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    top: 29px;
+    top: 34px;
     transform: inherit;
+    width: 35px;
+    height: 35px;
   }
 `;
 
