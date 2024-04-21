@@ -253,7 +253,7 @@ export const CartTotal = styled.div`
       transform: translateY(-50%);
       width: 30px;
       height: 30px;
-      line-height: 22px;
+      line-height: 28px;
       border-radius: 50%;
       background-color: #fff;
       color: #c4c4c4;
