@@ -79,6 +79,7 @@ export const BookImg = styled.div`
 `;
 
 export const BookInfo = styled.div`
+  width: 200px;
   margin-left: 1em;
   display: flex;
   flex-direction: column;
@@ -103,7 +104,7 @@ export const BookTagInfo = styled.div`
 `;
 
 export const BookImgLayer = styled.div`
-  width: 100%;
+  width: 300px;
   overflow: hidden;
   height: 400px;
   display: flex;
@@ -116,7 +117,6 @@ export const BookImgLayer = styled.div`
 `;
 
 export const BookCover = styled.img`
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease-in-out;
   &:hover {
     transform: scale(1.04);
