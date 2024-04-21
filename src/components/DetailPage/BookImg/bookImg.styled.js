@@ -12,7 +12,7 @@ export const BookImage = styled.img`
     transform: scale(1.04);
   }
 `;
-// BookImageContainer를 위한 스타일
+
 export const BookImageContainer = styled.div`
   position: relative;
   margin-right: 40px;
@@ -28,7 +28,6 @@ export const BookImageContainer = styled.div`
   }
 `;
 
-// PreviewText를 위한 스타일
 export const PreviewText = styled.span`
   display: block; // 블록 레벨 요소로 만들어 전체 폭을 사용하게 함
   margin-top: 10px; // 이미지와의 간격

@@ -14,8 +14,8 @@ export const PostcodeWidget = styled.div`
 
   // 모바일 뷰에서 위치 조정
   @media (max-width: 768px) {
-    width: 100%; // 모바일에서는 너비를 100%로 조정
-    left: auto; // 왼쪽 정렬 무시
-    right: 0; // 오른쪽 끝에 위치
+    width: 100%;
+    left: auto;
+    right: 0;
   }
 `;

@@ -52,14 +52,14 @@ export const BookMeta = styled.div`
 
 export const ButtonGroup = styled.div`
   display: flex;
-  flex-direction: row; // 기본은 행 방향
+  flex-direction: row;
   gap: 10px;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 50px;
 
   @media (max-width: 760px) {
-    flex-direction: column; // 모바일 뷰에서는 열 방향
+    flex-direction: column;
   }
 `;
 
@@ -156,44 +156,44 @@ export const BookInfoLine = styled.div`
 // 책 정보
 export const PriceGrid = styled.div`
   display: grid;
-  grid-template-columns: auto auto; // 두 개의 컬럼
-  grid-template-rows: repeat(3, auto); // 세 개의 행
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(3, auto);
   gap: 14px;
   align-items: center;
-  font-size: 16px; // 글씨 크기 증가
+  font-size: 16px;
 `;
 
 export const BookPriceSales = styled.p`
-  color: #ff7737; // 색상 변경
-  font-size: 24px; // 글씨 크기 변경
+  color: #ff7737;
+  font-size: 24px;
   font-weight: bold;
 `;
 export const DiscountLabel = styled.span`
-  color: #c72d1b; // 할인율 색상 변경
-  font-size: 18px; // 할인율 글씨 크기 변경
+  color: #c72d1b;
+  font-size: 18px;
 `;
 
 export const BookSalePercent = styled.p`
   color: #c72d1b;
-  font-size: 18px; // 글씨 크기 변경
+  font-size: 18px;
   font-weight: bold;
 `;
 
 // 정가 및 판매가 등 나머지 텍스트 스타일도 조정 가능
 export const BookPriceStandard = styled.p`
   color: #666;
-  font-size: 16px; // 글씨 크기 변경
-  text-decoration: line-through;
+  font-size: 16px;
+  // text-decoration: line-through;
 `;
 
 export const PriceLabel = styled.span`
-  font-size: 16px; // 글씨 크기 변경
+  font-size: 16px;
   color: #666;
   font-weight: bold;
 `;
 
 export const BookData = styled.p`
-  font-size: 16px; // 글씨 크기 변경
+  font-size: 16px;
   color: #666;
 `;
 
@@ -215,10 +215,10 @@ export const BookReview = styled.p`
 `;
 export const PaymentBenefitsContainer = styled.div`
   display: flex;
-  flex-direction: row; // 요소들을 수평 방향으로 배열
-  align-items: center; // 요소들을 수직 방향 중앙에 위치
-  gap: 20px; // 제목과 설명 사이의 공간
-  width: 100%; // 컨테이너가 전체 너비를 차지하도록 설정하여 제목과 설명이 나란히 들어갈 수 있게 함
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
 `;
 
 export const PaymentBenefitsTitle = styled.span`
@@ -227,15 +227,10 @@ export const PaymentBenefitsTitle = styled.span`
   font-weight: normal;
 `;
 
-// export const PaymentBenefitsDescription = styled.span`
-//   font-size: 14px;
-//   color: #333;
-//   font-weight: normal;
-// `;
 export const PaymentBenefitsDescription = styled.div`
-  display: flex; // Flexbox 사용
-  align-items: center; // 세로 중앙 정렬
-  gap: 20px; // 요소 사이 간격
+  display: flex;
+  align-items: center;
+  gap: 20px;
   // margin-bottom: 10px;
   color: #666;
 `;

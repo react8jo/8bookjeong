@@ -80,11 +80,6 @@ function DetailPage() {
 
               <S.Line />
 
-              {/* <S.PriceLine>
-                <S.BookSalePercent>{`${((book.item[0].priceStandard - book.item[0].priceSales) / book.item[0].priceStandard) * 100}%`}</S.BookSalePercent>
-                <S.BookPriceSales>{`${book.item[0].priceSales.toLocaleString()}원`}</S.BookPriceSales>
-                <S.BookPriceStandard>{`${book.item[0].priceStandard.toLocaleString()}원`}</S.BookPriceStandard>
-              </S.PriceLine> */}
               <S.PriceGrid>
                 <S.PriceLabel>정가</S.PriceLabel>
                 <S.BookPriceStandard>{`${book.item[0].priceStandard.toLocaleString()}원`}</S.BookPriceStandard>
@@ -112,11 +107,7 @@ function DetailPage() {
             </S.BookInfo>
 
             <S.Line />
-            {/* <S.PaymentBenefitsContainer>
-              <S.PaymentBenefitsTitle>결제혜택</S.PaymentBenefitsTitle>
-              <S.PaymentBenefitsDescription>카드/간편결제 혜택을 확인하세요</S.PaymentBenefitsDescription>
-            </S.PaymentBenefitsContainer> */}
-            {/* <S.Line /> */}
+
             <S.PaymentBenefitsContainer>
               <S.PaymentBenefitsTitle>배송안내</S.PaymentBenefitsTitle>
               <S.PaymentBenefitsDescription>
