@@ -6,12 +6,12 @@
 
 |  팀원  |        역할        |                담당 파트                 |                  깃허브 주소                  |
 | :----: | :----------------: | :--------------------------------------: | :-------------------------------------------: |
-| 이현서 | 프로젝트 오너 (PO) |             상세 정보 페이지             |  [pistapixie](https://github.com/pistapixie)  |
-| 김지윤 |   스크럼 마스터    | 블로그추천, 신간 캐러셀, 광고배너, 푸터  |   [kirnjiyun](https://github.com/kirnjiyun)   |
-| 권혁준 |        팀원        |    카테고리 별 필터 기능,페이지네이션    | [redhero8830](https://github.com/redhero8830) |
-|  박샘  |        팀원        | 404페이지, 로딩, 장바구니 및 구매 페이지 |    [seambark](https://github.com/seambark)    |
-| 박영호 |        팀원        |   메인페이지 베스트, 신간, 추천 리스트   |    [ZeroTTTT](https://github.com/ZeroTTTT)    |
-| 이승희 |        팀원        |    검색기능, 검색 결과, 페이지네이션     |      [HSLE24](https://github.com/HSLE24)      |
+| 이현서 | 프로젝트 오너 (PO) |             상세 정보 페이지, 플로팅 버튼           |  [pistapixie](https://github.com/pistapixie)  |
+| 김지윤 |   스크럼 마스터    | 메인 배너(블로그추천, 신간), 광고배너, 푸터  |   [kirnjiyun](https://github.com/kirnjiyun)   |
+| 권혁준 |        팀원        |    카테고리 페이지, 페이지네이션    | [redhero8830](https://github.com/redhero8830) |
+|  박샘  |        팀원        | 404,로딩,장바구니 및 구매 페이지 |    [seambark](https://github.com/seambark)    |
+| 박영호 |        팀원        |  메인 도서 리스트(베스트, 신간, 추천)   |    [ZeroTTTT](https://github.com/ZeroTTTT)    |
+| 이승희 |        팀원        |    검색 페이지, 페이지네이션     |      [HSLE24](https://github.com/HSLE24)      |
 
 #### 프로젝트 목표
 
