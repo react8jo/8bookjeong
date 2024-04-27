@@ -6,6 +6,29 @@ import BestsellerBookCard from './BestsellerBookCard';
 import * as S from './bestsellerBookSlider.styled';
 
 const BestsellerBookSlider = ({ title, books, responsive, isRank }) => {
+  const CustomLeftArrow = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      carouselState: { currentSlide, deviceType }
+    } = rest;
+    return (
+      <S.ControlButtonL onClick={() => onClick()} $justifyContent={'flex-start'}>
+        &lt;
+      </S.ControlButtonL>
+    );
+  };
+
+  const CustomRightArrow = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      carouselState: { currentSlide, deviceType }
+    } = rest;
+    return (
+      <S.ControlButtonR onClick={() => onClick()} $justifyContent={'flex-end'}>
+        &gt;
+      </S.ControlButtonR>
+    );
+  };
   return (
     <S.BestsellerBookSlider>
       <Carousel
@@ -15,6 +38,8 @@ const BestsellerBookSlider = ({ title, books, responsive, isRank }) => {
         // vertical={true} // 세로 캐러셀
         // arrows={false}
         // renderArrowsWhenDisabled={false}
+        customLeftArrow={<CustomLeftArrow />}
+        customRightArrow={<CustomRightArrow />}
         centerMode={true}
         itemClass='movie-slider p-1'
         containerClass='carousel-container'

@@ -29,7 +29,7 @@
   - 이승희: 다른 사람들과 함께 협업하는 과정을 경험해보고 싶습니다.
 
 ### 프로젝트 소개
-
+  ![팔북정 QR](./src/assets/images/QR.png)
 - 배포 페이지 : https://palbookjung.netlify.app/
 - 노션 페이지 : https://obtainable-stretch-0df.notion.site/8-c1b91720197948caa0e6d2817541547a
 

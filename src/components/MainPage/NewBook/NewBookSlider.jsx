@@ -7,7 +7,29 @@ import * as S from './NewBookSlider.styled';
 
 const NewBookSlider = ({ title, books, responsive }) => {
   // console.log('books', books);
+  const CustomLeftArrow = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      carouselState: { currentSlide, deviceType }
+    } = rest;
+    return (
+      <S.ControlButtonL onClick={() => onClick()} $justifyContent={'flex-start'}>
+        &lt;
+      </S.ControlButtonL>
+    );
+  };
 
+  const CustomRightArrow = ({ onClick, ...rest }) => {
+    const {
+      onMove,
+      carouselState: { currentSlide, deviceType }
+    } = rest;
+    return (
+      <S.ControlButtonR onClick={() => onClick()} $justifyContent={'flex-end'}>
+        &gt;
+      </S.ControlButtonR>
+    );
+  };
   return (
     <S.NewBookSlider>
       {/* <section> */}
@@ -17,6 +39,8 @@ const NewBookSlider = ({ title, books, responsive }) => {
           // autoPlay={true}
           // autoplaySpeed='5000'
           // centerMode={true}
+          customLeftArrow={<CustomLeftArrow />}
+          customRightArrow={<CustomRightArrow />}
           itemClass='movie-slider p-1'
           containerClass='carousel-container'
           responsive={responsive}
