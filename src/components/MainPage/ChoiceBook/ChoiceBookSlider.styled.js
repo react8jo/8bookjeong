@@ -22,3 +22,67 @@ export const CarouselContainer = styled.div`
   padding: 125px 0;
   overflow: hidden;
 `;
+export const ControlButtonR = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+  //
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  color: white;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const ControlButtonL = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 90%;
+  //
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  color: white;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  & > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 768px) {
+    right: 85%;
+  }
+`;
