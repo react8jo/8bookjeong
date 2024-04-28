@@ -31,6 +31,7 @@
 ### 프로젝트 소개
   ![팔북정 QR](./src/assets/images/QR.png)
 - 배포 페이지 : https://palbookjung.netlify.app/
+- 발표 ppt : https://www.canva.com/design/DAGDB7NFL04/XBayiicQKVjzqiziMN8BrA/edit?utm_content=DAGDB7NFL04&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 - 노션 페이지 : https://obtainable-stretch-0df.notion.site/8-c1b91720197948caa0e6d2817541547a
 
 #### 🗓️ 개발 일정 및 진행방식
