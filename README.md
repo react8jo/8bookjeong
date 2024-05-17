@@ -140,18 +140,13 @@
     
 
 
-### 장바구니 페이지
+### 장바구니, 결제 페이지 및 404
 
-|장바구니 페이지 | 구매 페이지|
-| :---------------: | :-----------------: |
-|  <img src= "https://github.com/react8jo/8bookjeong/assets/144419094/01d139cf-f622-4896-9c12-a8b0242343a9" width="200">| <img src="https://github.com/react8jo/8bookjeong/assets/144419094/c50149e1-f73e-4465-a78b-708fc2fa181b" width="200"> |
+|장바구니 페이지 | 구매 페이지| 404 페이지 |
+| :---------------: | :-----------------: |:--------: |
+|  <img src= "https://github.com/react8jo/8bookjeong/assets/144419094/01d139cf-f622-4896-9c12-a8b0242343a9" width="200">| <img src="https://github.com/react8jo/8bookjeong/assets/144419094/c50149e1-f73e-4465-a78b-708fc2fa181b" width="200"> | <img src="https://github.com/react8jo/8bookjeong/assets/144419094/802dd349-0648-4690-9334-c4ffe5f39a35" width="200"> |
 
 
-### 기타 페이지
-
-| 404 페이지 |
-| :--------: |
-| <img src="https://github.com/react8jo/8bookjeong/assets/144419094/802dd349-0648-4690-9334-c4ffe5f39a35" width="200"> |
 
 ## 🖥️ 기능 구현 (데스크탑버전)
 
