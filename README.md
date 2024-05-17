@@ -8,8 +8,11 @@
 - [회고](#회고)
 
 ## 🥇코딩알려주는누나 리액트 스터디 1등
-링크 : https://www.youtube.com/watch?v=H7wtij7kghE
-![스크린샷 2024-04-24 오후 11 38 17](https://github.com/react8jo/react-team/assets/138554290/76989357-8274-4bc4-b125-ee4f90ec5782)
+[바로가기](https://www.youtube.com/watch?v=H7wtij7kghE) <br/>
+
+<a href="https://www.youtube.com/watch?v=H7wtij7kghE">
+  <img src="https://github.com/react8jo/react-team/assets/138554290/76989357-8274-4bc4-b125-ee4f90ec5782" alt="스크린샷" width="50%"/>
+</a>
 
 <a name="프로젝트-소개"></a>
 ## 프로젝트 소개
