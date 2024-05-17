@@ -49,12 +49,13 @@
       <img src="./src/assets/images/QR.png" alt="팔북정 QR" width="100" />
     </td>
     <td>
-      - 배포 페이지 :[바로가기](https://palbookjung.netlify.app/)<br/>
-      - 발표 ppt : [바로가기](https://bit.ly/4b7AT6N)<br/>
-      - 노션 페이지 : [바로가기](https://zrr.kr/F2LG)
+      - 배포 페이지 <a href="https://palbookjung.netlify.app/" target="_blank">바로가기</a><br/>
+      - 발표 ppt <a href="https://bit.ly/4b7AT6N" target="_blank">바로가기</a><br/>
+      - 노션 페이지 <a href="https://zrr.kr/F2LG" target="_blank">바로가기</a>
     </td>
   </tr>
 </table>
+
 
 
 #### 🗓️ 개발 일정 및 진행방식
