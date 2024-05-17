@@ -136,15 +136,15 @@
 
 | 디테일 페이지 스크롤 | 네비게이션 탭 | 배송안내 기능 |
 | :---------------: | :-----------------: | :---------------: |
-|![상세페이지스크롤](https://github.com/react8jo/8bookjeong/assets/144419094/7f3e7b81-a1d5-447f-af1b-d1b12eea01a0)  |  ![상세페이지기능](https://github.com/react8jo/8bookjeong/assets/144419094/a7587f95-fad0-444c-98c4-d50694a9d0b7)
+|<img src="https://github.com/react8jo/8bookjeong/assets/144419094/7f3e7b81-a1d5-447f-af1b-d1b12eea01a0" width="200">  |  <img src="https://github.com/react8jo/8bookjeong/assets/144419094/a7587f95-fad0-444c-98c4-d50694a9d0b7" width="200">
     
 
 
 ### 장바구니 페이지
 
-|장바구니 페이지 | 구매 페이지| 상세페이지 스크롤 |
-| :---------------: | :-----------------: | :---------------: |
-|    사진넣는곳     |     사진넣는곳      |    사진넣는곳     |
+|장바구니 페이지 | 구매 페이지|
+| :---------------: | :-----------------: |
+|  <img src= "https://github.com/react8jo/8bookjeong/assets/144419094/01d139cf-f622-4896-9c12-a8b0242343a9" width="200">| <img src="https://github.com/react8jo/8bookjeong/assets/144419094/c50149e1-f73e-4465-a78b-708fc2fa181b" width="200"> |
 
 
 ### 기타 페이지
