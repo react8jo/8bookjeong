@@ -87,10 +87,11 @@
 #### 디자인
 
 - 로고 디자인 <br/>
-  ![팔북정 로고](./src/assets/images/logo.png) 
+  <img src="./src/assets/images/logo.png" alt="팔북정 로고" width="30%"/>
 
 - 컬러 팔레트 <br/>
-  ![팔북정 로고](./src/assets/images/color.png)
+  <img src="./src/assets/images/color.png" alt="팔북정 컬러 팔레트" width="30%"/>
+
 
 ## 📱기능 구현 (모바일 버전)
 
