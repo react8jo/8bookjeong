@@ -43,10 +43,19 @@
   - 이승희: 다른 사람들과 함께 협업하는 과정을 경험해보기.
 
 ### 프로젝트 소개
-  ![팔북정 QR](./src/assets/images/QR.png)
-- 배포 페이지 : https://palbookjung.netlify.app/
-- 발표 ppt : https://bit.ly/4b7AT6N
-- 노션 페이지 : https://zrr.kr/F2LG
+<table>
+  <tr>
+    <td>
+      <img src="./src/assets/images/QR.png" alt="팔북정 QR" width="100" />
+    </td>
+    <td>
+      - 배포 페이지 :[바로가기](https://palbookjung.netlify.app/)<br/>
+      - 발표 ppt : [바로가기](https://bit.ly/4b7AT6N)<br/>
+      - 노션 페이지 : [바로가기](https://zrr.kr/F2LG)
+    </td>
+  </tr>
+</table>
+
 
 #### 🗓️ 개발 일정 및 진행방식
 
