@@ -1,11 +1,9 @@
 import axios from 'axios';
-// const API_KEY = process.env.REACT_APP_API_KEY;
 const API_KEY = 'ttbdudgh46512353001';
 
 const api = axios.create({
-  // baseURL: '/ttb/api/',
-  // baseURL: 'https://www.aladin.co.kr/ttb/api/',
-  baseURL: 'https://port-0-book-api-main-85phb42blv0fujfq.sel5.cloudtype.app/',
+ 
+  baseURL: 'https://port-0-book8-rm6l2llwasdocy.sel5.cloudtype.app/',
   params: {
     TTBKey: API_KEY,
     output: 'js',
