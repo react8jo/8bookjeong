@@ -111,9 +111,9 @@
 
 ### 메인 페이지
 
-| 전체 스크롤 |  배너 캐러셀  | 상세페이지 스크롤 |
+| 전체 스크롤 |  배너 캐러셀  | 도서 리스트  |
 | :---------------: | :-----------------: | :---------------: |
-|    사진넣는곳     |     <img src="https://github.com/react8jo/8bookjeong/assets/144419094/a7e7f899-b875-45dd-9a36-4a8532d15995" width="200">      |    사진넣는곳     |
+| <img src="https://github.com/react8jo/8bookjeong/assets/144419094/15693e88-366e-45f4-b2a2-8b39d9990779" width="200">   |     <img src="https://github.com/react8jo/8bookjeong/assets/144419094/a7e7f899-b875-45dd-9a36-4a8532d15995" width="200">      |    사진넣는곳     |
  
 
 ### 카테고리 페이지
