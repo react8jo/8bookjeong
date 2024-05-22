@@ -116,17 +116,12 @@
 | <img src="https://github.com/react8jo/8bookjeong/assets/144419094/15693e88-366e-45f4-b2a2-8b39d9990779" width="200">   |     <img src="https://github.com/react8jo/8bookjeong/assets/144419094/a7e7f899-b875-45dd-9a36-4a8532d15995" width="200">     | <img src="https://github.com/react8jo/8bookjeong/assets/144419094/781c30c3-eb7d-4d67-8587-2ec4711ede23" width="200">|
  
 
-### 카테고리 페이지
+### 카테고리 및 검색 페이지
 
-| 카테고리 페이지 | 페이지네이션 | 상세페이지 스크롤 |
-| :---------------: | :-----------------: | :---------------: |
-|     ![필터 (1)](https://github.com/react8jo/8bookjeong/assets/144419094/3dbfe25c-8461-441b-bf22-c7b05fca9522)
+| 카테고리 페이지 | 검색 페이지 |
+| :---------------: | :-----------------: |
+|     ![필터 (1)](https://github.com/react8jo/8bookjeong/assets/144419094/3dbfe25c-8461-441b-bf22-c7b05fca9522) | <img src="https://github.com/react8jo/8bookjeong/assets/144419094/dd28e75f-d3f1-4692-8718-ab7e9b52c72d" width="200">| 
  
-
-### 검색 페이지
-| 검색 페이지 | 페이지네이션 | 정렬 기능 |
-| :---------------: | :-----------------: | :---------------: |
-|    사진넣는곳     |     사진넣는곳      |    사진넣는곳     |
 
 
 ### 디테일 페이지
