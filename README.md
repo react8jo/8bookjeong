@@ -126,8 +126,8 @@
 
 ### 디테일 페이지
 
-| 전체 스크롤 | 네비게이션 탭 | 배송안내 기능 |
-| :---------------: | :-----------------: | :---------------: |
+| 전체 스크롤 | 네비게이션 탭 |
+| :---------------: | :-----------------: | 
 |<img src="https://github.com/react8jo/8bookjeong/assets/144419094/7f3e7b81-a1d5-447f-af1b-d1b12eea01a0" width="200">  |  <img src="https://github.com/react8jo/8bookjeong/assets/144419094/a7587f95-fad0-444c-98c4-d50694a9d0b7" width="200">
     
 
